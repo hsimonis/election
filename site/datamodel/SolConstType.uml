@@ -1,0 +1,6 @@
+ class SolConstType {
+ConstituencyType constituencyType
+Double percent
+Solution solution
+Integer value
+}

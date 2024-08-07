@@ -1,0 +1,41 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{Almeida2022}
+Almeida, T., Manquinho, V.: Constraint-based electoral districting using a new
+  compactness measure: An application to {Portugal}. Computers \& Operations
+  Research  \textbf{146},  105892 (2022).
+  \doi{https://doi.org/10.1016/j.cor.2022.105892},
+  \url{https://www.sciencedirect.com/science/article/pii/S0305054822001575}
+
+\bibitem{Beldiceanu2005}
+Beldiceanu, N., Carlsson, M., Rampon, J.X.: {Global Constraint Catalog} (2005),
+  \url{https://hal.science/hal-00485396}, research Report SICS T2005-08
+
+\bibitem{CSO2022}
+{Central Statistics Office}: Census of population 2022 profile 1 - population
+  distribution and movements table {F1004A}. website (2024),
+  \url{https://www.cso.ie/en/statistics/population/censusofpopulation2022/censusofpopulation2022profile1-populationdistributionandmovements/},
+  accessed 3/8/2024
+
+\bibitem{Ireland2020}
+{Ireland}: Bunreacht na hÉireann = Constitution of Ireland. Stationery Office,
+  Dublin (2020), \url{https://www.irishstatutebook.ie/eli/cons/en/html}
+
+\bibitem{Ireland2022}
+{Ireland}: Electoral Reform Act 2022. Stationary Office, Dublin (2022),
+  \url{https://www.irishstatutebook.ie/eli/2022/act/30}
+
+\bibitem{Kotthoff2015}
+Kotthoff, L., O'Sullivan, B., Ravi, S.S., Davidson, I.: Complex clustering
+  using constraint programming: Modelling electoral map creation. In: ModRef
+  2015. Modelling and Reformulation Workshop (2015),
+  \url{https://www.cs.uwyo.edu/~larsko/papers/kotthoff_complex_2015.pdf}
+
+\bibitem{ElectoralCommission2023}
+{The Electoral Commission}: Constituency review report 2023 (2023),
+  \url{https://ec-report.s3.eu-west-1.amazonaws.com/constituency-review-report-2023.pdf}
+
+\end{thebibliography}

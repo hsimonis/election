@@ -1,0 +1,4 @@
+ class ApplicationDifference {
+String item
+DifferenceType type
+}

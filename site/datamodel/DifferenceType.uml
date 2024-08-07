@@ -1,0 +1,6 @@
+enum DifferenceType
+DifferenceType: ONLYA
+DifferenceType: ONLYB
+DifferenceType: DIFFERA
+DifferenceType: DIFFERB
+

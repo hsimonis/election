@@ -1,0 +1,26 @@
+ class Solution {
+Double avgSeatsPerConstituency
+Integer delta
+Double deltaPercent
+Double gapPercent
+Integer k
+Double lb
+Double maxE
+Double maxV
+Double minE
+Double minV
+Integer nr
+Integer nrConstituencies
+Integer nrThreads
+Double objValue
+Integer personsPerTD
+Double range
+SolutionStatus solutionStatus
+Double time
+Integer timeLimit
+Integer totalTransferred
+Integer totalTransfers
+Double weightedAbsoluteVariation
+Double weightedAverage
+Double weightedVariance
+}

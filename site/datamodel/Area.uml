@@ -1,0 +1,8 @@
+abstract class Area {
+Double totalArea
+Integer totalPopulation
+Double xMax
+Double xMin
+Double yMax
+Double yMin
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+
+<!--Generated at 17:04:25 on 2024-08-07-->
+
+
+<Tab text="Solution" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.insightcentre.election.controller.SolutionController">
+   <BorderPane>
+      <center>
+         <TableView fx:id="table" editable="true">
+            <columns>
+               <TableColumn fx:id="name" styleClass="right-aligned" text="Name" />
+               <TableColumn fx:id="nr" styleClass="right-aligned" text="Nr" />
+               <TableColumn fx:id="k" styleClass="right-aligned" text="K" />
+               <TableColumn fx:id="delta" styleClass="right-aligned" text="Delta" />
+               <TableColumn fx:id="deltaPercent" styleClass="right-aligned" text="DeltaPercent" />
+               <TableColumn fx:id="personsPerTD" styleClass="right-aligned" text="PersonsPerTD" />
+               <TableColumn fx:id="minE" styleClass="right-aligned" text="MinE" />
+               <TableColumn fx:id="maxE" styleClass="right-aligned" text="MaxE" />
+               <TableColumn fx:id="weightedAverage" styleClass="right-aligned" text="WeightedAverage" />
+               <TableColumn fx:id="weightedVariance" styleClass="right-aligned" text="WeightedVariance" />
+               <TableColumn fx:id="weightedAbsoluteVariation" styleClass="right-aligned" text="WeightedAbsoluteVariation" />
+               <TableColumn fx:id="minV" styleClass="right-aligned" text="MinV" />
+               <TableColumn fx:id="maxV" styleClass="right-aligned" text="MaxV" />
+               <TableColumn fx:id="range" styleClass="right-aligned" text="Range" />
+               <TableColumn fx:id="totalTransfers" styleClass="right-aligned" text="TotalTransfers" />
+               <TableColumn fx:id="totalTransferred" styleClass="right-aligned" text="TotalTransferred" />
+               <TableColumn fx:id="nrConstituencies" styleClass="right-aligned" text="NrConstituencies" />
+               <TableColumn fx:id="avgSeatsPerConstituency" styleClass="right-aligned" text="AvgSeatsPerConstituency" />
+               <TableColumn fx:id="timeLimit" styleClass="right-aligned" text="TimeLimit" />
+               <TableColumn fx:id="nrThreads" styleClass="right-aligned" text="NrThreads" />
+               <TableColumn fx:id="solutionStatus" styleClass="right-aligned" text="SolutionStatus" />
+               <TableColumn fx:id="objValue" styleClass="right-aligned" text="ObjValue" />
+               <TableColumn fx:id="lb" styleClass="right-aligned" text="Lb" />
+               <TableColumn fx:id="gapPercent" styleClass="right-aligned" text="GapPercent" />
+               <TableColumn fx:id="time" styleClass="right-aligned" text="Time" />
+            </columns>
+         </TableView>
+      </center>
+      <bottom>
+         <TitledPane fx:id="filterPane" expanded="false" text="Filter">
+            <content>
+               <HBox alignment="center" spacing="5.0">
+                  <ChoiceBox fx:id="filterChoiceBox" />
+                  <ChoiceBox fx:id="filterComparisonBox" />
+                  <TextField fx:id="filterTextField" />
+               </HBox>
+            </content>
+         </TitledPane>
+      </bottom>
+   </BorderPane>
+</Tab>

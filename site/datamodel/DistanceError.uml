@@ -1,0 +1,4 @@
+ class DistanceError {
+MapLocation from
+MapLocation to
+}

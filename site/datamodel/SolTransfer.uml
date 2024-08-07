@@ -1,0 +1,7 @@
+ class SolTransfer {
+County from
+Double percentOfFrom
+Solution solution
+County to
+Integer value
+}

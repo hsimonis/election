@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<!--Generated at 17:04:25 on 2024-08-07-->
+
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.insightcentre.election.controller.RootController">
+   <top>
+      <MenuBar>
+         <menus>
+            <Menu text="_File">
+               <items>
+                  <MenuItem id="File New" accelerator="Shortcut+N" onAction="#handle" text="New" />
+                  <SeparatorMenuItem />
+                  <MenuItem id="Open" accelerator="Shortcut+O" onAction="#handle" text="Open..." />
+                  <MenuItem id="Save" accelerator="Shortcut+S" onAction="#handle" text="Save" />
+                  <MenuItem id="Save As" accelerator="Shortcut+A" onAction="#handle" text="Save As..." />
+                  <MenuItem id="Save As XML" accelerator="Shortcut+L" onAction="#handle" text="Save As XML..." />
+                  <MenuItem id="Load From XML" accelerator="Shortcut+F" onAction="#handle" text="Load From XML..." />
+                  <SeparatorMenuItem />
+                  <MenuItem id="Print" accelerator="Shortcut+P" onAction="#handle" text="Print..." />
+                  <SeparatorMenuItem />
+                  <MenuItem id="Exit" accelerator="Shortcut+X" onAction="#handle" text="Exit" />
+               </items>
+            </Menu>
+            <Menu text="_Edit">
+               <items>
+                  <MenuItem id="New" onAction="#handle" text="New" />
+                  <MenuItem id="Copy" accelerator="Shortcut+C" onAction="#handle" text="Copy" />
+                  <MenuItem id="Paste" onAction="#handle" text="Paste" />
+                  <MenuItem id="Cut" accelerator="Shortcut+D" onAction="#handle" text="Delete" />
+               </items>
+            </Menu>
+            <Menu text="_Scenario">
+               <items>
+                  <MenuItem id="Check Data" onAction="#handle" text="Check Data" />
+                  <SeparatorMenuItem />
+                  <MenuItem id="Compare" onAction="#handle" text="Compare..." />
+               </items>
+            </Menu>
+            <Menu text="_View">
+               <items>
+                  <MenuItem id="Normal Size" onAction="#handle" text="Normal Size" />
+                  <Menu text="_Zoom">
+                     <items>
+                        <MenuItem id="ZoomSmallest" accelerator="Shortcut+T" onAction="#handle" text="Smallest" />
+                        <MenuItem id="ZoomSmall" onAction="#handle" text="Small" />
+                        <MenuItem id="ZoomSmaller" accelerator="Shortcut+M" onAction="#handle" text="Smaller" />
+                        <MenuItem id="ZoomNormal" onAction="#handle" text="Normal" />
+                        <MenuItem id="ZoomLarger" onAction="#handle" text="Larger" />
+                        <MenuItem id="ZoomLarge" onAction="#handle" text="Large" />
+                        <MenuItem id="ZoomLargest" accelerator="Shortcut+G" onAction="#handle" text="Largest" />
+                     </items>
+                  </Menu>
+                  <MenuItem id="Zoom In" accelerator="Shortcut+I" onAction="#handle" text="Zoom In" />
+                  <MenuItem id="Zoom Out" onAction="#handle" text="Zoom Out" />
+               </items>
+            </Menu>
+            <Menu text="_Window">
+               <items>
+                  <MenuItem id="countryPage" onAction="#handle" text="Country" />
+                  <MenuItem id="countyPage" onAction="#handle" text="County" />
+                  <MenuItem id="constituencyTypePage" onAction="#handle" text="ConstituencyType" />
+                  <MenuItem id="mapLocationPage" onAction="#handle" text="MapLocation" />
+                  <MenuItem id="areaPage" onAction="#handle" text="Area" />
+                  <MenuItem id="nuts3Page" onAction="#handle" text="Nuts3" />
+                  <MenuItem id="provincePage" onAction="#handle" text="Province" />
+                  <MenuItem id="shapedPage" onAction="#handle" text="Shaped" />
+                  <MenuItem id="electoralDivisionPage" accelerator="Shortcut+E" onAction="#handle" text="ElectoralDivision" />
+                  <MenuItem id="distancePage" onAction="#handle" text="Distance" />
+                  <MenuItem id="distanceErrorPage" onAction="#handle" text="DistanceError" />
+                  <MenuItem id="neighborCountyPage" onAction="#handle" text="NeighborCounty" />
+                  <MenuItem id="solutionPage" onAction="#handle" text="Solution" />
+                  <MenuItem id="solCountyPage" onAction="#handle" text="SolCounty" />
+                  <MenuItem id="solTransferPage" onAction="#handle" text="SolTransfer" />
+                  <MenuItem id="solConstTypePage" onAction="#handle" text="SolConstType" />
+                  <MenuItem id="scenarioPage" onAction="#handle" text="Scenario" />
+                  <MenuItem id="GenericPieChart" onAction="#handle" text="Generic Pie Chart" />
+                  <MenuItem id="GenericBarChart" accelerator="Shortcut+B" onAction="#handle" text="Generic Bar Chart" />
+                  <MenuItem id="GenericScatterChart" onAction="#handle" text="Generic Scatter Chart" />
+                  <Menu text="_System">
+                     <items>
+                        <MenuItem id="applicationDifferencePage" onAction="#handle" text="Scenario Differences" />
+                        <MenuItem id="applicationWarningPage" accelerator="Shortcut+W" onAction="#handle" text="Warnings" />
+                     </items>
+                  </Menu>
+               </items>
+            </Menu>
+            <Menu text="_Help">
+               <items>
+                  <SeparatorMenuItem />
+                  <MenuItem id="About" onAction="#handle" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <HBox styleClass="chart-legend">
+         <Label fx:id="statusBar" />
+      </HBox>
+   </bottom>
+</BorderPane>

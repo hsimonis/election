@@ -1,0 +1,7 @@
+ class Scenario {
+Integer alphaCostFactor
+Integer betaCostFactor
+Integer highBound
+Integer lowBound
+Integer totalPopulation
+}

@@ -1,0 +1,10 @@
+enum WarningType
+WarningType: NOTNULL
+WarningType: NOTEMPTY
+WarningType: NOTNEG
+WarningType: POSITIVE
+WarningType: LEQ
+WarningType: GEQ
+WarningType: BEFORE
+WarningType: AFTER
+

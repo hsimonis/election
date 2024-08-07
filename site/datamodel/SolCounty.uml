@@ -1,0 +1,14 @@
+ class SolCounty {
+String constTypes
+Integer constituenciesAssigned
+County county
+Integer effectivePopulation
+Double fractionalSeats
+Double personsPerSeat
+Integer population
+Integer seatsAssigned
+Solution solution
+Integer transferIn
+Integer transferOut
+Double variation
+}

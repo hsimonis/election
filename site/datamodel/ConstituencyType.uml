@@ -1,0 +1,4 @@
+ class ConstituencyType {
+Integer gammaCostFactor
+Integer nrSeats
+}

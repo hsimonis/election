@@ -1,0 +1,8 @@
+enum SolverType
+SolverType: CPO
+SolverType: Cplex
+SolverType: ORTools
+SolverType: Chuffed
+SolverType: CoinBC
+SolverType: Gecode
+

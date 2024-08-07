@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="body">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="applicationDifference" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="applicationWarning" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="constituencyType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="country" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="county" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="distance" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="distanceError" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="electoralDivision" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="neighborCounty" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="nuts3" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="province" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="scenario" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="solConstType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="solCounty" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="solTransfer" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="solution" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="applicationDifference">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="item" use="required" type="xs:string"/>
+			<xs:attribute name="type" use="required" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="applicationWarning">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="attrString" use="required" type="xs:string"/>
+			<xs:attribute name="classString" use="required" type="xs:string"/>
+			<xs:attribute name="item" use="required" type="xs:string"/>
+			<xs:attribute name="limit" use="required" type="xs:string"/>
+			<xs:attribute name="type" use="required" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="constituencyType">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="gammaCostFactor" use="required" type="xs:integer"/>
+			<xs:attribute name="nrSeats" use="required" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="country">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="population" use="required" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="county">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="centroidX" use="required" type="xs:double"/>
+			<xs:attribute name="centroidY" use="required" type="xs:double"/>
+			<xs:attribute name="nrED" use="required" type="xs:integer"/>
+			<xs:attribute name="population" use="required" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="distance">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="from" use="required" type="xs:IDREF"/>
+			<xs:attribute name="max" use="required" type="xs:double"/>
+			<xs:attribute name="min" use="required" type="xs:double"/>
+			<xs:attribute name="to" use="required" type="xs:IDREF"/>
+			<xs:attribute name="value" use="required" type="xs:double"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="distanceError">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="from" use="required" type="xs:IDREF"/>
+			<xs:attribute name="to" use="required" type="xs:IDREF"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="electoralDivision">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="ident" use="required" type="xs:string"/>
+			<xs:attribute name="latitude" use="required" type="xs:double"/>
+			<xs:attribute name="longitude" use="required" type="xs:double"/>
+			<xs:attribute name="shortName" use="required" type="xs:string"/>
+			<xs:attribute name="totalArea" use="required" type="xs:double"/>
+			<xs:attribute name="totalPopulation" use="required" type="xs:integer"/>
+			<xs:attribute name="xMax" use="required" type="xs:double"/>
+			<xs:attribute name="xMin" use="required" type="xs:double"/>
+			<xs:attribute name="yMax" use="required" type="xs:double"/>
+			<xs:attribute name="yMin" use="required" type="xs:double"/>
+			<xs:attribute name="cluster" use="required" type="xs:integer"/>
+			<xs:attribute name="county" use="required" type="xs:IDREF"/>
+			<xs:attribute name="nr" use="required" type="xs:integer"/>
+			<xs:attribute name="populationDensity" use="required" type="xs:double"/>
+			<xs:attribute name="province" use="required" type="xs:IDREF"/>
+			<xs:attribute name="shape" use="required" type="xs:string"/>
+			<xs:attribute name="shapeArea" use="required" type="xs:double"/>
+			<xs:attribute name="shapeLength" use="required" type="xs:double"/>
+			<xs:attribute name="edId" use="required" type="xs:integer"/>
+			<xs:attribute name="edIdString" use="required" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="neighborCounty">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="county1" use="required" type="xs:IDREF"/>
+			<xs:attribute name="county2" use="required" type="xs:IDREF"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="nuts3">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="ident" use="required" type="xs:string"/>
+			<xs:attribute name="latitude" use="required" type="xs:double"/>
+			<xs:attribute name="longitude" use="required" type="xs:double"/>
+			<xs:attribute name="shortName" use="required" type="xs:string"/>
+			<xs:attribute name="totalArea" use="required" type="xs:double"/>
+			<xs:attribute name="totalPopulation" use="required" type="xs:integer"/>
+			<xs:attribute name="xMax" use="required" type="xs:double"/>
+			<xs:attribute name="xMin" use="required" type="xs:double"/>
+			<xs:attribute name="yMax" use="required" type="xs:double"/>
+			<xs:attribute name="yMin" use="required" type="xs:double"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="province">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="ident" use="required" type="xs:string"/>
+			<xs:attribute name="latitude" use="required" type="xs:double"/>
+			<xs:attribute name="longitude" use="required" type="xs:double"/>
+			<xs:attribute name="shortName" use="required" type="xs:string"/>
+			<xs:attribute name="totalArea" use="required" type="xs:double"/>
+			<xs:attribute name="totalPopulation" use="required" type="xs:integer"/>
+			<xs:attribute name="xMax" use="required" type="xs:double"/>
+			<xs:attribute name="xMin" use="required" type="xs:double"/>
+			<xs:attribute name="yMax" use="required" type="xs:double"/>
+			<xs:attribute name="yMin" use="required" type="xs:double"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="scenario">
+		<xs:complexType>
+			<xs:attribute name="dirty" use="required" type="xs:boolean"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="valid" use="required" type="xs:boolean"/>
+			<xs:attribute name="alphaCostFactor" use="required" type="xs:integer"/>
+			<xs:attribute name="betaCostFactor" use="required" type="xs:integer"/>
+			<xs:attribute name="highBound" use="required" type="xs:integer"/>
+			<xs:attribute name="lowBound" use="required" type="xs:integer"/>
+			<xs:attribute name="totalPopulation" use="required" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="solConstType">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="constituencyType" use="required" type="xs:IDREF"/>
+			<xs:attribute name="percent" use="required" type="xs:double"/>
+			<xs:attribute name="solution" use="required" type="xs:IDREF"/>
+			<xs:attribute name="value" use="required" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="solCounty">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="constTypes" use="required" type="xs:string"/>
+			<xs:attribute name="constituenciesAssigned" use="required" type="xs:integer"/>
+			<xs:attribute name="county" use="required" type="xs:IDREF"/>
+			<xs:attribute name="effectivePopulation" use="required" type="xs:integer"/>
+			<xs:attribute name="fractionalSeats" use="required" type="xs:double"/>
+			<xs:attribute name="personsPerSeat" use="required" type="xs:double"/>
+			<xs:attribute name="population" use="required" type="xs:integer"/>
+			<xs:attribute name="seatsAssigned" use="required" type="xs:integer"/>
+			<xs:attribute name="solution" use="required" type="xs:IDREF"/>
+			<xs:attribute name="transferIn" use="required" type="xs:integer"/>
+			<xs:attribute name="transferOut" use="required" type="xs:integer"/>
+			<xs:attribute name="variation" use="required" type="xs:double"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="solTransfer">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="from" use="required" type="xs:IDREF"/>
+			<xs:attribute name="percentOfFrom" use="required" type="xs:double"/>
+			<xs:attribute name="solution" use="required" type="xs:IDREF"/>
+			<xs:attribute name="to" use="required" type="xs:IDREF"/>
+			<xs:attribute name="value" use="required" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="solution">
+		<xs:complexType>
+			<xs:attribute name="applicationDataset" use="required" type="xs:IDREF"/>
+			<xs:attribute name="id" use="required" type="xs:ID"/>
+			<xs:attribute name="name" use="required" type="xs:string"/>
+			<xs:attribute name="avgSeatsPerConstituency" use="required" type="xs:double"/>
+			<xs:attribute name="delta" use="required" type="xs:integer"/>
+			<xs:attribute name="deltaPercent" use="required" type="xs:double"/>
+			<xs:attribute name="gapPercent" use="required" type="xs:double"/>
+			<xs:attribute name="k" use="required" type="xs:integer"/>
+			<xs:attribute name="lb" use="required" type="xs:double"/>
+			<xs:attribute name="maxE" use="required" type="xs:double"/>
+			<xs:attribute name="maxV" use="required" type="xs:double"/>
+			<xs:attribute name="minE" use="required" type="xs:double"/>
+			<xs:attribute name="minV" use="required" type="xs:double"/>
+			<xs:attribute name="nr" use="required" type="xs:integer"/>
+			<xs:attribute name="nrConstituencies" use="required" type="xs:integer"/>
+			<xs:attribute name="nrThreads" use="required" type="xs:integer"/>
+			<xs:attribute name="objValue" use="required" type="xs:double"/>
+			<xs:attribute name="personsPerTD" use="required" type="xs:integer"/>
+			<xs:attribute name="range" use="required" type="xs:double"/>
+			<xs:attribute name="solutionStatus" use="required" type="xs:string"/>
+			<xs:attribute name="time" use="required" type="xs:double"/>
+			<xs:attribute name="timeLimit" use="required" type="xs:integer"/>
+			<xs:attribute name="totalTransferred" use="required" type="xs:integer"/>
+			<xs:attribute name="totalTransfers" use="required" type="xs:integer"/>
+			<xs:attribute name="weightedAbsoluteVariation" use="required" type="xs:double"/>
+			<xs:attribute name="weightedAverage" use="required" type="xs:double"/>
+			<xs:attribute name="weightedVariance" use="required" type="xs:double"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

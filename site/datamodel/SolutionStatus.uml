@@ -1,0 +1,7 @@
+enum SolutionStatus
+SolutionStatus: Solution
+SolutionStatus: Optimal
+SolutionStatus: Unsatisfiable
+SolutionStatus: Unknown
+SolutionStatus: Undetermined
+

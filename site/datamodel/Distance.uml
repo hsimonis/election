@@ -1,0 +1,7 @@
+ class Distance {
+MapLocation from
+Double max
+Double min
+MapLocation to
+Double value
+}

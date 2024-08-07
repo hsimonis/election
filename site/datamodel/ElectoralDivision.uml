@@ -1,0 +1,4 @@
+ class ElectoralDivision {
+Integer edId
+String edIdString
+}

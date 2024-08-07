@@ -1,0 +1,6 @@
+abstract class MapLocation {
+String ident
+Double latitude
+Double longitude
+String shortName
+}

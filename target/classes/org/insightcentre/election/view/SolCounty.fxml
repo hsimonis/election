@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+
+<!--Generated at 17:04:25 on 2024-08-07-->
+
+
+<Tab text="SolCounty" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.insightcentre.election.controller.SolCountyController">
+   <BorderPane>
+      <center>
+         <TableView fx:id="table" editable="true">
+            <columns>
+               <TableColumn fx:id="name" styleClass="right-aligned" text="Name" />
+               <TableColumn fx:id="county" styleClass="right-aligned" text="County" />
+               <TableColumn fx:id="solution" styleClass="right-aligned" text="Solution" />
+               <TableColumn fx:id="population" styleClass="right-aligned" text="Population" />
+               <TableColumn fx:id="fractionalSeats" styleClass="right-aligned" text="FractionalSeats" />
+               <TableColumn fx:id="transferOut" styleClass="right-aligned" text="TransferOut" />
+               <TableColumn fx:id="transferIn" styleClass="right-aligned" text="TransferIn" />
+               <TableColumn fx:id="effectivePopulation" styleClass="right-aligned" text="EffectivePopulation" />
+               <TableColumn fx:id="constituenciesAssigned" styleClass="right-aligned" text="ConstituenciesAssigned" />
+               <TableColumn fx:id="constTypes" styleClass="right-aligned" text="ConstTypes" />
+               <TableColumn fx:id="seatsAssigned" styleClass="right-aligned" text="SeatsAssigned" />
+               <TableColumn fx:id="personsPerSeat" styleClass="right-aligned" text="PersonsPerSeat" />
+               <TableColumn fx:id="variation" styleClass="right-aligned" text="Variation" />
+            </columns>
+         </TableView>
+      </center>
+      <bottom>
+         <TitledPane fx:id="filterPane" expanded="false" text="Filter">
+            <content>
+               <HBox alignment="center" spacing="5.0">
+                  <ChoiceBox fx:id="filterChoiceBox" />
+                  <ChoiceBox fx:id="filterComparisonBox" />
+                  <TextField fx:id="filterTextField" />
+               </HBox>
+            </content>
+         </TitledPane>
+      </bottom>
+   </BorderPane>
+</Tab>

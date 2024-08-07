@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.ScatterChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<!--Generated at 17:04:25 on 2024-08-07-->
+
+
+<Tab text="Scatter Chart" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.insightcentre.election.controller.ScatterChartController">
+   <BorderPane>
+      <top />
+      <center>
+         <ScatterChart fx:id="chart">
+            <xAxis>
+               <NumberAxis />
+            </xAxis>
+            <yAxis>
+               <NumberAxis />
+            </yAxis>
+         </ScatterChart>
+      </center>
+      <bottom>
+         <HBox alignment="center" spacing="5.0">
+            <Label text="Application Object:" />
+            <ChoiceBox fx:id="classChoiceBox" onAction="#onClassSelect" />
+            <Label text="Attribute X:" />
+            <ChoiceBox fx:id="attributeChoiceBox" onAction="#onAttributeSelect" />
+            <Label text="Attribute Y:" />
+            <ChoiceBox fx:id="attributeYChoiceBox" onAction="#onAttributeSelect" />
+            <Label text="Filter:" />
+            <ChoiceBox fx:id="attributeFilterBox" onAction="#onAttributeSelect" />
+            <ChoiceBox fx:id="filterComparisonBox" onAction="#onAttributeSelect" />
+            <TextField fx:id="filterTextField" onAction="#onAttributeSelect" />
+            <Label text="Group:" />
+            <ChoiceBox fx:id="attributeGroupBox" onAction="#onAttributeSelect" />
+         </HBox>
+      </bottom>
+   </BorderPane>
+</Tab>

@@ -1,0 +1,7 @@
+ class ApplicationWarning {
+String attrString
+String classString
+String item
+String limit
+WarningType type
+}

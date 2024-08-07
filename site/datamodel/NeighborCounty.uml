@@ -1,0 +1,4 @@
+ class NeighborCounty {
+County county1
+County county2
+}

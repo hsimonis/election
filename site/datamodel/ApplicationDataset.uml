@@ -1,0 +1,6 @@
+abstract class ApplicationDataset {
+Boolean dirty
+Integer id
+String name
+Boolean valid
+}

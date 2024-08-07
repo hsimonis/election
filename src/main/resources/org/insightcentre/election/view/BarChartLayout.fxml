@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<!--Generated at 17:04:25 on 2024-08-07-->
+
+
+<Tab text="Bar Chart" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.insightcentre.election.controller.BarChartController">
+   <BorderPane>
+      <top />
+      <center>
+         <BarChart fx:id="chart">
+            <xAxis>
+               <CategoryAxis />
+            </xAxis>
+            <yAxis>
+               <NumberAxis />
+            </yAxis>
+         </BarChart>
+      </center>
+      <bottom>
+         <HBox alignment="center" spacing="5.0">
+            <Label text="Application Object:" />
+            <ChoiceBox fx:id="classChoiceBox" onAction="#onClassSelect" />
+            <Label text="Attribute to Chart:" />
+            <ChoiceBox fx:id="attributeChoiceBox" onAction="#onAttributeSelect" />
+         </HBox>
+      </bottom>
+   </BorderPane>
+</Tab>

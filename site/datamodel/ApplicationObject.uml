@@ -1,0 +1,5 @@
+abstract class ApplicationObject {
+ApplicationDataset applicationDataset
+Integer id
+String name
+}
