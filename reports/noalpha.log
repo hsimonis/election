@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.4.29)  7 AUG 2024 17:38
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.4.29)  7 AUG 2024 22:26
  restricted system commands enabled.
 **noalpha
 (./noalpha.tex
@@ -1121,137 +1121,155 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 259.
+(Font)              <7> on input line 275.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 259.
- [5] [6] [7] [8] [9] [10] [11
+(Font)              <5> on input line 275.
+ [5] [6] [7] [8] [9] [10] [11] [12
 
-] [12] [13] [14
+] [13] [14]
+[15
 
-]
-[15] [16] [17
+] [16] [17] [18
 
-] [18] [19] [20
+] [19] [20] [21
 
-] [21] [22] [23
+] [22] [23] [24
 
-] [24] [25] [26
+] [25] [26] [27
 
-] [27] [28] [29
+] [28] [29]
+[30
 
-]
-[30] [31] [32
+] [31] [32] [33
 
-] [33] [34] [35
+] [34] [35] [36
 
-] [36] [37] [38
+] [37] [38] [39
 
-] [39] [40] [41
+] [40] [41] [42
 
-] [42] [43] [44
+] [43] [44]
+[45
 
-]
-[45] [46] [47
+] [46] [47] [48
 
-] [48] [49] [50
+] [49] [50] [51
 
-] [51] [52] [53
+] [52] [53] [54
 
-] [54] [55] [56
+] [55] [56] [57
 
-] [57] [58] [59
+] [58] [59]
+[60
 
-]
-[60] [61] [62
+] [61] [62] [63
 
-] [63] [64] [65
+] [64] [65] [66
 
-] [66] [67] [68
+] [67] [68] [69
 
-] [69] [70] [71
+] [70] [71] [72
 
-] [72] [73] [74
+] [73] [74]
+[75
 
-]
-[75] [76] [77
+] [76] [77] [78
 
-] [78] [79] [80
+] [79] [80] [81
 
-] [81] [82] [83
+] [82] [83] [84
 
-] [84] [85] [86
+] [85] [86] [87
 
-] [87] [88] [89
+] [88] [89]
+[90
 
-]
-[90] [91] [92
+] [91] [92] [93
 
-] [93] [94] [95
+] [94] [95] [96
 
-] [96] [97] [98
+] [97] [98] [99
 
-] [99] [100] [101
+] [100] [101] [102
 
-] [102] [103]
-[104
+] [103]
+[104] [105
 
-] [105] [106] [107
+] [106] [107] [108
 
-] [108] [109] [110
+] [109] [110] [111
 
-] [111] [112] [113
+] [112] [113] [114
 
-] [114] [115]
-[116
+] [115]
+[116] [117
 
-] [117] [118] [119
+] [118] [119] [120
 
-] [120] [121] [122
+] [121] [122] [123
 
-] [123] [124] [125
+] [124] [125] [126
 
-] [126] [127]
-[128
+] [127]
+[128] [129
 
-] [129] [130] [131
+] [130] [131] [132
 
-] [132] [133] [134
+] [133] [134] [135
 
-] [135] [136] [137
+] [136] [137] [138
 
-] [138] [139]
-[140
+] [139]
+[140] [141
 
-] [141] [142] [143
+] [142] [143] [144
 
-] [144] [145] [146
+] [145] [146] [147
 
-] [147] [148] [149
+] [148] [149] [150
 
-] [150] [151]
-[152
+] [151]
+[152] [153
 
-] [153] [154] [155
+] [154] [155] [156
 
-] [156] [157] [158
+] [157] [158] [159
 
-] [159] [160] [161
+] [160] [161] [162
 
-] [162] [163]
-(./noalpha.aux)
+] [163]
+[164] [165
+
+] [166] [167] [168
+
+] [169] [170] [171
+
+] [172] [173] [174
+
+] [175]
+[176] [177
+
+] [178] [179] [180
+
+] [181] [182] [183
+
+] [184] [185] [186
+
+] [187]
+[188] (./noalpha.aux)
 Package rerunfilecheck Info: File `noalpha.out' has not changed.
-(rerunfilecheck)             Checksum: 7DB911DBEEBFAD3A6405481794CA7F0F;7103.
+(rerunfilecheck)             Checksum: 277E3CA1DD36602D78C7D353AB5ECEF8;8159.
 )
 
 Here is how much of LuaTeX's memory you used:
- 44131 strings out of 477760
- 244902,1648299 words of node,token memory allocated
+ 44228 strings out of 477760
+ 306129,1648299 words of node,token memory allocated
  473 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 5 attribute, 60 glue_spec,
  5 attribute_list, 2 write nodes
-   avail lists: 1:4,2:11697,3:5713,4:824,5:1625,6:23,7:19162,8:9,9:4320,10:7,11:
-270
- 63142 multiletter control sequences out of 65536+600000
+   avail lists: 1:6,2:11853,3:5789,4:840,5:1865,6:22,7:21948,8:9,9:4833,10:7,11:
+286
+ 63174 multiletter control sequences out of 65536+600000
  42 fonts using 1802615 bytes
  99i,16n,90p,1599b,1951s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/texlive/2022/texmf-
@@ -1264,10 +1282,10 @@ fb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022
 pe1/public/lm/lmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.
 pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/texlive/2022/
 texmf-dist/fonts/type1/public/lm/lmr7.pfb>
-Output written on noalpha.pdf (163 pages, 1162845 bytes).
+Output written on noalpha.pdf (188 pages, 1321156 bytes).
 
-PDF statistics: 1176 PDF objects out of 1200 (max. 8388607)
- 990 compressed objects within 10 object streams
- 424 named destinations out of 1000 (max. 131072)
- 448 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1346 PDF objects out of 1440 (max. 8388607)
+ 1133 compressed objects within 12 object streams
+ 489 named destinations out of 1000 (max. 131072)
+ 512 words of extra memory for PDF output out of 10000 (max. 100000000)
 

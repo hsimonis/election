@@ -28,7 +28,7 @@ public class JfxApp extends GeneratedJfxApp {
                 Scenario base = new Scenario();
                 IrishCalendar.buildCalendar();
                 int seats = 174;
-                String scenario="nogamma"; // "parameters","nogamma","noalpha"
+                String scenario="noalpha"; // "parameters","nogamma","noalpha"
                 String specifics;
                 switch(scenario) {
                         case "parameters":
