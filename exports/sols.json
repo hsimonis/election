@@ -163,7 +163,7 @@
     "minV": -0.33792917004595835,
     "nrConstituencies": 38,
     "name": "Sol1",
-    "time": 0.45,
+    "time": 11.759,
     "counties": [
       {
         "transferOut": 61968,
@@ -617,7 +617,7 @@
     "minV": -0.5068937550689375,
     "nrConstituencies": 38,
     "name": "Sol2",
-    "time": 0.264,
+    "time": 9.799,
     "counties": [
       {
         "transferOut": 61968,
@@ -1077,7 +1077,7 @@
     "minV": -0.6758583400919167,
     "nrConstituencies": 38,
     "name": "Sol3",
-    "time": 0.192,
+    "time": 13.966,
     "counties": [
       {
         "transferOut": 61968,
@@ -1525,7 +1525,7 @@
     "minV": -0.8448229251148959,
     "nrConstituencies": 38,
     "name": "Sol4",
-    "time": 0.198,
+    "time": 13.614,
     "counties": [
       {
         "transferOut": 61968,
@@ -1973,7 +1973,7 @@
     "minV": -1.013787510137875,
     "nrConstituencies": 38,
     "name": "Sol5",
-    "time": 0.221,
+    "time": 11.278,
     "counties": [
       {
         "transferOut": 61968,
@@ -2415,7 +2415,7 @@
     "minV": -1.1827520951608543,
     "nrConstituencies": 38,
     "name": "Sol6",
-    "time": 0.156,
+    "time": 11.48,
     "counties": [
       {
         "transferOut": 61968,
@@ -2863,7 +2863,7 @@
     "minV": -1.3517166801838334,
     "nrConstituencies": 38,
     "name": "Sol7",
-    "time": 0.202,
+    "time": 12.361,
     "counties": [
       {
         "transferOut": 61968,
@@ -3317,7 +3317,7 @@
     "minV": -1.5206812652068127,
     "nrConstituencies": 38,
     "name": "Sol8",
-    "time": 0.161,
+    "time": 16.545,
     "counties": [
       {
         "transferOut": 61968,
@@ -3759,7 +3759,7 @@
     "minV": -1.6896458502297917,
     "nrConstituencies": 38,
     "name": "Sol9",
-    "time": 0.261,
+    "time": 12.12,
     "counties": [
       {
         "transferOut": 61968,
@@ -4213,7 +4213,7 @@
     "minV": -1.858610435252771,
     "nrConstituencies": 38,
     "name": "Sol10",
-    "time": 0.276,
+    "time": 11.797,
     "counties": [
       {
         "transferOut": 61968,
@@ -4655,7 +4655,7 @@
     "minV": -2.02757502027575,
     "nrConstituencies": 38,
     "name": "Sol11",
-    "time": 0.15,
+    "time": 13.881,
     "counties": [
       {
         "transferOut": 61968,
@@ -5103,7 +5103,7 @@
     "minV": -2.1965396052987294,
     "nrConstituencies": 38,
     "name": "Sol12",
-    "time": 0.194,
+    "time": 16.668,
     "counties": [
       {
         "transferOut": 61968,
@@ -5551,7 +5551,7 @@
     "minV": -2.3655041903217087,
     "nrConstituencies": 38,
     "name": "Sol13",
-    "time": 0.17,
+    "time": 16.885,
     "counties": [
       {
         "transferOut": 61968,
@@ -5993,7 +5993,7 @@
     "minV": -2.534468775344688,
     "nrConstituencies": 38,
     "name": "Sol14",
-    "time": 0.179,
+    "time": 13.574,
     "counties": [
       {
         "transferOut": 61968,
@@ -6441,7 +6441,7 @@
     "minV": -2.703433360367667,
     "nrConstituencies": 38,
     "name": "Sol15",
-    "time": 0.128,
+    "time": 12.796,
     "counties": [
       {
         "transferOut": 61968,
@@ -6889,7 +6889,7 @@
     "minV": -2.872397945390646,
     "nrConstituencies": 38,
     "name": "Sol16",
-    "time": 0.141,
+    "time": 11.457,
     "counties": [
       {
         "transferOut": 61968,
@@ -7325,7 +7325,7 @@
     "minV": -3.0413625304136254,
     "nrConstituencies": 38,
     "name": "Sol17",
-    "time": 0.158,
+    "time": 11.986,
     "counties": [
       {
         "transferOut": 61968,
@@ -7779,7 +7779,7 @@
     "minV": -3.2103271154366047,
     "nrConstituencies": 38,
     "name": "Sol18",
-    "time": 0.181,
+    "time": 10.604,
     "counties": [
       {
         "transferOut": 61968,
@@ -8227,7 +8227,7 @@
     "minV": -3.3792917004595835,
     "nrConstituencies": 38,
     "name": "Sol19",
-    "time": 0.149,
+    "time": 17.593,
     "counties": [
       {
         "transferOut": 61968,
@@ -8663,7 +8663,7 @@
     "minV": -3.5482562854825628,
     "nrConstituencies": 38,
     "name": "Sol20",
-    "time": 0.15,
+    "time": 15.093,
     "counties": [
       {
         "transferOut": 61968,
@@ -9105,7 +9105,7 @@
     "minV": -3.717220870505542,
     "nrConstituencies": 38,
     "name": "Sol21",
-    "time": 0.156,
+    "time": 20.341,
     "counties": [
       {
         "transferOut": 61968,
@@ -9535,7 +9535,7 @@
     "minV": -3.8861854555285213,
     "nrConstituencies": 38,
     "name": "Sol22",
-    "time": 0.202,
+    "time": 11.9,
     "counties": [
       {
         "transferOut": 61968,
@@ -9977,7 +9977,7 @@
     "minV": -4.0551500405515,
     "nrConstituencies": 38,
     "name": "Sol23",
-    "time": 0.132,
+    "time": 12.844,
     "counties": [
       {
         "transferOut": 61968,
@@ -10401,7 +10401,7 @@
     "minV": -4.2241146255744795,
     "nrConstituencies": 38,
     "name": "Sol24",
-    "time": 0.142,
+    "time": 13.086,
     "counties": [
       {
         "transferOut": 61968,
@@ -10825,7 +10825,7 @@
     "minV": -4.393079210597459,
     "nrConstituencies": 38,
     "name": "Sol25",
-    "time": 0.125,
+    "time": 13.603,
     "counties": [
       {
         "transferOut": 61968,
@@ -11267,7 +11267,7 @@
     "minV": -4.562043795620438,
     "nrConstituencies": 38,
     "name": "Sol26",
-    "time": 0.158,
+    "time": 13.91,
     "counties": [
       {
         "transferOut": 61968,
@@ -11697,7 +11697,7 @@
     "minV": -4.731008380643417,
     "nrConstituencies": 38,
     "name": "Sol27",
-    "time": 0.14,
+    "time": 17.999,
     "counties": [
       {
         "transferOut": 61968,
@@ -12121,7 +12121,7 @@
     "minV": -4.899972965666397,
     "nrConstituencies": 38,
     "name": "Sol28",
-    "time": 0.141,
+    "time": 11.272,
     "counties": [
       {
         "transferOut": 61968,
@@ -12551,7 +12551,7 @@
     "minV": -5.068937550689376,
     "nrConstituencies": 38,
     "name": "Sol29",
-    "time": 0.137,
+    "time": 16.102,
     "counties": [
       {
         "transferOut": 61968,
@@ -12981,7 +12981,7 @@
     "minV": -5.237902135712354,
     "nrConstituencies": 38,
     "name": "Sol30",
-    "time": 0.124,
+    "time": 13.674,
     "counties": [
       {
         "transferOut": 61968,
@@ -13405,7 +13405,7 @@
     "minV": -5.406866720735334,
     "nrConstituencies": 38,
     "name": "Sol31",
-    "time": 0.151,
+    "time": 13.734,
     "counties": [
       {
         "transferOut": 61968,
@@ -13841,7 +13841,7 @@
     "minV": -5.575831305758313,
     "nrConstituencies": 38,
     "name": "Sol32",
-    "time": 0.127,
+    "time": 12.36,
     "counties": [
       {
         "transferOut": 61968,
@@ -14259,7 +14259,7 @@
     "minV": -5.744795890781292,
     "nrConstituencies": 38,
     "name": "Sol33",
-    "time": 0.131,
+    "time": 11.493,
     "counties": [
       {
         "transferOut": 61968,
@@ -14683,7 +14683,7 @@
     "minV": -5.913760475804271,
     "nrConstituencies": 38,
     "name": "Sol34",
-    "time": 0.135,
+    "time": 10.114,
     "counties": [
       {
         "transferOut": 61968,
@@ -15113,7 +15113,7 @@
     "minV": -6.082725060827251,
     "nrConstituencies": 38,
     "name": "Sol35",
-    "time": 0.141,
+    "time": 12.609,
     "counties": [
       {
         "transferOut": 61968,
@@ -15537,7 +15537,7 @@
     "minV": -6.25168964585023,
     "nrConstituencies": 38,
     "name": "Sol36",
-    "time": 0.125,
+    "time": 15.039,
     "counties": [
       {
         "transferOut": 61968,
@@ -15961,7 +15961,7 @@
     "minV": -6.420654230873209,
     "nrConstituencies": 38,
     "name": "Sol37",
-    "time": 0.116,
+    "time": 16.328,
     "counties": [
       {
         "transferOut": 61968,
@@ -16403,7 +16403,7 @@
     "minV": -6.589618815896189,
     "nrConstituencies": 38,
     "name": "Sol38",
-    "time": 0.112,
+    "time": 19.537,
     "counties": [
       {
         "transferOut": 61968,
@@ -16809,7 +16809,7 @@
     "minV": -6.758583400919167,
     "nrConstituencies": 38,
     "name": "Sol39",
-    "time": 0.131,
+    "time": 15.9,
     "counties": [
       {
         "transferOut": 61968,
@@ -17221,7 +17221,7 @@
     "minV": -6.927547985942146,
     "nrConstituencies": 38,
     "name": "Sol40",
-    "time": 0.167,
+    "time": 20.666,
     "counties": [
       {
         "transferOut": 61968,
@@ -17627,7 +17627,7 @@
     "minV": -7.0965125709651256,
     "nrConstituencies": 38,
     "name": "Sol41",
-    "time": 0.151,
+    "time": 21.831,
     "counties": [
       {
         "transferOut": 61968,
@@ -18027,7 +18027,7 @@
     "minV": -7.265477155988105,
     "nrConstituencies": 38,
     "name": "Sol42",
-    "time": 0.157,
+    "time": 14.127,
     "counties": [
       {
         "transferOut": 61968,
@@ -18433,7 +18433,7 @@
     "minV": -7.434441741011084,
     "nrConstituencies": 38,
     "name": "Sol43",
-    "time": 0.134,
+    "time": 12.482,
     "counties": [
       {
         "transferOut": 61968,
@@ -18827,7 +18827,7 @@
     "minV": -7.603406326034063,
     "nrConstituencies": 38,
     "name": "Sol44",
-    "time": 0.127,
+    "time": 17.793,
     "counties": [
       {
         "transferOut": 61968,
@@ -19221,7 +19221,7 @@
     "minV": -7.772370911057043,
     "nrConstituencies": 38,
     "name": "Sol45",
-    "time": 0.173,
+    "time": 10.343,
     "counties": [
       {
         "transferOut": 61968,
@@ -19621,7 +19621,7 @@
     "minV": -7.941335496080022,
     "nrConstituencies": 38,
     "name": "Sol46",
-    "time": 0.102,
+    "time": 10.845,
     "counties": [
       {
         "transferOut": 61968,
@@ -20009,7 +20009,7 @@
     "minV": -8.110300081103,
     "nrConstituencies": 38,
     "name": "Sol47",
-    "time": 0.134,
+    "time": 12.913,
     "counties": [
       {
         "transferOut": 61968,
@@ -20409,7 +20409,7 @@
     "minV": -8.27926466612598,
     "nrConstituencies": 38,
     "name": "Sol48",
-    "time": 0.115,
+    "time": 11.04,
     "counties": [
       {
         "transferOut": 61968,
@@ -20803,7 +20803,7 @@
     "minV": -8.448229251148959,
     "nrConstituencies": 38,
     "name": "Sol49",
-    "time": 0.128,
+    "time": 10.796,
     "counties": [
       {
         "transferOut": 61968,
@@ -21197,7 +21197,7 @@
     "minV": -8.61719383617194,
     "nrConstituencies": 38,
     "name": "Sol50",
-    "time": 0.145,
+    "time": 15.357,
     "counties": [
       {
         "transferOut": 61968,
@@ -21591,7 +21591,7 @@
     "minV": -8.786158421194918,
     "nrConstituencies": 38,
     "name": "Sol51",
-    "time": 0.131,
+    "time": 11.02,
     "counties": [
       {
         "transferOut": 61968,
@@ -21985,7 +21985,7 @@
     "minV": -8.955123006217896,
     "nrConstituencies": 38,
     "name": "Sol52",
-    "time": 0.154,
+    "time": 11.103,
     "counties": [
       {
         "transferOut": 61968,
@@ -22373,7 +22373,7 @@
     "minV": -9.124087591240876,
     "nrConstituencies": 38,
     "name": "Sol53",
-    "time": 0.148,
+    "time": 11.256,
     "counties": [
       {
         "transferOut": 61968,
@@ -22785,7 +22785,7 @@
     "minV": -9.293052176263854,
     "nrConstituencies": 37,
     "name": "Sol54",
-    "time": 0.137,
+    "time": 10.716,
     "counties": [
       {
         "transferOut": 61968,
@@ -23179,7 +23179,7 @@
     "minV": -9.462016761286835,
     "nrConstituencies": 37,
     "name": "Sol55",
-    "time": 0.137,
+    "time": 9.248,
     "counties": [
       {
         "transferOut": 61968,
@@ -23567,7 +23567,7 @@
     "minV": -9.630981346309813,
     "nrConstituencies": 37,
     "name": "Sol56",
-    "time": 0.126,
+    "time": 8.957,
     "counties": [
       {
         "transferOut": 61968,
@@ -23967,7 +23967,7 @@
     "minV": -9.799945931332793,
     "nrConstituencies": 37,
     "name": "Sol57",
-    "time": 0.113,
+    "time": 9.268,
     "counties": [
       {
         "transferOut": 61968,
@@ -24355,7 +24355,7 @@
     "minV": -9.968910516355772,
     "nrConstituencies": 37,
     "name": "Sol58",
-    "time": 0.164,
+    "time": 12.574,
     "counties": [
       {
         "transferOut": 61968,
@@ -24743,7 +24743,7 @@
     "minV": -10.137875101378752,
     "nrConstituencies": 37,
     "name": "Sol59",
-    "time": 0.142,
+    "time": 10.07,
     "counties": [
       {
         "transferOut": 61968,
