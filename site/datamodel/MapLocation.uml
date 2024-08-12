@@ -1,6 +1,6 @@
 abstract class MapLocation {
+Double centroidX
+Double centroidY
 String ident
-Double latitude
-Double longitude
 String shortName
 }

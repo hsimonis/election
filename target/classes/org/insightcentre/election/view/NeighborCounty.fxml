@@ -10,7 +10,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 
-<!--Generated at 17:04:25 on 2024-08-07-->
+<!--Generated at 10:26:59 on 2024-08-11-->
 
 
 <Tab text="NeighborCounty" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.insightcentre.election.controller.NeighborCountyController">

@@ -10,7 +10,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 
-<!--Generated at 17:04:25 on 2024-08-07-->
+<!--Generated at 10:26:59 on 2024-08-11-->
 
 
 <Tab text="ElectoralDivision" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.insightcentre.election.controller.ElectoralDivisionController">
@@ -20,25 +20,20 @@
             <columns>
                <TableColumn fx:id="name" styleClass="right-aligned" text="Name" />
                <TableColumn fx:id="shortName" styleClass="right-aligned" text="ShortName" />
-               <TableColumn fx:id="longitude" styleClass="right-aligned" text="Longitude" />
-               <TableColumn fx:id="latitude" styleClass="right-aligned" text="Latitude" />
                <TableColumn fx:id="ident" styleClass="right-aligned" text="Ident" />
+               <TableColumn fx:id="centroidX" styleClass="right-aligned" text="CentroidX" />
+               <TableColumn fx:id="centroidY" styleClass="right-aligned" text="CentroidY" />
                <TableColumn editable="false" styleClass="right-aligned,disabled-column" text="XMin" fx:id="xMin" />
                <TableColumn editable="false" styleClass="right-aligned,disabled-column" text="XMax" fx:id="xMax" />
                <TableColumn fx:id="yMin" editable="false" styleClass="right-aligned,disabled-column" text="YMin" />
                <TableColumn fx:id="yMax" editable="false" styleClass="right-aligned,disabled-column" text="YMax" />
                <TableColumn fx:id="totalPopulation" editable="false" styleClass="right-aligned,disabled-column" text="TotalPopulation" />
-               <TableColumn fx:id="totalArea" editable="false" styleClass="right-aligned,disabled-column" text="TotalArea" />
                <TableColumn fx:id="nr" styleClass="right-aligned" text="Nr" />
-               <TableColumn fx:id="shapeLength" styleClass="right-aligned" text="ShapeLength" />
-               <TableColumn fx:id="shapeArea" styleClass="right-aligned" text="ShapeArea" />
-               <TableColumn fx:id="populationDensity" editable="false" styleClass="right-aligned,disabled-column" text="PopulationDensity" />
-               <TableColumn fx:id="cluster" styleClass="right-aligned" text="Cluster" />
-               <TableColumn fx:id="county" styleClass="right-aligned" text="County" />
-               <TableColumn fx:id="province" styleClass="right-aligned" text="Province" />
                <TableColumn fx:id="shape" styleClass="right-aligned" text="Shape" />
                <TableColumn fx:id="edId" styleClass="right-aligned" text="EdId" />
                <TableColumn fx:id="edIdString" styleClass="right-aligned" text="EdIdString" />
+               <TableColumn fx:id="county" styleClass="right-aligned" text="County" />
+               <TableColumn fx:id="lea" styleClass="right-aligned" text="Lea" />
             </columns>
          </TableView>
       </center>

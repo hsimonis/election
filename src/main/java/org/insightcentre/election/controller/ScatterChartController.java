@@ -12,7 +12,7 @@ import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
 
 /**
- * Generated at 17:04:25 on 2024-08-07 */
+ * Generated at 10:26:59 on 2024-08-11 */
 public class ScatterChartController extends ChartXYFilterController {
 	@FXML
 	private ScatterChart<Number, Number> chart;
@@ -51,28 +51,6 @@ public class ScatterChartController extends ChartXYFilterController {
 		filterNames.add("type");
 		filterNames.add("limit");
 		filterNames.add("name");
-		attributeNames.add("population");
-		filterNames.add("population");
-		choicesMap.put("Country", attributeNames);
-		filterMap.put("Country", filterNames);
-		attributeNames = FXCollections.observableArrayList();
-		filterNames = FXCollections.observableArrayList();
-		filterNames.add(filterNone);
-		filterNames.add("name");
-		attributeNames.add("population");
-		filterNames.add("population");
-		attributeNames.add("nrED");
-		filterNames.add("nrED");
-		attributeNames.add("centroidX");
-		filterNames.add("centroidX");
-		attributeNames.add("centroidY");
-		filterNames.add("centroidY");
-		choicesMap.put("County", attributeNames);
-		filterMap.put("County", filterNames);
-		attributeNames = FXCollections.observableArrayList();
-		filterNames = FXCollections.observableArrayList();
-		filterNames.add(filterNone);
-		filterNames.add("name");
 		attributeNames.add("nrSeats");
 		filterNames.add("nrSeats");
 		attributeNames.add("gammaCostFactor");
@@ -84,11 +62,11 @@ public class ScatterChartController extends ChartXYFilterController {
 		filterNames.add(filterNone);
 		filterNames.add("name");
 		filterNames.add("shortName");
-		attributeNames.add("longitude");
-		filterNames.add("longitude");
-		attributeNames.add("latitude");
-		filterNames.add("latitude");
 		filterNames.add("ident");
+		attributeNames.add("centroidX");
+		filterNames.add("centroidX");
+		attributeNames.add("centroidY");
+		filterNames.add("centroidY");
 		choicesMap.put("MapLocation", attributeNames);
 		filterMap.put("MapLocation", filterNames);
 		attributeNames = FXCollections.observableArrayList();
@@ -96,11 +74,11 @@ public class ScatterChartController extends ChartXYFilterController {
 		filterNames.add(filterNone);
 		filterNames.add("name");
 		filterNames.add("shortName");
-		attributeNames.add("longitude");
-		filterNames.add("longitude");
-		attributeNames.add("latitude");
-		filterNames.add("latitude");
 		filterNames.add("ident");
+		attributeNames.add("centroidX");
+		filterNames.add("centroidX");
+		attributeNames.add("centroidY");
+		filterNames.add("centroidY");
 		attributeNames.add("xMin");
 		filterNames.add("xMin");
 		attributeNames.add("xMax");
@@ -111,8 +89,6 @@ public class ScatterChartController extends ChartXYFilterController {
 		filterNames.add("yMax");
 		attributeNames.add("totalPopulation");
 		filterNames.add("totalPopulation");
-		attributeNames.add("totalArea");
-		filterNames.add("totalArea");
 		choicesMap.put("Area", attributeNames);
 		filterMap.put("Area", filterNames);
 		attributeNames = FXCollections.observableArrayList();
@@ -120,11 +96,11 @@ public class ScatterChartController extends ChartXYFilterController {
 		filterNames.add(filterNone);
 		filterNames.add("name");
 		filterNames.add("shortName");
-		attributeNames.add("longitude");
-		filterNames.add("longitude");
-		attributeNames.add("latitude");
-		filterNames.add("latitude");
 		filterNames.add("ident");
+		attributeNames.add("centroidX");
+		filterNames.add("centroidX");
+		attributeNames.add("centroidY");
+		filterNames.add("centroidY");
 		attributeNames.add("xMin");
 		filterNames.add("xMin");
 		attributeNames.add("xMax");
@@ -135,8 +111,6 @@ public class ScatterChartController extends ChartXYFilterController {
 		filterNames.add("yMax");
 		attributeNames.add("totalPopulation");
 		filterNames.add("totalPopulation");
-		attributeNames.add("totalArea");
-		filterNames.add("totalArea");
 		choicesMap.put("Nuts3", attributeNames);
 		filterMap.put("Nuts3", filterNames);
 		attributeNames = FXCollections.observableArrayList();
@@ -144,11 +118,11 @@ public class ScatterChartController extends ChartXYFilterController {
 		filterNames.add(filterNone);
 		filterNames.add("name");
 		filterNames.add("shortName");
-		attributeNames.add("longitude");
-		filterNames.add("longitude");
-		attributeNames.add("latitude");
-		filterNames.add("latitude");
 		filterNames.add("ident");
+		attributeNames.add("centroidX");
+		filterNames.add("centroidX");
+		attributeNames.add("centroidY");
+		filterNames.add("centroidY");
 		attributeNames.add("xMin");
 		filterNames.add("xMin");
 		attributeNames.add("xMax");
@@ -159,8 +133,6 @@ public class ScatterChartController extends ChartXYFilterController {
 		filterNames.add("yMax");
 		attributeNames.add("totalPopulation");
 		filterNames.add("totalPopulation");
-		attributeNames.add("totalArea");
-		filterNames.add("totalArea");
 		choicesMap.put("Province", attributeNames);
 		filterMap.put("Province", filterNames);
 		attributeNames = FXCollections.observableArrayList();
@@ -168,11 +140,11 @@ public class ScatterChartController extends ChartXYFilterController {
 		filterNames.add(filterNone);
 		filterNames.add("name");
 		filterNames.add("shortName");
-		attributeNames.add("longitude");
-		filterNames.add("longitude");
-		attributeNames.add("latitude");
-		filterNames.add("latitude");
 		filterNames.add("ident");
+		attributeNames.add("centroidX");
+		filterNames.add("centroidX");
+		attributeNames.add("centroidY");
+		filterNames.add("centroidY");
 		attributeNames.add("xMin");
 		filterNames.add("xMin");
 		attributeNames.add("xMax");
@@ -183,20 +155,8 @@ public class ScatterChartController extends ChartXYFilterController {
 		filterNames.add("yMax");
 		attributeNames.add("totalPopulation");
 		filterNames.add("totalPopulation");
-		attributeNames.add("totalArea");
-		filterNames.add("totalArea");
 		attributeNames.add("nr");
 		filterNames.add("nr");
-		attributeNames.add("shapeLength");
-		filterNames.add("shapeLength");
-		attributeNames.add("shapeArea");
-		filterNames.add("shapeArea");
-		attributeNames.add("populationDensity");
-		filterNames.add("populationDensity");
-		attributeNames.add("cluster");
-		filterNames.add("cluster");
-		filterNames.add("county");
-		filterNames.add("province");
 		filterNames.add("shape");
 		choicesMap.put("Shaped", attributeNames);
 		filterMap.put("Shaped", filterNames);
@@ -205,11 +165,11 @@ public class ScatterChartController extends ChartXYFilterController {
 		filterNames.add(filterNone);
 		filterNames.add("name");
 		filterNames.add("shortName");
-		attributeNames.add("longitude");
-		filterNames.add("longitude");
-		attributeNames.add("latitude");
-		filterNames.add("latitude");
 		filterNames.add("ident");
+		attributeNames.add("centroidX");
+		filterNames.add("centroidX");
+		attributeNames.add("centroidY");
+		filterNames.add("centroidY");
 		attributeNames.add("xMin");
 		filterNames.add("xMin");
 		attributeNames.add("xMax");
@@ -220,26 +180,68 @@ public class ScatterChartController extends ChartXYFilterController {
 		filterNames.add("yMax");
 		attributeNames.add("totalPopulation");
 		filterNames.add("totalPopulation");
-		attributeNames.add("totalArea");
-		filterNames.add("totalArea");
 		attributeNames.add("nr");
 		filterNames.add("nr");
-		attributeNames.add("shapeLength");
-		filterNames.add("shapeLength");
-		attributeNames.add("shapeArea");
-		filterNames.add("shapeArea");
-		attributeNames.add("populationDensity");
-		filterNames.add("populationDensity");
-		attributeNames.add("cluster");
-		filterNames.add("cluster");
-		filterNames.add("county");
-		filterNames.add("province");
+		filterNames.add("shape");
+		attributeNames.add("nrED");
+		filterNames.add("nrED");
+		choicesMap.put("County", attributeNames);
+		filterMap.put("County", filterNames);
+		attributeNames = FXCollections.observableArrayList();
+		filterNames = FXCollections.observableArrayList();
+		filterNames.add(filterNone);
+		filterNames.add("name");
+		filterNames.add("shortName");
+		filterNames.add("ident");
+		attributeNames.add("centroidX");
+		filterNames.add("centroidX");
+		attributeNames.add("centroidY");
+		filterNames.add("centroidY");
+		attributeNames.add("xMin");
+		filterNames.add("xMin");
+		attributeNames.add("xMax");
+		filterNames.add("xMax");
+		attributeNames.add("yMin");
+		filterNames.add("yMin");
+		attributeNames.add("yMax");
+		filterNames.add("yMax");
+		attributeNames.add("totalPopulation");
+		filterNames.add("totalPopulation");
+		attributeNames.add("nr");
+		filterNames.add("nr");
 		filterNames.add("shape");
 		attributeNames.add("edId");
 		filterNames.add("edId");
 		filterNames.add("edIdString");
+		filterNames.add("county");
+		filterNames.add("lea");
 		choicesMap.put("ElectoralDivision", attributeNames);
 		filterMap.put("ElectoralDivision", filterNames);
+		attributeNames = FXCollections.observableArrayList();
+		filterNames = FXCollections.observableArrayList();
+		filterNames.add(filterNone);
+		filterNames.add("name");
+		filterNames.add("shortName");
+		filterNames.add("ident");
+		attributeNames.add("centroidX");
+		filterNames.add("centroidX");
+		attributeNames.add("centroidY");
+		filterNames.add("centroidY");
+		attributeNames.add("xMin");
+		filterNames.add("xMin");
+		attributeNames.add("xMax");
+		filterNames.add("xMax");
+		attributeNames.add("yMin");
+		filterNames.add("yMin");
+		attributeNames.add("yMax");
+		filterNames.add("yMax");
+		attributeNames.add("totalPopulation");
+		filterNames.add("totalPopulation");
+		attributeNames.add("nr");
+		filterNames.add("nr");
+		filterNames.add("shape");
+		choicesMap.put("Lea", attributeNames);
+		filterMap.put("Lea", filterNames);
 		attributeNames = FXCollections.observableArrayList();
 		filterNames = FXCollections.observableArrayList();
 		filterNames.add(filterNone);
@@ -400,12 +402,6 @@ public class ScatterChartController extends ChartXYFilterController {
 			else if (className.equals("ApplicationWarning")) {
 				objectList = mainApp.getApplicationWarningData();
 			}
-			else if (className.equals("Country")) {
-				objectList = mainApp.getCountryData();
-			}
-			else if (className.equals("County")) {
-				objectList = mainApp.getCountyData();
-			}
 			else if (className.equals("ConstituencyType")) {
 				objectList = mainApp.getConstituencyTypeData();
 			}
@@ -424,8 +420,14 @@ public class ScatterChartController extends ChartXYFilterController {
 			else if (className.equals("Shaped")) {
 				objectList = mainApp.getShapedData();
 			}
+			else if (className.equals("County")) {
+				objectList = mainApp.getCountyData();
+			}
 			else if (className.equals("ElectoralDivision")) {
 				objectList = mainApp.getElectoralDivisionData();
+			}
+			else if (className.equals("Lea")) {
+				objectList = mainApp.getLeaData();
 			}
 			else if (className.equals("Distance")) {
 				objectList = mainApp.getDistanceData();

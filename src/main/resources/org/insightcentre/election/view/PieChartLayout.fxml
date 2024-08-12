@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<!--Generated at 17:04:25 on 2024-08-07-->
+<!--Generated at 10:26:59 on 2024-08-11-->
 
 
 <Tab text="Pie Chart" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.insightcentre.election.controller.PieChartController">

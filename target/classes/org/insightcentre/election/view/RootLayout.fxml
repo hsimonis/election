@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<!--Generated at 17:04:25 on 2024-08-07-->
+<!--Generated at 10:26:59 on 2024-08-11-->
 
 
 <BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.insightcentre.election.controller.RootController">
@@ -65,15 +65,15 @@
             </Menu>
             <Menu text="_Window">
                <items>
-                  <MenuItem id="countryPage" onAction="#handle" text="Country" />
-                  <MenuItem id="countyPage" onAction="#handle" text="County" />
                   <MenuItem id="constituencyTypePage" onAction="#handle" text="ConstituencyType" />
                   <MenuItem id="mapLocationPage" onAction="#handle" text="MapLocation" />
                   <MenuItem id="areaPage" onAction="#handle" text="Area" />
                   <MenuItem id="nuts3Page" onAction="#handle" text="Nuts3" />
                   <MenuItem id="provincePage" onAction="#handle" text="Province" />
                   <MenuItem id="shapedPage" onAction="#handle" text="Shaped" />
+                  <MenuItem id="countyPage" onAction="#handle" text="County" />
                   <MenuItem id="electoralDivisionPage" accelerator="Shortcut+E" onAction="#handle" text="ElectoralDivision" />
+                  <MenuItem id="leaPage" onAction="#handle" text="Lea" />
                   <MenuItem id="distancePage" onAction="#handle" text="Distance" />
                   <MenuItem id="distanceErrorPage" onAction="#handle" text="DistanceError" />
                   <MenuItem id="neighborCountyPage" onAction="#handle" text="NeighborCounty" />

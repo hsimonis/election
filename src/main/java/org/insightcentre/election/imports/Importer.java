@@ -13,13 +13,13 @@ public class Importer {
     public Importer(Scenario base,String importDir,String scenario){
         assert(importDir.endsWith("/"));
         new ReadParameters(base,importDir+scenario+".json");
-        new ImportED(base, importDir, "ED_centroids (1).csv");
-        new ImportEDPopulation(base, importDir, "ED_population.csv");
-        groupED(base);
         // different coordinate system compare to ED
         new CountyGeoJSON(base,importDir+"Counties.geojson");
         // centroid and shape coordinate systems differ
 //        new CountyGeoJSON(base,importDir+"Counties___OSi_National_Statutory_Boundaries___Generalised_20m_-6920972630406172930.geojson");
+        new ImportSAPS(base,importDir+"CSO_2022_ED.csv");
+        new EDGeoJSON(base,importDir+"CSO_2022_ELECTORAL_DIVISIONS.geojson");
+        groupED(base);
     }
 
     private void groupED(Scenario base){

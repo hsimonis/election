@@ -1,10 +1,4 @@
 abstract class Shaped {
-Integer cluster
-County county
 Integer nr
-Double populationDensity
-Province province
 String shape
-Double shapeArea
-Double shapeLength
 }

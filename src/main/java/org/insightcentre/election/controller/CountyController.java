@@ -20,7 +20,7 @@ import org.insightcentre.election.GeneratedJfxApp;
 import org.insightcentre.election.datamodel.County;
 
 /**
- * Generated at 17:04:25 on 2024-08-07 */
+ * Generated at 10:26:59 on 2024-08-11 */
 public class CountyController extends Table3Controller {
 	@FXML
 	private TableView<County> table;
@@ -29,16 +29,40 @@ public class CountyController extends Table3Controller {
 	private TableColumn<County, String> name;
 
 	@FXML
-	private TableColumn<County, Integer> population;
+	private TableColumn<County, String> shortName;
 
 	@FXML
-	private TableColumn<County, Integer> nrED;
+	private TableColumn<County, String> ident;
 
 	@FXML
 	private TableColumn<County, Double> centroidX;
 
 	@FXML
 	private TableColumn<County, Double> centroidY;
+
+	@FXML
+	private TableColumn<County, Double> xMin;
+
+	@FXML
+	private TableColumn<County, Double> xMax;
+
+	@FXML
+	private TableColumn<County, Double> yMin;
+
+	@FXML
+	private TableColumn<County, Double> yMax;
+
+	@FXML
+	private TableColumn<County, Integer> totalPopulation;
+
+	@FXML
+	private TableColumn<County, Integer> nr;
+
+	@FXML
+	private TableColumn<County, String> shape;
+
+	@FXML
+	private TableColumn<County, Integer> nrED;
 
 	private GeneratedJfxApp mainApp;
 
@@ -61,14 +85,14 @@ public class CountyController extends Table3Controller {
 		name.setCellValueFactory(new PropertyValueFactory<>("name"));
 		name.setCellFactory(TextFieldTableCell.forTableColumn());
 		name.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setName(event.getNewValue()); mainApp.reset();});
-		choices.add("population");
-		population.setCellValueFactory(new PropertyValueFactory<>("population"));
-		population.setCellFactory(TextFieldTableCell.forTableColumn(INTEGER_CONVERTER));
-		population.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setPopulation(event.getNewValue()); mainApp.reset();});
-		choices.add("nrED");
-		nrED.setCellValueFactory(new PropertyValueFactory<>("nrED"));
-		nrED.setCellFactory(TextFieldTableCell.forTableColumn(INTEGER_CONVERTER));
-		nrED.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setNrED(event.getNewValue()); mainApp.reset();});
+		choices.add("shortName");
+		shortName.setCellValueFactory(new PropertyValueFactory<>("shortName"));
+		shortName.setCellFactory(TextFieldTableCell.forTableColumn());
+		shortName.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setShortName(event.getNewValue()); mainApp.reset();});
+		choices.add("ident");
+		ident.setCellValueFactory(new PropertyValueFactory<>("ident"));
+		ident.setCellFactory(TextFieldTableCell.forTableColumn());
+		ident.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setIdent(event.getNewValue()); mainApp.reset();});
 		choices.add("centroidX");
 		centroidX.setCellValueFactory(new PropertyValueFactory<>("centroidX"));
 		centroidX.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
@@ -77,6 +101,38 @@ public class CountyController extends Table3Controller {
 		centroidY.setCellValueFactory(new PropertyValueFactory<>("centroidY"));
 		centroidY.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
 		centroidY.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCentroidY(event.getNewValue()); mainApp.reset();});
+		choices.add("xMin");
+		xMin.setCellValueFactory(new PropertyValueFactory<>("xMin"));
+		xMin.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
+		xMin.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setXMin(event.getNewValue()); mainApp.reset();});
+		choices.add("xMax");
+		xMax.setCellValueFactory(new PropertyValueFactory<>("xMax"));
+		xMax.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
+		xMax.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setXMax(event.getNewValue()); mainApp.reset();});
+		choices.add("yMin");
+		yMin.setCellValueFactory(new PropertyValueFactory<>("yMin"));
+		yMin.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
+		yMin.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setYMin(event.getNewValue()); mainApp.reset();});
+		choices.add("yMax");
+		yMax.setCellValueFactory(new PropertyValueFactory<>("yMax"));
+		yMax.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
+		yMax.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setYMax(event.getNewValue()); mainApp.reset();});
+		choices.add("totalPopulation");
+		totalPopulation.setCellValueFactory(new PropertyValueFactory<>("totalPopulation"));
+		totalPopulation.setCellFactory(TextFieldTableCell.forTableColumn(INTEGER_CONVERTER));
+		totalPopulation.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setTotalPopulation(event.getNewValue()); mainApp.reset();});
+		choices.add("nr");
+		nr.setCellValueFactory(new PropertyValueFactory<>("nr"));
+		nr.setCellFactory(TextFieldTableCell.forTableColumn(INTEGER_CONVERTER));
+		nr.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setNr(event.getNewValue()); mainApp.reset();});
+		choices.add("shape");
+		shape.setCellValueFactory(new PropertyValueFactory<>("shape"));
+		shape.setCellFactory(TextFieldTableCell.forTableColumn());
+		shape.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setShape(event.getNewValue()); mainApp.reset();});
+		choices.add("nrED");
+		nrED.setCellValueFactory(new PropertyValueFactory<>("nrED"));
+		nrED.setCellFactory(TextFieldTableCell.forTableColumn(INTEGER_CONVERTER));
+		nrED.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setNrED(event.getNewValue()); mainApp.reset();});
 		initialize(choices);
 	}
 

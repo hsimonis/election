@@ -20,7 +20,7 @@ import org.insightcentre.election.GeneratedJfxApp;
 import org.insightcentre.election.datamodel.Area;
 
 /**
- * Generated at 17:04:25 on 2024-08-07 */
+ * Generated at 10:26:59 on 2024-08-11 */
 public class AreaController extends Table3Controller {
 	@FXML
 	private TableView<Area> table;
@@ -32,13 +32,13 @@ public class AreaController extends Table3Controller {
 	private TableColumn<Area, String> shortName;
 
 	@FXML
-	private TableColumn<Area, Double> longitude;
-
-	@FXML
-	private TableColumn<Area, Double> latitude;
-
-	@FXML
 	private TableColumn<Area, String> ident;
+
+	@FXML
+	private TableColumn<Area, Double> centroidX;
+
+	@FXML
+	private TableColumn<Area, Double> centroidY;
 
 	@FXML
 	private TableColumn<Area, Double> xMin;
@@ -54,9 +54,6 @@ public class AreaController extends Table3Controller {
 
 	@FXML
 	private TableColumn<Area, Integer> totalPopulation;
-
-	@FXML
-	private TableColumn<Area, Double> totalArea;
 
 	private GeneratedJfxApp mainApp;
 
@@ -83,18 +80,18 @@ public class AreaController extends Table3Controller {
 		shortName.setCellValueFactory(new PropertyValueFactory<>("shortName"));
 		shortName.setCellFactory(TextFieldTableCell.forTableColumn());
 		shortName.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setShortName(event.getNewValue()); mainApp.reset();});
-		choices.add("longitude");
-		longitude.setCellValueFactory(new PropertyValueFactory<>("longitude"));
-		longitude.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
-		longitude.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setLongitude(event.getNewValue()); mainApp.reset();});
-		choices.add("latitude");
-		latitude.setCellValueFactory(new PropertyValueFactory<>("latitude"));
-		latitude.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
-		latitude.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setLatitude(event.getNewValue()); mainApp.reset();});
 		choices.add("ident");
 		ident.setCellValueFactory(new PropertyValueFactory<>("ident"));
 		ident.setCellFactory(TextFieldTableCell.forTableColumn());
 		ident.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setIdent(event.getNewValue()); mainApp.reset();});
+		choices.add("centroidX");
+		centroidX.setCellValueFactory(new PropertyValueFactory<>("centroidX"));
+		centroidX.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
+		centroidX.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCentroidX(event.getNewValue()); mainApp.reset();});
+		choices.add("centroidY");
+		centroidY.setCellValueFactory(new PropertyValueFactory<>("centroidY"));
+		centroidY.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
+		centroidY.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCentroidY(event.getNewValue()); mainApp.reset();});
 		choices.add("xMin");
 		xMin.setCellValueFactory(new PropertyValueFactory<>("xMin"));
 		xMin.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
@@ -115,10 +112,6 @@ public class AreaController extends Table3Controller {
 		totalPopulation.setCellValueFactory(new PropertyValueFactory<>("totalPopulation"));
 		totalPopulation.setCellFactory(TextFieldTableCell.forTableColumn(INTEGER_CONVERTER));
 		totalPopulation.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setTotalPopulation(event.getNewValue()); mainApp.reset();});
-		choices.add("totalArea");
-		totalArea.setCellValueFactory(new PropertyValueFactory<>("totalArea"));
-		totalArea.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
-		totalArea.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setTotalArea(event.getNewValue()); mainApp.reset();});
 		initialize(choices);
 	}
 

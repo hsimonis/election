@@ -5,15 +5,15 @@ import org.insightcentre.election.datamodel.ApplicationObject;
 import org.insightcentre.election.datamodel.ApplicationDifference;
 import org.insightcentre.election.datamodel.ApplicationWarning;
 import org.insightcentre.election.datamodel.Scenario;
-import org.insightcentre.election.datamodel.Country;
-import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ConstituencyType;
 import org.insightcentre.election.datamodel.MapLocation;
 import org.insightcentre.election.datamodel.Area;
 import org.insightcentre.election.datamodel.Nuts3;
 import org.insightcentre.election.datamodel.Province;
 import org.insightcentre.election.datamodel.Shaped;
+import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ElectoralDivision;
+import org.insightcentre.election.datamodel.Lea;
 import org.insightcentre.election.datamodel.Distance;
 import org.insightcentre.election.datamodel.DistanceError;
 import org.insightcentre.election.datamodel.NeighborCounty;
@@ -109,20 +109,6 @@ public abstract class ApplicationDataset implements ApplicationDatasetInterface,
     List<Scenario> listScenario = new ArrayList<Scenario>();
 
 /**
- *  This lists holds all items of class Country and its subclasses
- *
-*/
-
-    List<Country> listCountry = new ArrayList<Country>();
-
-/**
- *  This lists holds all items of class County and its subclasses
- *
-*/
-
-    List<County> listCounty = new ArrayList<County>();
-
-/**
  *  This lists holds all items of class ConstituencyType and its subclasses
  *
 */
@@ -165,11 +151,25 @@ public abstract class ApplicationDataset implements ApplicationDatasetInterface,
     List<Shaped> listShaped = new ArrayList<Shaped>();
 
 /**
+ *  This lists holds all items of class County and its subclasses
+ *
+*/
+
+    List<County> listCounty = new ArrayList<County>();
+
+/**
  *  This lists holds all items of class ElectoralDivision and its subclasses
  *
 */
 
     List<ElectoralDivision> listElectoralDivision = new ArrayList<ElectoralDivision>();
+
+/**
+ *  This lists holds all items of class Lea and its subclasses
+ *
+*/
+
+    List<Lea> listLea = new ArrayList<Lea>();
 
 /**
  *  This lists holds all items of class Distance and its subclasses
@@ -346,11 +346,11 @@ public int compareTo(ApplicationDataset ds2){
         return Arrays.asList("ApplicationDifference",
                              "ApplicationWarning",
                              "ConstituencyType",
-                             "Country",
                              "County",
                              "Distance",
                              "DistanceError",
                              "ElectoralDivision",
+                             "Lea",
                              "NeighborCounty",
                              "Nuts3",
                              "Province",
@@ -416,15 +416,15 @@ public int compareTo(ApplicationDataset ds2){
         listApplicationObject = new ArrayList<ApplicationObject>();
         resetListApplicationWarning();
         resetListApplicationDifference();
-        resetListCountry();
-        resetListCounty();
         resetListConstituencyType();
         resetListMapLocation();
         resetListArea();
         resetListNuts3();
         resetListProvince();
         resetListShaped();
+        resetListCounty();
         resetListElectoralDivision();
+        resetListLea();
         resetListDistance();
         resetListDistanceError();
         resetListNeighborCounty();
@@ -537,74 +537,6 @@ public int compareTo(ApplicationDataset ds2){
     }
 
 /**
- *  Iterator for list of class Country
- *
-*/
-
-    public Iterator<Country> getIteratorCountry(){
-        return listCountry.iterator();
-    }
-
-/**
- *  Getter for list of class Country
- *
-*/
-
-    public List<Country> getListCountry(){
-        return listCountry;
-    }
-
-/**
- *  reset the list of class Country; use with care, does not call cascades
- *
-*/
-
-    public void resetListCountry(){
-        listCountry = new ArrayList<Country>();
-        List<ApplicationObject> newListApplicationObject = new ArrayList<ApplicationObject>();
-        for(ApplicationObject a:listApplicationObject){
-            if (!(a instanceof Country)){
-                newListApplicationObject.add(a);
-            }
-        }
-       listApplicationObject = newListApplicationObject;
-    }
-
-/**
- *  Iterator for list of class County
- *
-*/
-
-    public Iterator<County> getIteratorCounty(){
-        return listCounty.iterator();
-    }
-
-/**
- *  Getter for list of class County
- *
-*/
-
-    public List<County> getListCounty(){
-        return listCounty;
-    }
-
-/**
- *  reset the list of class County; use with care, does not call cascades
- *
-*/
-
-    public void resetListCounty(){
-        listCounty = new ArrayList<County>();
-        List<ApplicationObject> newListApplicationObject = new ArrayList<ApplicationObject>();
-        for(ApplicationObject a:listApplicationObject){
-            if (!(a instanceof County)){
-                newListApplicationObject.add(a);
-            }
-        }
-       listApplicationObject = newListApplicationObject;
-    }
-
-/**
  *  Iterator for list of class ConstituencyType
  *
 */
@@ -674,7 +606,9 @@ public int compareTo(ApplicationDataset ds2){
         resetListNuts3();
         resetListProvince();
         resetListShaped();
+        resetListCounty();
         resetListElectoralDivision();
+        resetListLea();
     }
 
 /**
@@ -719,7 +653,9 @@ public int compareTo(ApplicationDataset ds2){
         resetListNuts3();
         resetListProvince();
         resetListShaped();
+        resetListCounty();
         resetListElectoralDivision();
+        resetListLea();
     }
 
 /**
@@ -864,7 +800,64 @@ public int compareTo(ApplicationDataset ds2){
             }
         }
        listApplicationObject = newListApplicationObject;
+        resetListCounty();
         resetListElectoralDivision();
+        resetListLea();
+    }
+
+/**
+ *  Iterator for list of class County
+ *
+*/
+
+    public Iterator<County> getIteratorCounty(){
+        return listCounty.iterator();
+    }
+
+/**
+ *  Getter for list of class County
+ *
+*/
+
+    public List<County> getListCounty(){
+        return listCounty;
+    }
+
+/**
+ *  reset the list of class County; use with care, does not call cascades
+ *
+*/
+
+    public void resetListCounty(){
+        listCounty = new ArrayList<County>();
+        List<Shaped> newListShaped = new ArrayList<Shaped>();
+        for(Shaped a:listShaped){
+            if (!(a instanceof County)){
+                newListShaped.add(a);
+            }
+        }
+       listShaped = newListShaped;
+        List<Area> newListArea = new ArrayList<Area>();
+        for(Area a:listArea){
+            if (!(a instanceof County)){
+                newListArea.add(a);
+            }
+        }
+       listArea = newListArea;
+        List<MapLocation> newListMapLocation = new ArrayList<MapLocation>();
+        for(MapLocation a:listMapLocation){
+            if (!(a instanceof County)){
+                newListMapLocation.add(a);
+            }
+        }
+       listMapLocation = newListMapLocation;
+        List<ApplicationObject> newListApplicationObject = new ArrayList<ApplicationObject>();
+        for(ApplicationObject a:listApplicationObject){
+            if (!(a instanceof County)){
+                newListApplicationObject.add(a);
+            }
+        }
+       listApplicationObject = newListApplicationObject;
     }
 
 /**
@@ -916,6 +909,61 @@ public int compareTo(ApplicationDataset ds2){
         List<ApplicationObject> newListApplicationObject = new ArrayList<ApplicationObject>();
         for(ApplicationObject a:listApplicationObject){
             if (!(a instanceof ElectoralDivision)){
+                newListApplicationObject.add(a);
+            }
+        }
+       listApplicationObject = newListApplicationObject;
+    }
+
+/**
+ *  Iterator for list of class Lea
+ *
+*/
+
+    public Iterator<Lea> getIteratorLea(){
+        return listLea.iterator();
+    }
+
+/**
+ *  Getter for list of class Lea
+ *
+*/
+
+    public List<Lea> getListLea(){
+        return listLea;
+    }
+
+/**
+ *  reset the list of class Lea; use with care, does not call cascades
+ *
+*/
+
+    public void resetListLea(){
+        listLea = new ArrayList<Lea>();
+        List<Shaped> newListShaped = new ArrayList<Shaped>();
+        for(Shaped a:listShaped){
+            if (!(a instanceof Lea)){
+                newListShaped.add(a);
+            }
+        }
+       listShaped = newListShaped;
+        List<Area> newListArea = new ArrayList<Area>();
+        for(Area a:listArea){
+            if (!(a instanceof Lea)){
+                newListArea.add(a);
+            }
+        }
+       listArea = newListArea;
+        List<MapLocation> newListMapLocation = new ArrayList<MapLocation>();
+        for(MapLocation a:listMapLocation){
+            if (!(a instanceof Lea)){
+                newListMapLocation.add(a);
+            }
+        }
+       listMapLocation = newListMapLocation;
+        List<ApplicationObject> newListApplicationObject = new ArrayList<ApplicationObject>();
+        for(ApplicationObject a:listApplicationObject){
+            if (!(a instanceof Lea)){
                 newListApplicationObject.add(a);
             }
         }
@@ -1291,37 +1339,37 @@ public int compareTo(ApplicationDataset ds2){
     }
 
 /**
- *  Removing object item of class County; remove all dependent objects of class Shaped which refer to item through their attribute county
+ *  Removing object item of class County; remove all dependent objects of class ElectoralDivision which refer to item through their attribute county
  *
 */
 
-    public void cascadeShapedCounty(County item){
+    public void cascadeElectoralDivisionCounty(County item){
         assert item != null;
-        List<Shaped> toRemove = new ArrayList<Shaped>();
-        for(Shaped a:getListShaped()) {
+        List<ElectoralDivision> toRemove = new ArrayList<ElectoralDivision>();
+        for(ElectoralDivision a:getListElectoralDivision()) {
          if (a.getCounty() == item) {
             toRemove.add(a);
          }
         }
-        for(Shaped b:toRemove) {
+        for(ElectoralDivision b:toRemove) {
             b.remove();
         }
     }
 
 /**
- *  Removing object item of class Province; remove all dependent objects of class Shaped which refer to item through their attribute province
+ *  Removing object item of class Lea; remove all dependent objects of class ElectoralDivision which refer to item through their attribute lea
  *
 */
 
-    public void cascadeShapedProvince(Province item){
+    public void cascadeElectoralDivisionLea(Lea item){
         assert item != null;
-        List<Shaped> toRemove = new ArrayList<Shaped>();
-        for(Shaped a:getListShaped()) {
-         if (a.getProvince() == item) {
+        List<ElectoralDivision> toRemove = new ArrayList<ElectoralDivision>();
+        for(ElectoralDivision a:getListElectoralDivision()) {
+         if (a.getLea() == item) {
             toRemove.add(a);
          }
         }
-        for(Shaped b:toRemove) {
+        for(ElectoralDivision b:toRemove) {
             b.remove();
         }
     }
@@ -1625,46 +1673,6 @@ public int compareTo(ApplicationDataset ds2){
     }
 
 /**
- *  add an item to the list for class Country
- *
-*/
-
-    public void addCountry(Country country){
-        assert country != null;
-        this.listCountry.add(country);
-    }
-
-/**
- *  remove an item from the list for class Country
- *
-*/
-
-    public Boolean removeCountry(Country country){
-        assert country != null;
-        return this.listCountry.remove(country);
-    }
-
-/**
- *  add an item to the list for class County
- *
-*/
-
-    public void addCounty(County county){
-        assert county != null;
-        this.listCounty.add(county);
-    }
-
-/**
- *  remove an item from the list for class County
- *
-*/
-
-    public Boolean removeCounty(County county){
-        assert county != null;
-        return this.listCounty.remove(county);
-    }
-
-/**
  *  add an item to the list for class ConstituencyType
  *
 */
@@ -1785,6 +1793,26 @@ public int compareTo(ApplicationDataset ds2){
     }
 
 /**
+ *  add an item to the list for class County
+ *
+*/
+
+    public void addCounty(County county){
+        assert county != null;
+        this.listCounty.add(county);
+    }
+
+/**
+ *  remove an item from the list for class County
+ *
+*/
+
+    public Boolean removeCounty(County county){
+        assert county != null;
+        return this.listCounty.remove(county);
+    }
+
+/**
  *  add an item to the list for class ElectoralDivision
  *
 */
@@ -1802,6 +1830,26 @@ public int compareTo(ApplicationDataset ds2){
     public Boolean removeElectoralDivision(ElectoralDivision electoralDivision){
         assert electoralDivision != null;
         return this.listElectoralDivision.remove(electoralDivision);
+    }
+
+/**
+ *  add an item to the list for class Lea
+ *
+*/
+
+    public void addLea(Lea lea){
+        assert lea != null;
+        this.listLea.add(lea);
+    }
+
+/**
+ *  remove an item from the list for class Lea
+ *
+*/
+
+    public Boolean removeLea(Lea lea){
+        assert lea != null;
+        return this.listLea.remove(lea);
     }
 
 /**
@@ -1959,9 +2007,6 @@ public int compareTo(ApplicationDataset ds2){
         for(ConstituencyType x:getListConstituencyType()){
             System.out.println(x);
         }
-        for(Country x:getListCountry()){
-            System.out.println(x);
-        }
         for(County x:getListCounty()){
             System.out.println(x);
         }
@@ -1972,6 +2017,9 @@ public int compareTo(ApplicationDataset ds2){
             System.out.println(x);
         }
         for(ElectoralDivision x:getListElectoralDivision()){
+            System.out.println(x);
+        }
+        for(Lea x:getListLea()){
             System.out.println(x);
         }
         for(NeighborCounty x:getListNeighborCounty()){
@@ -2043,9 +2091,6 @@ public int compareTo(ApplicationDataset ds2){
         for(ConstituencyType x:getListConstituencyType()){
             if (x.getClass().equals(ConstituencyType.class)) x.toXML(out);
         }
-        for(Country x:getListCountry()){
-            if (x.getClass().equals(Country.class)) x.toXML(out);
-        }
         for(County x:getListCounty()){
             if (x.getClass().equals(County.class)) x.toXML(out);
         }
@@ -2057,6 +2102,9 @@ public int compareTo(ApplicationDataset ds2){
         }
         for(ElectoralDivision x:getListElectoralDivision()){
             if (x.getClass().equals(ElectoralDivision.class)) x.toXML(out);
+        }
+        for(Lea x:getListLea()){
+            if (x.getClass().equals(Lea.class)) x.toXML(out);
         }
         for(NeighborCounty x:getListNeighborCounty()){
             if (x.getClass().equals(NeighborCounty.class)) x.toXML(out);
@@ -2176,11 +2224,11 @@ public int compareTo(ApplicationDataset ds2){
         System.out.println("Comparing ApplicationDataset");
         compareApplicationWarning(this.getListApplicationWarning(),compare.getListApplicationWarning());
         compareConstituencyType(this.getListConstituencyType(),compare.getListConstituencyType());
-        compareCountry(this.getListCountry(),compare.getListCountry());
         compareCounty(this.getListCounty(),compare.getListCounty());
         compareDistance(this.getListDistance(),compare.getListDistance());
         compareDistanceError(this.getListDistanceError(),compare.getListDistanceError());
         compareElectoralDivision(this.getListElectoralDivision(),compare.getListElectoralDivision());
+        compareLea(this.getListLea(),compare.getListLea());
         compareNeighborCounty(this.getListNeighborCounty(),compare.getListNeighborCounty());
         compareNuts3(this.getListNuts3(),compare.getListNuts3());
         compareProvince(this.getListProvince(),compare.getListProvince());
@@ -2235,30 +2283,6 @@ public int compareTo(ApplicationDataset ds2){
             ConstituencyType a = ConstituencyType.find(b,aList);
             if (a == null) {
                 new ApplicationDifference(this,ApplicationDataset.getIdNr(),"ConstituencyType B",b.toString(),DifferenceType.ONLYB);
-            }
-        }
-    }
-
-/**
- * compare two lists of types Country, create AppplicationWarnings for items which are in only one of the lists
- * or for items which are applicationSame(), but not applicationEqual()
-*/
-
-    public void compareCountry(List<Country> aList,List<Country> bList){
-        System.out.println("Comparing Country");
-        for(Country a:aList){
-            Country b= Country.find(a,bList);
-            if (b == null) {
-                new ApplicationDifference(this,ApplicationDataset.getIdNr(),"Country A",a.prettyString(),DifferenceType.ONLYA);
-            } else if (!a.applicationEqual(b)){
-                new ApplicationDifference(this,ApplicationDataset.getIdNr(),"Country A",a.prettyString(),DifferenceType.DIFFERA);
-                new ApplicationDifference(this,ApplicationDataset.getIdNr(),"Country B",b.prettyString(),DifferenceType.DIFFERB);
-            }
-        }
-        for(Country b: bList){
-            Country a = Country.find(b,aList);
-            if (a == null) {
-                new ApplicationDifference(this,ApplicationDataset.getIdNr(),"Country B",b.toString(),DifferenceType.ONLYB);
             }
         }
     }
@@ -2355,6 +2379,30 @@ public int compareTo(ApplicationDataset ds2){
             ElectoralDivision a = ElectoralDivision.find(b,aList);
             if (a == null) {
                 new ApplicationDifference(this,ApplicationDataset.getIdNr(),"ElectoralDivision B",b.toString(),DifferenceType.ONLYB);
+            }
+        }
+    }
+
+/**
+ * compare two lists of types Lea, create AppplicationWarnings for items which are in only one of the lists
+ * or for items which are applicationSame(), but not applicationEqual()
+*/
+
+    public void compareLea(List<Lea> aList,List<Lea> bList){
+        System.out.println("Comparing Lea");
+        for(Lea a:aList){
+            Lea b= Lea.find(a,bList);
+            if (b == null) {
+                new ApplicationDifference(this,ApplicationDataset.getIdNr(),"Lea A",a.prettyString(),DifferenceType.ONLYA);
+            } else if (!a.applicationEqual(b)){
+                new ApplicationDifference(this,ApplicationDataset.getIdNr(),"Lea A",a.prettyString(),DifferenceType.DIFFERA);
+                new ApplicationDifference(this,ApplicationDataset.getIdNr(),"Lea B",b.prettyString(),DifferenceType.DIFFERB);
+            }
+        }
+        for(Lea b: bList){
+            Lea a = Lea.find(b,aList);
+            if (a == null) {
+                new ApplicationDifference(this,ApplicationDataset.getIdNr(),"Lea B",b.toString(),DifferenceType.ONLYB);
             }
         }
     }
@@ -2535,11 +2583,11 @@ public int compareTo(ApplicationDataset ds2){
     public void checkAll(){
         checkApplicationWarning(this.getListApplicationWarning());
         checkConstituencyType(this.getListConstituencyType());
-        checkCountry(this.getListCountry());
         checkCounty(this.getListCounty());
         checkDistance(this.getListDistance());
         checkDistanceError(this.getListDistanceError());
         checkElectoralDivision(this.getListElectoralDivision());
+        checkLea(this.getListLea());
         checkNeighborCounty(this.getListNeighborCounty());
         checkNuts3(this.getListNuts3());
         checkProvince(this.getListProvince());
@@ -2568,17 +2616,6 @@ public int compareTo(ApplicationDataset ds2){
 
     public void checkConstituencyType(List<ConstituencyType> list){
         for(ConstituencyType a:list){
-            a.check();
-        }
-    }
-
-/**
- * helper method for checkAll()
- * @param list List<Country> dataset list of all items of type Country
-*/
-
-    public void checkCountry(List<Country> list){
-        for(Country a:list){
             a.check();
         }
     }
@@ -2623,6 +2660,17 @@ public int compareTo(ApplicationDataset ds2){
 
     public void checkElectoralDivision(List<ElectoralDivision> list){
         for(ElectoralDivision a:list){
+            a.check();
+        }
+    }
+
+/**
+ * helper method for checkAll()
+ * @param list List<Lea> dataset list of all items of type Lea
+*/
+
+    public void checkLea(List<Lea> list){
+        for(Lea a:list){
             a.check();
         }
     }
@@ -2719,11 +2767,11 @@ public int compareTo(ApplicationDataset ds2){
         ApplicationDifference.dummy(this);
         ApplicationWarning.dummy(this);
         ConstituencyType.dummy(this);
-        Country.dummy(this);
         County.dummy(this);
         Distance.dummy(this);
         DistanceError.dummy(this);
         ElectoralDivision.dummy(this);
+        Lea.dummy(this);
         NeighborCounty.dummy(this);
         Nuts3.dummy(this);
         Province.dummy(this);

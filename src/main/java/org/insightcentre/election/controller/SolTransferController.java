@@ -23,7 +23,7 @@ import org.insightcentre.election.datamodel.SolTransfer;
 import org.insightcentre.election.datamodel.Solution;
 
 /**
- * Generated at 17:04:25 on 2024-08-07 */
+ * Generated at 10:26:59 on 2024-08-11 */
 public class SolTransferController extends Table3Controller {
 	@FXML
 	private TableView<SolTransfer> table;

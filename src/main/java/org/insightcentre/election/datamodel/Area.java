@@ -5,15 +5,15 @@ import org.insightcentre.election.datamodel.ApplicationObject;
 import org.insightcentre.election.datamodel.ApplicationDifference;
 import org.insightcentre.election.datamodel.ApplicationWarning;
 import org.insightcentre.election.datamodel.Scenario;
-import org.insightcentre.election.datamodel.Country;
-import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ConstituencyType;
 import org.insightcentre.election.datamodel.MapLocation;
 import org.insightcentre.election.datamodel.Area;
 import org.insightcentre.election.datamodel.Nuts3;
 import org.insightcentre.election.datamodel.Province;
 import org.insightcentre.election.datamodel.Shaped;
+import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ElectoralDivision;
+import org.insightcentre.election.datamodel.Lea;
 import org.insightcentre.election.datamodel.Distance;
 import org.insightcentre.election.datamodel.DistanceError;
 import org.insightcentre.election.datamodel.NeighborCounty;
@@ -41,13 +41,6 @@ import framework.AppearInCollection;
 */
 
 public abstract class Area extends MapLocation{
-/**
- *  
- *
-*/
-
-    public Double totalArea;
-
 /**
  *  
  *
@@ -102,7 +95,6 @@ public abstract class Area extends MapLocation{
 
     public Area(ApplicationDataset applicationDataset){
         super(applicationDataset);
-        setTotalArea(0.0);
         setTotalPopulation(0);
         setXMax(0.0);
         setXMin(0.0);
@@ -121,11 +113,10 @@ public abstract class Area extends MapLocation{
     public Area(ApplicationDataset applicationDataset,
             Integer id,
             String name,
+            Double centroidX,
+            Double centroidY,
             String ident,
-            Double latitude,
-            Double longitude,
             String shortName,
-            Double totalArea,
             Integer totalPopulation,
             Double xMax,
             Double xMin,
@@ -134,11 +125,10 @@ public abstract class Area extends MapLocation{
         super(applicationDataset,
             id,
             name,
+            centroidX,
+            centroidY,
             ident,
-            latitude,
-            longitude,
             shortName);
-        setTotalArea(totalArea);
         setTotalPopulation(totalPopulation);
         setXMax(xMax);
         setXMin(xMin);
@@ -151,11 +141,10 @@ public abstract class Area extends MapLocation{
         this(other.applicationDataset,
             other.id,
             other.name,
+            other.centroidX,
+            other.centroidY,
             other.ident,
-            other.latitude,
-            other.longitude,
             other.shortName,
-            other.totalArea,
             other.totalPopulation,
             other.xMax,
             other.xMin,
@@ -176,16 +165,6 @@ public abstract class Area extends MapLocation{
         getApplicationDataset().cascadeDistanceErrorFrom(this);
         getApplicationDataset().cascadeDistanceErrorTo(this);
         return getApplicationDataset().removeArea(this) && getApplicationDataset().removeMapLocation(this) && getApplicationDataset().removeApplicationObject(this);
-    }
-
-/**
- *  get attribute totalArea
- *
- * @return Double
-*/
-
-    public Double getTotalArea(){
-        return this.totalArea;
     }
 
 /**
@@ -236,18 +215,6 @@ public abstract class Area extends MapLocation{
 
     public Double getYMin(){
         return this.yMin;
-    }
-
-/**
- *  set attribute totalArea, mark dataset as dirty, mark dataset as not valid
-@param totalArea Double
- *
-*/
-
-    public void setTotalArea(Double totalArea){
-        this.totalArea = totalArea;
-        getApplicationDataset().setDirty(true);
-        getApplicationDataset().setValid(false);
     }
 
 /**
@@ -338,7 +305,7 @@ public abstract class Area extends MapLocation{
 */
 
     public String prettyString(){
-        return ""+ " " +getId()+ " " +getName()+ " " +getIdent()+ " " +getLatitude()+ " " +getLongitude()+ " " +getShortName()+ " " +getTotalArea()+ " " +getTotalPopulation()+ " " +getXMax()+ " " +getXMin()+ " " +getYMax()+ " " +getYMin();
+        return ""+ " " +getId()+ " " +getName()+ " " +getCentroidX()+ " " +getCentroidY()+ " " +getIdent()+ " " +getShortName()+ " " +getTotalPopulation()+ " " +getXMax()+ " " +getXMin()+ " " +getYMax()+ " " +getYMin();
     }
 
 /**
@@ -362,27 +329,16 @@ public abstract class Area extends MapLocation{
          out.println("<area "+ " applicationDataset=\""+toXMLApplicationDataset()+"\""+
             " id=\""+toXMLId()+"\""+
             " name=\""+toXMLName()+"\""+
+            " centroidX=\""+toXMLCentroidX()+"\""+
+            " centroidY=\""+toXMLCentroidY()+"\""+
             " ident=\""+toXMLIdent()+"\""+
-            " latitude=\""+toXMLLatitude()+"\""+
-            " longitude=\""+toXMLLongitude()+"\""+
             " shortName=\""+toXMLShortName()+"\""+
-            " totalArea=\""+toXMLTotalArea()+"\""+
             " totalPopulation=\""+toXMLTotalPopulation()+"\""+
             " xMax=\""+toXMLXMax()+"\""+
             " xMin=\""+toXMLXMin()+"\""+
             " yMax=\""+toXMLYMax()+"\""+
             " yMin=\""+toXMLYMin()+"\""+" />");
      }
-
-/**
- * helper method for toXML(), prcess one attribute
- * probably useless on its own
- * @return String
-*/
-
-    String toXMLTotalArea(){
-        return this.getTotalArea().toString();
-    }
 
 /**
  * helper method for toXML(), prcess one attribute
@@ -528,23 +484,20 @@ public abstract class Area extends MapLocation{
 */
 
     public Boolean applicationEqual(Area b){
+      if(!this.getCentroidX().equals(b.getCentroidX())){
+         System.out.println("CentroidX");
+        }
+      if(!this.getCentroidY().equals(b.getCentroidY())){
+         System.out.println("CentroidY");
+        }
       if(!this.getIdent().equals(b.getIdent())){
          System.out.println("Ident");
-        }
-      if(!this.getLatitude().equals(b.getLatitude())){
-         System.out.println("Latitude");
-        }
-      if(!this.getLongitude().equals(b.getLongitude())){
-         System.out.println("Longitude");
         }
       if(!this.getName().equals(b.getName())){
          System.out.println("Name");
         }
       if(!this.getShortName().equals(b.getShortName())){
          System.out.println("ShortName");
-        }
-      if(!this.getTotalArea().equals(b.getTotalArea())){
-         System.out.println("TotalArea");
         }
       if(!this.getTotalPopulation().equals(b.getTotalPopulation())){
          System.out.println("TotalPopulation");
@@ -561,12 +514,11 @@ public abstract class Area extends MapLocation{
       if(!this.getYMin().equals(b.getYMin())){
          System.out.println("YMin");
         }
-        return  this.getIdent().equals(b.getIdent()) &&
-          this.getLatitude().equals(b.getLatitude()) &&
-          this.getLongitude().equals(b.getLongitude()) &&
+        return  this.getCentroidX().equals(b.getCentroidX()) &&
+          this.getCentroidY().equals(b.getCentroidY()) &&
+          this.getIdent().equals(b.getIdent()) &&
           this.getName().equals(b.getName()) &&
           this.getShortName().equals(b.getShortName()) &&
-          this.getTotalArea().equals(b.getTotalArea()) &&
           this.getTotalPopulation().equals(b.getTotalPopulation()) &&
           this.getXMax().equals(b.getXMax()) &&
           this.getXMin().equals(b.getXMin()) &&

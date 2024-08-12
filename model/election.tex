@@ -34,6 +34,7 @@
 \maketitle              
 
 \begin{abstract}
+This report describes an initial model and results for determining the electoral constituencies for the national elections to Parliament (Dáil Éireann) in Ireland. The number of seats in Parliament and the number and shape of constituencies in Ireland are reevaluated after each census, and change with population increases or decreases in each region. Ireland uses a Single Transferable Vote voting system, where constituencies elect multiple members (currently 3, 4, or 5). By law, the constituencies must be chosen in such a way that (as far as practial) the same number of the population is represented by each seat, while existing administrative areas (called counties in Ireland) should be respected as far as possible when forming constituencies. This redistricting problem is currently solved by hand, our model provides the first automated solution to this process. 
 
 \keywords{Election Districting \and Constituencies \and Clustering}
 \end{abstract}
@@ -47,7 +48,7 @@
 \section{Problem Description and Related Work}
 \label{sec:problem}
 
-Different from many combinatorial optimization problems encountered in industry, the defining constraints for the election districting problems are well defined by law. 
+Different from many combinatorial optimization problems encountered in industry, the defining constraints for the election districting problems are provided by law. 
 
 We quote from Article 16 of the \emph{Irish Constitution}~\cite{Ireland2020}:
 \begin{quote}
@@ -83,9 +84,9 @@ the breaching of county boundaries shall be avoided as far as practicable (shall
 \end{quote}
 This means that the constituencies inside the Dublin area are not affected by the country borders, we follow this decision in our model, by treating Dublin as a single "county".  
 
-While the solution given in~\cite{ElectoralCommission2023} is largely based on the existing electoral districts, it is important to note that in the solution given changes to a number of electoral districts are required (for example on page 127 for Cork North-Central). To achieve comparable results our solution may require similar changes.
+While the solution given in~\cite{ElectoralCommission2023} is largely based on the existing electoral divisions, it is important to note that in the solution given changes to a number of electoral divisions are required (for example on page 127 for Cork North-Central). To achieve comparable results our solution may require similar changes.
 
-As the Irish election system is quite different from many other countries, results on election districting~\cite{Almeida2022} are not directly transferable to the Irish situation. Only~\cite{Kotthoff2015} directly addresses the Irish scenario. Their model tries to allocate electoral districts to constituencies, satisfying the size limits imposed by law. To deal with the contiguity constraint, they use a constraint model based on the global \emph{tree} constraint~\cite{Beldiceanu2005} which ensures that all districts allocated to a constituency form one contiguous area. The model suffers from scalability issues, and only a partial solution for Galway is presented in the paper, with an execution time of 100 hours quoted on a multi-core computer. 
+As the Irish election system is quite different from many other countries, results on election districting~\cite{Almeida2022} are not directly transferable to the Irish situation. Only~\cite{Kotthoff2015} directly addresses the Irish scenario. Their model tries to allocate electoral divisions to constituencies, satisfying the size limits imposed by law. To deal with the contiguity constraint, they use a constraint model based on the global \emph{tree} constraint~\cite{Beldiceanu2005} which ensures that all divisons allocated to a constituency form one contiguous area. The model suffers from scalability issues, and only a partial solution for Galway is presented in the paper, with an execution time of 100 hours quoted on a multi-core computer. 
 
 
 
@@ -122,7 +123,7 @@ The main decision variables of the model are used for two purposes. The $x_{ij}$
 \begin{description}
 \item[$x_{ij}$] non-negative integer variable stating how many constituencies of size $j$ we create in county $i$
 \item[$y_{i_1i_2}$] zero-one integer variable stating whether we assign population in county $i_{1}$ to a constituency defined in county $i_{2}$. The transfer only exists if counties $i_{1}$ and $i_{2}$ are neighbours.
-\item[$z_{i_1i_2}$] non negative variable stating how many people we transfer from county $i_{1}$ to county $i_{2}$. $p_{i_1}$ is an upper bound for this variable. In a first version of the model we assume that any specific number of persons can be transferred, possibly requiring modifications of electoral districts. 
+\item[$z_{i_1i_2}$] non negative variable stating how many people we transfer from county $i_{1}$ to county $i_{2}$. $p_{i_1}$ is an upper bound for this variable. In a first version of the model we assume that any specific number of persons can be transferred, possibly requiring modifications of electoral divisions. 
 \item[$u_{j}$] the total number of constituencies of size $j$
 \end{description}
 
@@ -142,7 +143,7 @@ The effective population of a county $i$ (the population itself plus all transfe
 \begin{equation}
 \forall_{i \in I}:\quad (a-\Delta)\sum_{j \in J} x_{ij}s_{j} \leq p_{i}+\sum_{i_1 \in I} z_{i_1i} - \sum_{i_2 \in I} z_{ii_2}\leq (a+\Delta)\sum_{j \in J} x_{ij}s_{j}
 \end{equation}
-Note that this form of the constraint assumes that we can split the total population in a county between the different constituencies exactly proportional to the number of seats allocated. This may require some changes to the electoral districts to balance the numbers.
+Note that this form of the constraint assumes that we can split the total population in a county between the different constituencies exactly proportional to the number of seats allocated. This may require some changes to the electoral divisions to balance the numbers.
 
 The decision variable for a inter-country transfer is linked to the counting variable for the same transfer by a \emph{bigM} constraint. If the decision variable is zero, then the counting variable must also be zero. Inversely, if the count is greater than zero, then the decision variable must be one.
 \begin{equation}
@@ -216,7 +217,9 @@ $$ & $$ & variance of voting power per person \\
 
 \subsection{Experiments}
 \subsection{Data}
-We use the population data for Ireland from the last Census in 2022~\cite{CSO2022}, Table F1004A on the CSO website provides county level counts, we aggregate the values for Dublin from the counties involved. Note that we treat Cork city and Galway city as individual entries separate from the corresponding counties. 
+We use the population data for Ireland from the last Census in 2022~\cite{CSO2022}, Table F1004A on the CSO website provides county level counts, we aggregate the values for Dublin from the counties involved. We do not distinguish Cork city and Cork county, nor Galway city and Galway county, in order to make our results directly comparable to the solution proposed by the Electoral Commission~\cite{}. 
+
+For the electoral divisions, we use the 2016 CSO data, which seem to differ slightly from the data used by the Electoral Commission. We do this as we have not found a source of a shape file for the 2022 electoral divisions, which is required to determine the neighborhood relation between the divisions. 
 
 \subsection{Baseline Results}
 
@@ -284,5 +287,16 @@ Table~\ref{tab:baselinetable} shows a table of the 43 constituencies proposed in
 \caption{\label{tab:baselinetable}Baseline Constituency Structure}
 \includegraphics[width=\textwidth]{images/baselinetable}
 \end{table}
+
+\sectin{Data Source Details}
+
+Electoral Division shapes as geojson
+\url{https://data-osi.opendata.arcgis.com/datasets/osi::cso-electoral-divisions-national-statistical-boundaries-2022-generalised-100m/explore}
+
+Electoral Division population data
+\url{https://www.cso.ie/en/census/census2022/census2022smallareapopulationstatistics/}
+
+Local Election areas
+\url{https://data-osi.opendata.arcgis.com/datasets/cac5ddcbbe934edc881d1611c6b910c7_0/explore}
 
 \end{document}

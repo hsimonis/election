@@ -20,7 +20,7 @@ import org.insightcentre.election.datamodel.ApplicationWarning;
 import org.insightcentre.election.datamodel.WarningType;
 
 /**
- * Generated at 17:04:25 on 2024-08-07 */
+ * Generated at 10:26:59 on 2024-08-11 */
 public class ApplicationWarningController extends Table3Controller {
 	@FXML
 	private TableView<ApplicationWarning> table;

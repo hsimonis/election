@@ -5,15 +5,15 @@ import org.insightcentre.election.datamodel.ApplicationObject;
 import org.insightcentre.election.datamodel.ApplicationDifference;
 import org.insightcentre.election.datamodel.ApplicationWarning;
 import org.insightcentre.election.datamodel.Scenario;
-import org.insightcentre.election.datamodel.Country;
-import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ConstituencyType;
 import org.insightcentre.election.datamodel.MapLocation;
 import org.insightcentre.election.datamodel.Area;
 import org.insightcentre.election.datamodel.Nuts3;
 import org.insightcentre.election.datamodel.Province;
 import org.insightcentre.election.datamodel.Shaped;
+import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ElectoralDivision;
+import org.insightcentre.election.datamodel.Lea;
 import org.insightcentre.election.datamodel.Distance;
 import org.insightcentre.election.datamodel.DistanceError;
 import org.insightcentre.election.datamodel.NeighborCounty;
@@ -46,21 +46,21 @@ public abstract class MapLocation extends ApplicationObject{
  *
 */
 
+    public Double centroidX;
+
+/**
+ *  
+ *
+*/
+
+    public Double centroidY;
+
+/**
+ *  
+ *
+*/
+
     public String ident;
-
-/**
- *  
- *
-*/
-
-    public Double latitude;
-
-/**
- *  
- *
-*/
-
-    public Double longitude;
 
 /**
  *  
@@ -88,9 +88,9 @@ public abstract class MapLocation extends ApplicationObject{
 
     public MapLocation(ApplicationDataset applicationDataset){
         super(applicationDataset);
+        setCentroidX(0.0);
+        setCentroidY(0.0);
         setIdent("");
-        setLatitude(0.0);
-        setLongitude(0.0);
         setShortName("");
         applicationDataset.addMapLocation(this);
     }
@@ -105,16 +105,16 @@ public abstract class MapLocation extends ApplicationObject{
     public MapLocation(ApplicationDataset applicationDataset,
             Integer id,
             String name,
+            Double centroidX,
+            Double centroidY,
             String ident,
-            Double latitude,
-            Double longitude,
             String shortName){
         super(applicationDataset,
             id,
             name);
+        setCentroidX(centroidX);
+        setCentroidY(centroidY);
         setIdent(ident);
-        setLatitude(latitude);
-        setLongitude(longitude);
         setShortName(shortName);
         applicationDataset.addMapLocation(this);
     }
@@ -123,9 +123,9 @@ public abstract class MapLocation extends ApplicationObject{
         this(other.applicationDataset,
             other.id,
             other.name,
+            other.centroidX,
+            other.centroidY,
             other.ident,
-            other.latitude,
-            other.longitude,
             other.shortName);
     }
 
@@ -145,6 +145,26 @@ public abstract class MapLocation extends ApplicationObject{
     }
 
 /**
+ *  get attribute centroidX
+ *
+ * @return Double
+*/
+
+    public Double getCentroidX(){
+        return this.centroidX;
+    }
+
+/**
+ *  get attribute centroidY
+ *
+ * @return Double
+*/
+
+    public Double getCentroidY(){
+        return this.centroidY;
+    }
+
+/**
  *  get attribute ident
  *
  * @return String
@@ -152,26 +172,6 @@ public abstract class MapLocation extends ApplicationObject{
 
     public String getIdent(){
         return this.ident;
-    }
-
-/**
- *  get attribute latitude
- *
- * @return Double
-*/
-
-    public Double getLatitude(){
-        return this.latitude;
-    }
-
-/**
- *  get attribute longitude
- *
- * @return Double
-*/
-
-    public Double getLongitude(){
-        return this.longitude;
     }
 
 /**
@@ -185,6 +185,30 @@ public abstract class MapLocation extends ApplicationObject{
     }
 
 /**
+ *  set attribute centroidX, mark dataset as dirty, mark dataset as not valid
+@param centroidX Double
+ *
+*/
+
+    public void setCentroidX(Double centroidX){
+        this.centroidX = centroidX;
+        getApplicationDataset().setDirty(true);
+        getApplicationDataset().setValid(false);
+    }
+
+/**
+ *  set attribute centroidY, mark dataset as dirty, mark dataset as not valid
+@param centroidY Double
+ *
+*/
+
+    public void setCentroidY(Double centroidY){
+        this.centroidY = centroidY;
+        getApplicationDataset().setDirty(true);
+        getApplicationDataset().setValid(false);
+    }
+
+/**
  *  set attribute ident, mark dataset as dirty, mark dataset as not valid
 @param ident String
  *
@@ -192,30 +216,6 @@ public abstract class MapLocation extends ApplicationObject{
 
     public void setIdent(String ident){
         this.ident = ident;
-        getApplicationDataset().setDirty(true);
-        getApplicationDataset().setValid(false);
-    }
-
-/**
- *  set attribute latitude, mark dataset as dirty, mark dataset as not valid
-@param latitude Double
- *
-*/
-
-    public void setLatitude(Double latitude){
-        this.latitude = latitude;
-        getApplicationDataset().setDirty(true);
-        getApplicationDataset().setValid(false);
-    }
-
-/**
- *  set attribute longitude, mark dataset as dirty, mark dataset as not valid
-@param longitude Double
- *
-*/
-
-    public void setLongitude(Double longitude){
-        this.longitude = longitude;
         getApplicationDataset().setDirty(true);
         getApplicationDataset().setValid(false);
     }
@@ -249,7 +249,7 @@ public abstract class MapLocation extends ApplicationObject{
 */
 
     public String prettyString(){
-        return ""+ " " +getId()+ " " +getName()+ " " +getIdent()+ " " +getLatitude()+ " " +getLongitude()+ " " +getShortName();
+        return ""+ " " +getId()+ " " +getName()+ " " +getCentroidX()+ " " +getCentroidY()+ " " +getIdent()+ " " +getShortName();
     }
 
 /**
@@ -273,9 +273,9 @@ public abstract class MapLocation extends ApplicationObject{
          out.println("<mapLocation "+ " applicationDataset=\""+toXMLApplicationDataset()+"\""+
             " id=\""+toXMLId()+"\""+
             " name=\""+toXMLName()+"\""+
+            " centroidX=\""+toXMLCentroidX()+"\""+
+            " centroidY=\""+toXMLCentroidY()+"\""+
             " ident=\""+toXMLIdent()+"\""+
-            " latitude=\""+toXMLLatitude()+"\""+
-            " longitude=\""+toXMLLongitude()+"\""+
             " shortName=\""+toXMLShortName()+"\""+" />");
      }
 
@@ -285,28 +285,28 @@ public abstract class MapLocation extends ApplicationObject{
  * @return String
 */
 
+    String toXMLCentroidX(){
+        return this.getCentroidX().toString();
+    }
+
+/**
+ * helper method for toXML(), prcess one attribute
+ * probably useless on its own
+ * @return String
+*/
+
+    String toXMLCentroidY(){
+        return this.getCentroidY().toString();
+    }
+
+/**
+ * helper method for toXML(), prcess one attribute
+ * probably useless on its own
+ * @return String
+*/
+
     String toXMLIdent(){
         return this.safeXML(getIdent());
-    }
-
-/**
- * helper method for toXML(), prcess one attribute
- * probably useless on its own
- * @return String
-*/
-
-    String toXMLLatitude(){
-        return this.getLatitude().toString();
-    }
-
-/**
- * helper method for toXML(), prcess one attribute
- * probably useless on its own
- * @return String
-*/
-
-    String toXMLLongitude(){
-        return this.getLongitude().toString();
     }
 
 /**
@@ -413,14 +413,14 @@ public abstract class MapLocation extends ApplicationObject{
 */
 
     public Boolean applicationEqual(MapLocation b){
+      if(!this.getCentroidX().equals(b.getCentroidX())){
+         System.out.println("CentroidX");
+        }
+      if(!this.getCentroidY().equals(b.getCentroidY())){
+         System.out.println("CentroidY");
+        }
       if(!this.getIdent().equals(b.getIdent())){
          System.out.println("Ident");
-        }
-      if(!this.getLatitude().equals(b.getLatitude())){
-         System.out.println("Latitude");
-        }
-      if(!this.getLongitude().equals(b.getLongitude())){
-         System.out.println("Longitude");
         }
       if(!this.getName().equals(b.getName())){
          System.out.println("Name");
@@ -428,9 +428,9 @@ public abstract class MapLocation extends ApplicationObject{
       if(!this.getShortName().equals(b.getShortName())){
          System.out.println("ShortName");
         }
-        return  this.getIdent().equals(b.getIdent()) &&
-          this.getLatitude().equals(b.getLatitude()) &&
-          this.getLongitude().equals(b.getLongitude()) &&
+        return  this.getCentroidX().equals(b.getCentroidX()) &&
+          this.getCentroidY().equals(b.getCentroidY()) &&
+          this.getIdent().equals(b.getIdent()) &&
           this.getName().equals(b.getName()) &&
           this.getShortName().equals(b.getShortName());
     }

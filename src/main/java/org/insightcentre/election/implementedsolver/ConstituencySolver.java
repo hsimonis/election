@@ -56,7 +56,7 @@ public class ConstituencySolver {
         Hashtable<County,Integer> countyHash = new Hashtable<>();
         for(County c:base.getListCounty()){
             county[cc] = c;
-            population[cc] = c.getPopulation();
+            population[cc] = c.getTotalPopulation();
             countyHash.put(c,cc);
             cc++;
         }

@@ -1,6 +1,3 @@
  class County {
-Double centroidX
-Double centroidY
 Integer nrED
-Integer population
 }

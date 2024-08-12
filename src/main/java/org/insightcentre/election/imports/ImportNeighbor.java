@@ -1,7 +1,6 @@
 package org.insightcentre.election.imports;
 
 import au.com.bytecode.opencsv.CSVReader;
-import org.insightcentre.election.datamodel.Country;
 import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.NeighborCounty;
 import org.insightcentre.election.datamodel.Scenario;

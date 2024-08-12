@@ -49,7 +49,7 @@ public class ImportEDPopulation extends ImportCSV{
                         severe("Unknown "+guid+" name "+name +" pop "+(cohort0+cohort10+cohort20+cohort30+cohort40+cohort50+cohort60+cohort70+cohort80));
                     } else {
                         ed.setTotalPopulation(cohort0+cohort10+cohort20+cohort30+cohort40+cohort50+cohort60+cohort70+cohort80);
-                        ed.setPopulationDensity(1000.0*1000.0*ed.getTotalPopulation()/ed.getShapeArea());
+//                        ed.setPopulationDensity(1000.0*1000.0*ed.getTotalPopulation()/ed.getShapeArea());
                     }
 
                     created++;

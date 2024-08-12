@@ -1,4 +1,6 @@
  class ElectoralDivision {
+County county
 Integer edId
 String edIdString
+Lea lea
 }

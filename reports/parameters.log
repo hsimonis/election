@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.4.29)  7 AUG 2024 21:06
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022)  (format=lualatex 2022.4.28)  10 AUG 2024 11:20
  restricted system commands enabled.
 **parameters
 (./parameters.tex
@@ -1118,22 +1118,22 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ] [3]
-Overfull \hbox (5.86847pt too wide) in alignment at lines 140--144
+Overfull \hbox (5.86847pt too wide) in alignment at lines 139--143
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (5.86847pt too wide) in alignment at lines 144--147
+Overfull \hbox (5.86847pt too wide) in alignment at lines 143--146
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (5.86847pt too wide) in alignment at lines 147--149
+Overfull \hbox (5.86847pt too wide) in alignment at lines 146--148
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (5.86847pt too wide) in alignment at lines 149--209
+Overfull \hbox (5.86847pt too wide) in alignment at lines 148--208
  [][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1141,9 +1141,9 @@ Overfull \hbox (5.86847pt too wide) in alignment at lines 149--209
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 275.
+(Font)              <7> on input line 274.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 275.
+(Font)              <5> on input line 274.
  [5] [6] [7] [8] [9] [10] [11] [12
 
 ] [13] [14] [15
@@ -1247,286 +1247,286 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ] [145] [146] [147
 
 ] [148] [149]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13158--13162
+Overfull \hbox (1.88248pt too wide) in alignment at lines 13086--13090
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13162--13165
+Overfull \hbox (1.88248pt too wide) in alignment at lines 13090--13093
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13165--13167
+Overfull \hbox (1.88248pt too wide) in alignment at lines 13093--13095
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13167--13169
+Overfull \hbox (1.88248pt too wide) in alignment at lines 13095--13097
  [][][][][][][][][][][][][][][][][][] 
  []
 
 [150
 
 ] [151] [152]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13411--13415
+Overfull \hbox (1.88248pt too wide) in alignment at lines 13337--13341
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13415--13418
+Overfull \hbox (1.88248pt too wide) in alignment at lines 13341--13344
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13418--13420
+Overfull \hbox (1.88248pt too wide) in alignment at lines 13344--13346
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13420--13422
+Overfull \hbox (1.88248pt too wide) in alignment at lines 13346--13348
  [][][][][][][][][][][][][][][][][][] 
  []
 
 [153
 
 ] [154] [155]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13664--13668
+Overfull \hbox (1.77196pt too wide) in alignment at lines 13588--13592
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13668--13671
+Overfull \hbox (1.77196pt too wide) in alignment at lines 13592--13595
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13671--13673
+Overfull \hbox (1.77196pt too wide) in alignment at lines 13595--13597
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13673--13675
+Overfull \hbox (1.77196pt too wide) in alignment at lines 13597--13599
  [][][][][][][][][][][][][][][][][][] 
  []
 
 [156
 
 ] [157] [158]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13914--13918
+Overfull \hbox (1.77196pt too wide) in alignment at lines 13836--13840
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13918--13921
+Overfull \hbox (1.77196pt too wide) in alignment at lines 13840--13843
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13921--13923
+Overfull \hbox (1.77196pt too wide) in alignment at lines 13843--13845
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 13923--13925
+Overfull \hbox (1.77196pt too wide) in alignment at lines 13845--13847
  [][][][][][][][][][][][][][][][][][] 
  []
 
 [159
 
 ] [160] [161]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14164--14168
+Overfull \hbox (1.77196pt too wide) in alignment at lines 14084--14088
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14168--14171
+Overfull \hbox (1.77196pt too wide) in alignment at lines 14088--14091
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14171--14173
+Overfull \hbox (1.77196pt too wide) in alignment at lines 14091--14093
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14173--14175
+Overfull \hbox (1.77196pt too wide) in alignment at lines 14093--14095
  [][][][][][][][][][][][][][][][][][] 
  []
 
 [162
 
 ] [163] [164]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14414--14418
+Overfull \hbox (1.77196pt too wide) in alignment at lines 14332--14336
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14418--14421
+Overfull \hbox (1.77196pt too wide) in alignment at lines 14336--14339
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14421--14423
+Overfull \hbox (1.77196pt too wide) in alignment at lines 14339--14341
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14423--14425
+Overfull \hbox (1.77196pt too wide) in alignment at lines 14341--14343
  [][][][][][][][][][][][][][][][][][] 
  []
 
 [165
 
 ] [166] [167]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14664--14668
+Overfull \hbox (1.77196pt too wide) in alignment at lines 14580--14584
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14668--14671
+Overfull \hbox (1.77196pt too wide) in alignment at lines 14584--14587
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14671--14673
+Overfull \hbox (1.77196pt too wide) in alignment at lines 14587--14589
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14673--14675
+Overfull \hbox (1.77196pt too wide) in alignment at lines 14589--14591
  [][][][][][][][][][][][][][][][][][] 
  []
 
 [168
 
 ] [169] [170]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14914--14918
+Overfull \hbox (1.88248pt too wide) in alignment at lines 14828--14832
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14918--14921
+Overfull \hbox (1.88248pt too wide) in alignment at lines 14832--14835
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14921--14923
+Overfull \hbox (1.88248pt too wide) in alignment at lines 14835--14837
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 14923--14925
+Overfull \hbox (1.88248pt too wide) in alignment at lines 14837--14839
  [][][][][][][][][][][][][][][][][][] 
  []
 
 [171
 
 ] [172] [173]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15164--15168
+Overfull \hbox (1.77196pt too wide) in alignment at lines 15076--15080
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15168--15171
+Overfull \hbox (1.77196pt too wide) in alignment at lines 15080--15083
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15171--15173
+Overfull \hbox (1.77196pt too wide) in alignment at lines 15083--15085
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15173--15175
+Overfull \hbox (1.77196pt too wide) in alignment at lines 15085--15087
  [][][][][][][][][][][][][][][][][][] 
  []
 
 [174
 
 ] [175] [176]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15414--15418
+Overfull \hbox (1.77196pt too wide) in alignment at lines 15324--15328
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15418--15421
+Overfull \hbox (1.77196pt too wide) in alignment at lines 15328--15331
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15421--15423
+Overfull \hbox (1.77196pt too wide) in alignment at lines 15331--15333
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15423--15425
+Overfull \hbox (1.77196pt too wide) in alignment at lines 15333--15335
  [][][][][][][][][][][][][][][][][][] 
  []
 
 [177
 
 ] [178] [179]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15664--15668
+Overfull \hbox (1.88248pt too wide) in alignment at lines 15572--15576
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15668--15671
+Overfull \hbox (1.88248pt too wide) in alignment at lines 15576--15579
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15671--15673
+Overfull \hbox (1.88248pt too wide) in alignment at lines 15579--15581
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15673--15675
+Overfull \hbox (1.88248pt too wide) in alignment at lines 15581--15583
  [][][][][][][][][][][][][][][][][][] 
  []
 
 [180
 
 ] [181] [182]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15914--15918
+Overfull \hbox (1.88248pt too wide) in alignment at lines 15820--15824
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15918--15921
+Overfull \hbox (1.88248pt too wide) in alignment at lines 15824--15827
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15921--15923
+Overfull \hbox (1.88248pt too wide) in alignment at lines 15827--15829
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 15923--15925
+Overfull \hbox (1.88248pt too wide) in alignment at lines 15829--15831
  [][][][][][][][][][][][][][][][][][] 
  []
 
 [183
 
 ] [184] [185]
-Overfull \hbox (1.77196pt too wide) in alignment at lines 16164--16168
+Overfull \hbox (1.88248pt too wide) in alignment at lines 16068--16072
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 16168--16171
+Overfull \hbox (1.88248pt too wide) in alignment at lines 16072--16075
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 16171--16173
+Overfull \hbox (1.88248pt too wide) in alignment at lines 16075--16077
  [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.77196pt too wide) in alignment at lines 16173--16175
+Overfull \hbox (1.88248pt too wide) in alignment at lines 16077--16079
  [][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1538,14 +1538,14 @@ Package rerunfilecheck Info: File `parameters.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 44256 strings out of 477760
- 306112,1648299 words of node,token memory allocated
+ 44266 strings out of 477760
+ 306124,1648299 words of node,token memory allocated
  473 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 5 attribute, 60 glue_spec,
  5 attribute_list, 2 write nodes
-   avail lists: 1:2,2:11039,3:5391,4:756,5:1864,6:26,7:21988,8:9,9:4833,10:7,11:
+   avail lists: 1:5,2:11117,3:5429,4:760,5:1864,6:24,7:22048,8:9,9:4833,10:7,11:
 288
- 63202 multiletter control sequences out of 65536+600000
+ 63212 multiletter control sequences out of 65536+600000
  42 fonts using 1802615 bytes
  99i,16n,90p,1602b,1951s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/texlive/2022/texmf-
@@ -1558,7 +1558,7 @@ fb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2022
 pe1/public/lm/lmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.
 pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/texlive/2022/
 texmf-dist/fonts/type1/public/lm/lmr7.pfb>
-Output written on parameters.pdf (188 pages, 1211557 bytes).
+Output written on parameters.pdf (188 pages, 1212477 bytes).
 
 PDF statistics: 1346 PDF objects out of 1440 (max. 8388607)
  1133 compressed objects within 12 object streams

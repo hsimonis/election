@@ -26,11 +26,11 @@ int compare(ApplicationObjectInterface o1, ApplicationObjectInterface o2)
 !include ApplicationWarning.uml
 !include Area.uml
 !include ConstituencyType.uml
-!include Country.uml
 !include County.uml
 !include Distance.uml
 !include DistanceError.uml
 !include ElectoralDivision.uml
+!include Lea.uml
 !include MapLocation.uml
 !include NeighborCounty.uml
 !include Nuts3.uml
@@ -53,12 +53,14 @@ MapLocation <|-- Area
 Area <|-- Nuts3
 Area <|-- Province
 Area <|-- Shaped
+Shaped <|-- County
 Shaped <|-- ElectoralDivision
+Shaped <|-- Lea
 ApplicationDataset  *-- ApplicationObject 
 County  *-- NeighborCounty : county1
 County  *-- NeighborCounty : county2
-County  *-- Shaped 
-Province  *-- Shaped 
+County  *-- ElectoralDivision 
+Lea  *-- ElectoralDivision 
 MapLocation  *-- Distance : from
 MapLocation  *-- Distance : to
 MapLocation  *-- DistanceError : from

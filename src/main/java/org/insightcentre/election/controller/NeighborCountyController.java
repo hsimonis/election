@@ -20,7 +20,7 @@ import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.NeighborCounty;
 
 /**
- * Generated at 17:04:25 on 2024-08-07 */
+ * Generated at 10:26:59 on 2024-08-11 */
 public class NeighborCountyController extends Table3Controller {
 	@FXML
 	private TableView<NeighborCounty> table;

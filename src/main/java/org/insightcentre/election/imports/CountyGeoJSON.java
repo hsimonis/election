@@ -50,11 +50,14 @@ public class CountyGeoJSON {
                 String name = capitalize(properties.getString("ENGLISH").toLowerCase());
                 String county = properties.getString("COUNTY");
                 String province = properties.getString("PROVINCE");
+                String guid = properties.getString("GUID");
                 double x = properties.getDouble("CENTROID_X");
                 double y = properties.getDouble("CENTROID_Y");
                 County c = County.findByName(base,name);
                 c.setCentroidX(x);
                 c.setCentroidY(y);
+                c.setIdent(guid);
+                c.setShape(geom.toString());
                 info("name "+name+" "+county+" "+province+" "+x+" "+y);
 
 //                for(String key: geom.keySet()){

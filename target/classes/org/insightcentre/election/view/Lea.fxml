@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+
+<!--Generated at 10:26:59 on 2024-08-11-->
+
+
+<Tab text="Lea" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.insightcentre.election.controller.LeaController">
+   <BorderPane>
+      <center>
+         <TableView fx:id="table" editable="true">
+            <columns>
+               <TableColumn fx:id="name" styleClass="right-aligned" text="Name" />
+               <TableColumn fx:id="shortName" styleClass="right-aligned" text="ShortName" />
+               <TableColumn fx:id="ident" styleClass="right-aligned" text="Ident" />
+               <TableColumn fx:id="centroidX" styleClass="right-aligned" text="CentroidX" />
+               <TableColumn fx:id="centroidY" styleClass="right-aligned" text="CentroidY" />
+               <TableColumn editable="false" styleClass="right-aligned,disabled-column" text="XMin" fx:id="xMin" />
+               <TableColumn editable="false" styleClass="right-aligned,disabled-column" text="XMax" fx:id="xMax" />
+               <TableColumn fx:id="yMin" editable="false" styleClass="right-aligned,disabled-column" text="YMin" />
+               <TableColumn fx:id="yMax" editable="false" styleClass="right-aligned,disabled-column" text="YMax" />
+               <TableColumn fx:id="totalPopulation" editable="false" styleClass="right-aligned,disabled-column" text="TotalPopulation" />
+               <TableColumn fx:id="nr" styleClass="right-aligned" text="Nr" />
+               <TableColumn fx:id="shape" styleClass="right-aligned" text="Shape" />
+            </columns>
+         </TableView>
+      </center>
+      <bottom>
+         <TitledPane fx:id="filterPane" expanded="false" text="Filter">
+            <content>
+               <HBox alignment="center" spacing="5.0">
+                  <ChoiceBox fx:id="filterChoiceBox" />
+                  <ChoiceBox fx:id="filterComparisonBox" />
+                  <TextField fx:id="filterTextField" />
+               </HBox>
+            </content>
+         </TitledPane>
+      </bottom>
+   </BorderPane>
+</Tab>

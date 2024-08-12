@@ -20,10 +20,10 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import org.insightcentre.election.GeneratedJfxApp;
 import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ElectoralDivision;
-import org.insightcentre.election.datamodel.Province;
+import org.insightcentre.election.datamodel.Lea;
 
 /**
- * Generated at 17:04:25 on 2024-08-07 */
+ * Generated at 10:26:59 on 2024-08-11 */
 public class ElectoralDivisionController extends Table3Controller {
 	@FXML
 	private TableView<ElectoralDivision> table;
@@ -35,13 +35,13 @@ public class ElectoralDivisionController extends Table3Controller {
 	private TableColumn<ElectoralDivision, String> shortName;
 
 	@FXML
-	private TableColumn<ElectoralDivision, Double> longitude;
-
-	@FXML
-	private TableColumn<ElectoralDivision, Double> latitude;
-
-	@FXML
 	private TableColumn<ElectoralDivision, String> ident;
+
+	@FXML
+	private TableColumn<ElectoralDivision, Double> centroidX;
+
+	@FXML
+	private TableColumn<ElectoralDivision, Double> centroidY;
 
 	@FXML
 	private TableColumn<ElectoralDivision, Double> xMin;
@@ -59,28 +59,7 @@ public class ElectoralDivisionController extends Table3Controller {
 	private TableColumn<ElectoralDivision, Integer> totalPopulation;
 
 	@FXML
-	private TableColumn<ElectoralDivision, Double> totalArea;
-
-	@FXML
 	private TableColumn<ElectoralDivision, Integer> nr;
-
-	@FXML
-	private TableColumn<ElectoralDivision, Double> shapeLength;
-
-	@FXML
-	private TableColumn<ElectoralDivision, Double> shapeArea;
-
-	@FXML
-	private TableColumn<ElectoralDivision, Double> populationDensity;
-
-	@FXML
-	private TableColumn<ElectoralDivision, Integer> cluster;
-
-	@FXML
-	private TableColumn<ElectoralDivision, County> county;
-
-	@FXML
-	private TableColumn<ElectoralDivision, Province> province;
 
 	@FXML
 	private TableColumn<ElectoralDivision, String> shape;
@@ -91,6 +70,12 @@ public class ElectoralDivisionController extends Table3Controller {
 	@FXML
 	private TableColumn<ElectoralDivision, String> edIdString;
 
+	@FXML
+	private TableColumn<ElectoralDivision, County> county;
+
+	@FXML
+	private TableColumn<ElectoralDivision, Lea> lea;
+
 	private GeneratedJfxApp mainApp;
 
 	@Override
@@ -99,8 +84,8 @@ public class ElectoralDivisionController extends Table3Controller {
 		table.setItems(mainApp.getElectoralDivisionData());
 		county.setCellFactory(ComboBoxTableCell.forTableColumn(mainApp.getCountyData()));
 		county.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCounty(event.getNewValue()); mainApp.reset();});
-		province.setCellFactory(ComboBoxTableCell.forTableColumn(mainApp.getProvinceData()));
-		province.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setProvince(event.getNewValue()); mainApp.reset();});
+		lea.setCellFactory(ComboBoxTableCell.forTableColumn(mainApp.getLeaData()));
+		lea.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setLea(event.getNewValue()); mainApp.reset();});
 	}
 
 	public TableView<ElectoralDivision> getTable() {
@@ -120,18 +105,18 @@ public class ElectoralDivisionController extends Table3Controller {
 		shortName.setCellValueFactory(new PropertyValueFactory<>("shortName"));
 		shortName.setCellFactory(TextFieldTableCell.forTableColumn());
 		shortName.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setShortName(event.getNewValue()); mainApp.reset();});
-		choices.add("longitude");
-		longitude.setCellValueFactory(new PropertyValueFactory<>("longitude"));
-		longitude.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
-		longitude.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setLongitude(event.getNewValue()); mainApp.reset();});
-		choices.add("latitude");
-		latitude.setCellValueFactory(new PropertyValueFactory<>("latitude"));
-		latitude.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
-		latitude.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setLatitude(event.getNewValue()); mainApp.reset();});
 		choices.add("ident");
 		ident.setCellValueFactory(new PropertyValueFactory<>("ident"));
 		ident.setCellFactory(TextFieldTableCell.forTableColumn());
 		ident.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setIdent(event.getNewValue()); mainApp.reset();});
+		choices.add("centroidX");
+		centroidX.setCellValueFactory(new PropertyValueFactory<>("centroidX"));
+		centroidX.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
+		centroidX.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCentroidX(event.getNewValue()); mainApp.reset();});
+		choices.add("centroidY");
+		centroidY.setCellValueFactory(new PropertyValueFactory<>("centroidY"));
+		centroidY.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
+		centroidY.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCentroidY(event.getNewValue()); mainApp.reset();});
 		choices.add("xMin");
 		xMin.setCellValueFactory(new PropertyValueFactory<>("xMin"));
 		xMin.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
@@ -152,34 +137,10 @@ public class ElectoralDivisionController extends Table3Controller {
 		totalPopulation.setCellValueFactory(new PropertyValueFactory<>("totalPopulation"));
 		totalPopulation.setCellFactory(TextFieldTableCell.forTableColumn(INTEGER_CONVERTER));
 		totalPopulation.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setTotalPopulation(event.getNewValue()); mainApp.reset();});
-		choices.add("totalArea");
-		totalArea.setCellValueFactory(new PropertyValueFactory<>("totalArea"));
-		totalArea.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
-		totalArea.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setTotalArea(event.getNewValue()); mainApp.reset();});
 		choices.add("nr");
 		nr.setCellValueFactory(new PropertyValueFactory<>("nr"));
 		nr.setCellFactory(TextFieldTableCell.forTableColumn(INTEGER_CONVERTER));
 		nr.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setNr(event.getNewValue()); mainApp.reset();});
-		choices.add("shapeLength");
-		shapeLength.setCellValueFactory(new PropertyValueFactory<>("shapeLength"));
-		shapeLength.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
-		shapeLength.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setShapeLength(event.getNewValue()); mainApp.reset();});
-		choices.add("shapeArea");
-		shapeArea.setCellValueFactory(new PropertyValueFactory<>("shapeArea"));
-		shapeArea.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
-		shapeArea.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setShapeArea(event.getNewValue()); mainApp.reset();});
-		choices.add("populationDensity");
-		populationDensity.setCellValueFactory(new PropertyValueFactory<>("populationDensity"));
-		populationDensity.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
-		populationDensity.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setPopulationDensity(event.getNewValue()); mainApp.reset();});
-		choices.add("cluster");
-		cluster.setCellValueFactory(new PropertyValueFactory<>("cluster"));
-		cluster.setCellFactory(TextFieldTableCell.forTableColumn(INTEGER_CONVERTER));
-		cluster.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCluster(event.getNewValue()); mainApp.reset();});
-		choices.add("county");
-		county.setCellValueFactory(new PropertyValueFactory<>("county"));
-		choices.add("province");
-		province.setCellValueFactory(new PropertyValueFactory<>("province"));
 		choices.add("shape");
 		shape.setCellValueFactory(new PropertyValueFactory<>("shape"));
 		shape.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -192,6 +153,10 @@ public class ElectoralDivisionController extends Table3Controller {
 		edIdString.setCellValueFactory(new PropertyValueFactory<>("edIdString"));
 		edIdString.setCellFactory(TextFieldTableCell.forTableColumn());
 		edIdString.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setEdIdString(event.getNewValue()); mainApp.reset();});
+		choices.add("county");
+		county.setCellValueFactory(new PropertyValueFactory<>("county"));
+		choices.add("lea");
+		lea.setCellValueFactory(new PropertyValueFactory<>("lea"));
 		initialize(choices);
 	}
 

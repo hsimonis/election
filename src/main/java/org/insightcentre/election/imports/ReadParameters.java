@@ -37,7 +37,9 @@ public class ReadParameters {
                 JSONObject county = counties.getJSONObject(i);
                 County c = new County(base);
                 c.setName(county.getString("name"));
-                c.setPopulation(county.getInt("size"));
+                c.setShortName(county.getString("name"));
+                c.setTotalPopulation(county.getInt("size"));
+                c.setNr(i);
             }
             JSONArray neighbors = obj.getJSONArray("neighbors");
             for(int i=0;i<neighbors.length();i++){

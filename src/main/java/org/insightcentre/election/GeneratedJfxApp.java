@@ -25,11 +25,11 @@ import org.insightcentre.election.datamodel.ApplicationDifference;
 import org.insightcentre.election.datamodel.ApplicationWarning;
 import org.insightcentre.election.datamodel.Area;
 import org.insightcentre.election.datamodel.ConstituencyType;
-import org.insightcentre.election.datamodel.Country;
 import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.Distance;
 import org.insightcentre.election.datamodel.DistanceError;
 import org.insightcentre.election.datamodel.ElectoralDivision;
+import org.insightcentre.election.datamodel.Lea;
 import org.insightcentre.election.datamodel.MapLocation;
 import org.insightcentre.election.datamodel.NeighborCounty;
 import org.insightcentre.election.datamodel.Nuts3;
@@ -43,7 +43,7 @@ import org.insightcentre.election.datamodel.Solution;
 import org.insightcentre.election.datamodel.XMLLoader;
 
 /**
- * Generated at 17:04:25 on 2024-08-07 */
+ * Generated at 10:26:59 on 2024-08-11 */
 public class GeneratedJfxApp extends AbstractJfxMainWindow {
 	static {
 		FREEMARKER_CFG.setClassForTemplateLoading(GeneratedJfxApp.class, "C:/Users/hsimonis/Documents/Github/election/site/web");
@@ -61,10 +61,6 @@ public class GeneratedJfxApp extends AbstractJfxMainWindow {
 
 	private ObservableList<ApplicationWarning> applicationWarningData = FXCollections.observableArrayList();
 
-	private ObservableList<Country> countryData = FXCollections.observableArrayList();
-
-	private ObservableList<County> countyData = FXCollections.observableArrayList();
-
 	private ObservableList<ConstituencyType> constituencyTypeData = FXCollections.observableArrayList();
 
 	private ObservableList<MapLocation> mapLocationData = FXCollections.observableArrayList();
@@ -77,7 +73,11 @@ public class GeneratedJfxApp extends AbstractJfxMainWindow {
 
 	private ObservableList<Shaped> shapedData = FXCollections.observableArrayList();
 
+	private ObservableList<County> countyData = FXCollections.observableArrayList();
+
 	private ObservableList<ElectoralDivision> electoralDivisionData = FXCollections.observableArrayList();
+
+	private ObservableList<Lea> leaData = FXCollections.observableArrayList();
 
 	private ObservableList<Distance> distanceData = FXCollections.observableArrayList();
 
@@ -97,15 +97,15 @@ public class GeneratedJfxApp extends AbstractJfxMainWindow {
 		super("election", "Election District Mapping - Insight SFI Centre for Data Analytics", "*.data", "C:/Users/hsimonis/Documents/Github/election");
 		fs = minimalDataset();
 		reset();
-		tableViews.put("Country", "Country");
-		tableViews.put("County", "County");
 		tableViews.put("ConstituencyType", "ConstituencyType");
 		tableViews.put("MapLocation", "MapLocation");
 		tableViews.put("Area", "Area");
 		tableViews.put("Nuts3", "Nuts3");
 		tableViews.put("Province", "Province");
 		tableViews.put("Shaped", "Shaped");
+		tableViews.put("County", "County");
 		tableViews.put("ElectoralDivision", "ElectoralDivision");
+		tableViews.put("Lea", "Lea");
 		tableViews.put("Distance", "Distance");
 		tableViews.put("DistanceError", "DistanceError");
 		tableViews.put("NeighborCounty", "NeighborCounty");
@@ -191,10 +191,6 @@ public class GeneratedJfxApp extends AbstractJfxMainWindow {
 		applicationDifferenceData.addAll(base.getListApplicationDifference());
 		applicationWarningData.clear();
 		applicationWarningData.addAll(base.getListApplicationWarning());
-		countryData.clear();
-		countryData.addAll(base.getListCountry());
-		countyData.clear();
-		countyData.addAll(base.getListCounty());
 		constituencyTypeData.clear();
 		constituencyTypeData.addAll(base.getListConstituencyType());
 		mapLocationData.clear();
@@ -207,8 +203,12 @@ public class GeneratedJfxApp extends AbstractJfxMainWindow {
 		provinceData.addAll(base.getListProvince());
 		shapedData.clear();
 		shapedData.addAll(base.getListShaped());
+		countyData.clear();
+		countyData.addAll(base.getListCounty());
 		electoralDivisionData.clear();
 		electoralDivisionData.addAll(base.getListElectoralDivision());
+		leaData.clear();
+		leaData.addAll(base.getListLea());
 		distanceData.clear();
 		distanceData.addAll(base.getListDistance());
 		distanceErrorData.clear();
@@ -240,14 +240,6 @@ public class GeneratedJfxApp extends AbstractJfxMainWindow {
 		return applicationWarningData;
 	}
 
-	public ObservableList<Country> getCountryData() {
-		return countryData;
-	}
-
-	public ObservableList<County> getCountyData() {
-		return countyData;
-	}
-
 	public ObservableList<ConstituencyType> getConstituencyTypeData() {
 		return constituencyTypeData;
 	}
@@ -272,8 +264,16 @@ public class GeneratedJfxApp extends AbstractJfxMainWindow {
 		return shapedData;
 	}
 
+	public ObservableList<County> getCountyData() {
+		return countyData;
+	}
+
 	public ObservableList<ElectoralDivision> getElectoralDivisionData() {
 		return electoralDivisionData;
+	}
+
+	public ObservableList<Lea> getLeaData() {
+		return leaData;
 	}
 
 	public ObservableList<Distance> getDistanceData() {

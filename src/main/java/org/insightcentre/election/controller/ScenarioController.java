@@ -26,7 +26,7 @@ import org.insightcentre.election.GeneratedJfxApp;
 import org.insightcentre.election.datamodel.Scenario;
 
 /**
- * Generated at 17:04:25 on 2024-08-07 */
+ * Generated at 10:26:59 on 2024-08-11 */
 public class ScenarioController extends Table3Controller {
 	@FXML
 	private TableView<Scenario> table;

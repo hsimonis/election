@@ -5,15 +5,15 @@ import org.insightcentre.election.datamodel.ApplicationObject;
 import org.insightcentre.election.datamodel.ApplicationDifference;
 import org.insightcentre.election.datamodel.ApplicationWarning;
 import org.insightcentre.election.datamodel.Scenario;
-import org.insightcentre.election.datamodel.Country;
-import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ConstituencyType;
 import org.insightcentre.election.datamodel.MapLocation;
 import org.insightcentre.election.datamodel.Area;
 import org.insightcentre.election.datamodel.Nuts3;
 import org.insightcentre.election.datamodel.Province;
 import org.insightcentre.election.datamodel.Shaped;
+import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ElectoralDivision;
+import org.insightcentre.election.datamodel.Lea;
 import org.insightcentre.election.datamodel.Distance;
 import org.insightcentre.election.datamodel.DistanceError;
 import org.insightcentre.election.datamodel.NeighborCounty;
@@ -46,6 +46,13 @@ public  class ElectoralDivision extends Shaped{
  *
 */
 
+    public County county;
+
+/**
+ *  
+ *
+*/
+
     public Integer edId;
 
 /**
@@ -54,6 +61,13 @@ public  class ElectoralDivision extends Shaped{
 */
 
     public String edIdString;
+
+/**
+ *  
+ *
+*/
+
+    public Lea lea;
 
 /**
  *  No-arg constructor for use in TableView
@@ -74,8 +88,10 @@ public  class ElectoralDivision extends Shaped{
 
     public ElectoralDivision(ApplicationDataset applicationDataset){
         super(applicationDataset);
+        setCounty(null);
         setEdId(0);
         setEdIdString("");
+        setLea(null);
         applicationDataset.addElectoralDivision(this);
     }
 
@@ -89,49 +105,39 @@ public  class ElectoralDivision extends Shaped{
     public ElectoralDivision(ApplicationDataset applicationDataset,
             Integer id,
             String name,
+            Double centroidX,
+            Double centroidY,
             String ident,
-            Double latitude,
-            Double longitude,
             String shortName,
-            Double totalArea,
             Integer totalPopulation,
             Double xMax,
             Double xMin,
             Double yMax,
             Double yMin,
-            Integer cluster,
-            County county,
             Integer nr,
-            Double populationDensity,
-            Province province,
             String shape,
-            Double shapeArea,
-            Double shapeLength,
+            County county,
             Integer edId,
-            String edIdString){
+            String edIdString,
+            Lea lea){
         super(applicationDataset,
             id,
             name,
+            centroidX,
+            centroidY,
             ident,
-            latitude,
-            longitude,
             shortName,
-            totalArea,
             totalPopulation,
             xMax,
             xMin,
             yMax,
             yMin,
-            cluster,
-            county,
             nr,
-            populationDensity,
-            province,
-            shape,
-            shapeArea,
-            shapeLength);
+            shape);
+        setCounty(county);
         setEdId(edId);
         setEdIdString(edIdString);
+        setLea(lea);
         applicationDataset.addElectoralDivision(this);
     }
 
@@ -139,26 +145,21 @@ public  class ElectoralDivision extends Shaped{
         this(other.applicationDataset,
             other.id,
             other.name,
+            other.centroidX,
+            other.centroidY,
             other.ident,
-            other.latitude,
-            other.longitude,
             other.shortName,
-            other.totalArea,
             other.totalPopulation,
             other.xMax,
             other.xMin,
             other.yMax,
             other.yMin,
-            other.cluster,
-            other.county,
             other.nr,
-            other.populationDensity,
-            other.province,
             other.shape,
-            other.shapeArea,
-            other.shapeLength,
+            other.county,
             other.edId,
-            other.edIdString);
+            other.edIdString,
+            other.lea);
     }
 
 /**
@@ -174,6 +175,16 @@ public  class ElectoralDivision extends Shaped{
         getApplicationDataset().cascadeDistanceErrorFrom(this);
         getApplicationDataset().cascadeDistanceErrorTo(this);
         return getApplicationDataset().removeElectoralDivision(this) && getApplicationDataset().removeShaped(this) && getApplicationDataset().removeArea(this) && getApplicationDataset().removeMapLocation(this) && getApplicationDataset().removeApplicationObject(this);
+    }
+
+/**
+ *  get attribute county
+ *
+ * @return County
+*/
+
+    public County getCounty(){
+        return this.county;
     }
 
 /**
@@ -197,6 +208,28 @@ public  class ElectoralDivision extends Shaped{
     }
 
 /**
+ *  get attribute lea
+ *
+ * @return Lea
+*/
+
+    public Lea getLea(){
+        return this.lea;
+    }
+
+/**
+ *  set attribute county, mark dataset as dirty, mark dataset as not valid
+@param county County
+ *
+*/
+
+    public void setCounty(County county){
+        this.county = county;
+        getApplicationDataset().setDirty(true);
+        getApplicationDataset().setValid(false);
+    }
+
+/**
  *  set attribute edId, mark dataset as dirty, mark dataset as not valid
 @param edId Integer
  *
@@ -216,6 +249,18 @@ public  class ElectoralDivision extends Shaped{
 
     public void setEdIdString(String edIdString){
         this.edIdString = edIdString;
+        getApplicationDataset().setDirty(true);
+        getApplicationDataset().setValid(false);
+    }
+
+/**
+ *  set attribute lea, mark dataset as dirty, mark dataset as not valid
+@param lea Lea
+ *
+*/
+
+    public void setLea(Lea lea){
+        this.lea = lea;
         getApplicationDataset().setDirty(true);
         getApplicationDataset().setValid(false);
     }
@@ -248,7 +293,7 @@ public  class ElectoralDivision extends Shaped{
 */
 
     public String prettyString(){
-        return ""+ " " +getId()+ " " +getName()+ " " +getIdent()+ " " +getLatitude()+ " " +getLongitude()+ " " +getShortName()+ " " +getTotalArea()+ " " +getTotalPopulation()+ " " +getXMax()+ " " +getXMin()+ " " +getYMax()+ " " +getYMin()+ " " +getCluster()+ " " +getCounty().toColumnString()+ " " +getNr()+ " " +getPopulationDensity()+ " " +getProvince().toColumnString()+ " " +getShape()+ " " +getShapeArea()+ " " +getShapeLength()+ " " +getEdId()+ " " +getEdIdString();
+        return ""+ " " +getId()+ " " +getName()+ " " +getCentroidX()+ " " +getCentroidY()+ " " +getIdent()+ " " +getShortName()+ " " +getTotalPopulation()+ " " +getXMax()+ " " +getXMin()+ " " +getYMax()+ " " +getYMin()+ " " +getNr()+ " " +getShape()+ " " +getCounty().toColumnString()+ " " +getEdId()+ " " +getEdIdString()+ " " +getLea().toColumnString();
     }
 
 /**
@@ -272,27 +317,32 @@ public  class ElectoralDivision extends Shaped{
          out.println("<electoralDivision "+ " applicationDataset=\""+toXMLApplicationDataset()+"\""+
             " id=\""+toXMLId()+"\""+
             " name=\""+toXMLName()+"\""+
+            " centroidX=\""+toXMLCentroidX()+"\""+
+            " centroidY=\""+toXMLCentroidY()+"\""+
             " ident=\""+toXMLIdent()+"\""+
-            " latitude=\""+toXMLLatitude()+"\""+
-            " longitude=\""+toXMLLongitude()+"\""+
             " shortName=\""+toXMLShortName()+"\""+
-            " totalArea=\""+toXMLTotalArea()+"\""+
             " totalPopulation=\""+toXMLTotalPopulation()+"\""+
             " xMax=\""+toXMLXMax()+"\""+
             " xMin=\""+toXMLXMin()+"\""+
             " yMax=\""+toXMLYMax()+"\""+
             " yMin=\""+toXMLYMin()+"\""+
-            " cluster=\""+toXMLCluster()+"\""+
-            " county=\""+toXMLCounty()+"\""+
             " nr=\""+toXMLNr()+"\""+
-            " populationDensity=\""+toXMLPopulationDensity()+"\""+
-            " province=\""+toXMLProvince()+"\""+
             " shape=\""+toXMLShape()+"\""+
-            " shapeArea=\""+toXMLShapeArea()+"\""+
-            " shapeLength=\""+toXMLShapeLength()+"\""+
+            " county=\""+toXMLCounty()+"\""+
             " edId=\""+toXMLEdId()+"\""+
-            " edIdString=\""+toXMLEdIdString()+"\""+" />");
+            " edIdString=\""+toXMLEdIdString()+"\""+
+            " lea=\""+toXMLLea()+"\""+" />");
      }
+
+/**
+ * helper method for toXML(), prcess one attribute
+ * probably useless on its own
+ * @return String
+*/
+
+    String toXMLCounty(){
+        return "ID_"+this.getCounty().getId().toString();
+    }
 
 /**
  * helper method for toXML(), prcess one attribute
@@ -315,17 +365,27 @@ public  class ElectoralDivision extends Shaped{
     }
 
 /**
+ * helper method for toXML(), prcess one attribute
+ * probably useless on its own
+ * @return String
+*/
+
+    String toXMLLea(){
+        return "ID_"+this.getLea().getId().toString();
+    }
+
+/**
  * show object as one row in an HTML table
  * 
  * @return String of form <tr>...</tr>
 */
 
     public static String toHTMLLabels(){
-        return "<tr><th>ElectoralDivision</th>"+"<th>Name</th>"+"<th>ShortName</th>"+"<th>Longitude</th>"+"<th>Latitude</th>"+"<th>Ident</th>"+"<th>XMin</th>"+"<th>XMax</th>"+"<th>YMin</th>"+"<th>YMax</th>"+"<th>TotalPopulation</th>"+"<th>TotalArea</th>"+"<th>Nr</th>"+"<th>ShapeLength</th>"+"<th>ShapeArea</th>"+"<th>PopulationDensity</th>"+"<th>Cluster</th>"+"<th>County</th>"+"<th>Province</th>"+"<th>Shape</th>"+"<th>EdId</th>"+"<th>EdIdString</th>"+"</tr>";
+        return "<tr><th>ElectoralDivision</th>"+"<th>Name</th>"+"<th>ShortName</th>"+"<th>Ident</th>"+"<th>CentroidX</th>"+"<th>CentroidY</th>"+"<th>XMin</th>"+"<th>XMax</th>"+"<th>YMin</th>"+"<th>YMax</th>"+"<th>TotalPopulation</th>"+"<th>Nr</th>"+"<th>Shape</th>"+"<th>EdId</th>"+"<th>EdIdString</th>"+"<th>County</th>"+"<th>Lea</th>"+"</tr>";
     }
 
     public String toHTML(){
-        return "<tr><th>&nbsp;</th>"+"<td>"+getName()+"</td>"+ " " +"<td>"+getShortName()+"</td>"+ " " +"<td>"+getLongitude()+"</td>"+ " " +"<td>"+getLatitude()+"</td>"+ " " +"<td>"+getIdent()+"</td>"+ " " +"<td>"+getXMin()+"</td>"+ " " +"<td>"+getXMax()+"</td>"+ " " +"<td>"+getYMin()+"</td>"+ " " +"<td>"+getYMax()+"</td>"+ " " +"<td>"+getTotalPopulation()+"</td>"+ " " +"<td>"+getTotalArea()+"</td>"+ " " +"<td>"+getNr()+"</td>"+ " " +"<td>"+getShapeLength()+"</td>"+ " " +"<td>"+getShapeArea()+"</td>"+ " " +"<td>"+getPopulationDensity()+"</td>"+ " " +"<td>"+getCluster()+"</td>"+ " " +"<td>"+getCounty().toColumnString()+"</td>"+ " " +"<td>"+getProvince().toColumnString()+"</td>"+ " " +"<td>"+getShape()+"</td>"+ " " +"<td>"+getEdId()+"</td>"+ " " +"<td>"+getEdIdString()+"</td>"+"</tr>";
+        return "<tr><th>&nbsp;</th>"+"<td>"+getName()+"</td>"+ " " +"<td>"+getShortName()+"</td>"+ " " +"<td>"+getIdent()+"</td>"+ " " +"<td>"+getCentroidX()+"</td>"+ " " +"<td>"+getCentroidY()+"</td>"+ " " +"<td>"+getXMin()+"</td>"+ " " +"<td>"+getXMax()+"</td>"+ " " +"<td>"+getYMin()+"</td>"+ " " +"<td>"+getYMax()+"</td>"+ " " +"<td>"+getTotalPopulation()+"</td>"+ " " +"<td>"+getNr()+"</td>"+ " " +"<td>"+getShape()+"</td>"+ " " +"<td>"+getEdId()+"</td>"+ " " +"<td>"+getEdIdString()+"</td>"+ " " +"<td>"+getCounty().toColumnString()+"</td>"+ " " +"<td>"+getLea().toColumnString()+"</td>"+"</tr>";
     }
 
 /**
@@ -442,8 +502,11 @@ public  class ElectoralDivision extends Shaped{
 */
 
     public Boolean applicationEqual(ElectoralDivision b){
-      if(!this.getCluster().equals(b.getCluster())){
-         System.out.println("Cluster");
+      if(!this.getCentroidX().equals(b.getCentroidX())){
+         System.out.println("CentroidX");
+        }
+      if(!this.getCentroidY().equals(b.getCentroidY())){
+         System.out.println("CentroidY");
         }
       if(!this.getCounty().applicationSame(b.getCounty())){
          System.out.println("County");
@@ -457,11 +520,8 @@ public  class ElectoralDivision extends Shaped{
       if(!this.getIdent().equals(b.getIdent())){
          System.out.println("Ident");
         }
-      if(!this.getLatitude().equals(b.getLatitude())){
-         System.out.println("Latitude");
-        }
-      if(!this.getLongitude().equals(b.getLongitude())){
-         System.out.println("Longitude");
+      if(!this.getLea().applicationSame(b.getLea())){
+         System.out.println("Lea");
         }
       if(!this.getName().equals(b.getName())){
          System.out.println("Name");
@@ -469,26 +529,11 @@ public  class ElectoralDivision extends Shaped{
       if(!this.getNr().equals(b.getNr())){
          System.out.println("Nr");
         }
-      if(!this.getPopulationDensity().equals(b.getPopulationDensity())){
-         System.out.println("PopulationDensity");
-        }
-      if(!this.getProvince().applicationSame(b.getProvince())){
-         System.out.println("Province");
-        }
       if(!this.getShape().equals(b.getShape())){
          System.out.println("Shape");
         }
-      if(!this.getShapeArea().equals(b.getShapeArea())){
-         System.out.println("ShapeArea");
-        }
-      if(!this.getShapeLength().equals(b.getShapeLength())){
-         System.out.println("ShapeLength");
-        }
       if(!this.getShortName().equals(b.getShortName())){
          System.out.println("ShortName");
-        }
-      if(!this.getTotalArea().equals(b.getTotalArea())){
-         System.out.println("TotalArea");
         }
       if(!this.getTotalPopulation().equals(b.getTotalPopulation())){
          System.out.println("TotalPopulation");
@@ -505,22 +550,17 @@ public  class ElectoralDivision extends Shaped{
       if(!this.getYMin().equals(b.getYMin())){
          System.out.println("YMin");
         }
-        return  this.getCluster().equals(b.getCluster()) &&
+        return  this.getCentroidX().equals(b.getCentroidX()) &&
+          this.getCentroidY().equals(b.getCentroidY()) &&
           this.getCounty().applicationSame(b.getCounty()) &&
           this.getEdId().equals(b.getEdId()) &&
           this.getEdIdString().equals(b.getEdIdString()) &&
           this.getIdent().equals(b.getIdent()) &&
-          this.getLatitude().equals(b.getLatitude()) &&
-          this.getLongitude().equals(b.getLongitude()) &&
+          this.getLea().applicationSame(b.getLea()) &&
           this.getName().equals(b.getName()) &&
           this.getNr().equals(b.getNr()) &&
-          this.getPopulationDensity().equals(b.getPopulationDensity()) &&
-          this.getProvince().applicationSame(b.getProvince()) &&
           this.getShape().equals(b.getShape()) &&
-          this.getShapeArea().equals(b.getShapeArea()) &&
-          this.getShapeLength().equals(b.getShapeLength()) &&
           this.getShortName().equals(b.getShortName()) &&
-          this.getTotalArea().equals(b.getTotalArea()) &&
           this.getTotalPopulation().equals(b.getTotalPopulation()) &&
           this.getXMax().equals(b.getXMax()) &&
           this.getXMin().equals(b.getXMin()) &&
@@ -540,8 +580,8 @@ public  class ElectoralDivision extends Shaped{
         if (getCounty() == null){
          new ApplicationWarning(getApplicationDataset(),ApplicationDataset.getIdNr(),toColumnString(),"county","ElectoralDivision",(getCounty()==null?"null":getCounty().toString()),"",WarningType.NOTNULL);
         }
-        if (getProvince() == null){
-         new ApplicationWarning(getApplicationDataset(),ApplicationDataset.getIdNr(),toColumnString(),"province","ElectoralDivision",(getProvince()==null?"null":getProvince().toString()),"",WarningType.NOTNULL);
+        if (getLea() == null){
+         new ApplicationWarning(getApplicationDataset(),ApplicationDataset.getIdNr(),toColumnString(),"lea","ElectoralDivision",(getLea()==null?"null":getLea().toString()),"",WarningType.NOTNULL);
         }
     }
 
@@ -562,8 +602,8 @@ public  class ElectoralDivision extends Shaped{
       if (attrName.equals("county")){
          return (List) ((Scenario)base).getListCounty();
       }
-      if (attrName.equals("province")){
-         return (List) ((Scenario)base).getListProvince();
+      if (attrName.equals("lea")){
+         return (List) ((Scenario)base).getListLea();
       }
       return null;
    }

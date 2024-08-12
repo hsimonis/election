@@ -13,7 +13,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 
 /**
- * Generated at 17:04:25 on 2024-08-07 */
+ * Generated at 10:26:59 on 2024-08-11 */
 public class BarChartController extends ChartController {
 	@FXML
 	private BarChart<String, Number> chart;
@@ -29,83 +29,82 @@ public class BarChartController extends ChartController {
 		attributeNames.add("totalPopulation");
 		choicesMap.put("Scenario", attributeNames);
 		attributeNames = FXCollections.observableArrayList();
-		attributeNames.add("population");
-		choicesMap.put("Country", attributeNames);
-		attributeNames = FXCollections.observableArrayList();
-		attributeNames.add("population");
-		attributeNames.add("nrED");
-		attributeNames.add("centroidX");
-		attributeNames.add("centroidY");
-		choicesMap.put("County", attributeNames);
-		attributeNames = FXCollections.observableArrayList();
 		attributeNames.add("nrSeats");
 		attributeNames.add("gammaCostFactor");
 		choicesMap.put("ConstituencyType", attributeNames);
 		attributeNames = FXCollections.observableArrayList();
-		attributeNames.add("longitude");
-		attributeNames.add("latitude");
+		attributeNames.add("centroidX");
+		attributeNames.add("centroidY");
 		choicesMap.put("MapLocation", attributeNames);
 		attributeNames = FXCollections.observableArrayList();
-		attributeNames.add("longitude");
-		attributeNames.add("latitude");
+		attributeNames.add("centroidX");
+		attributeNames.add("centroidY");
 		attributeNames.add("xMin");
 		attributeNames.add("xMax");
 		attributeNames.add("yMin");
 		attributeNames.add("yMax");
 		attributeNames.add("totalPopulation");
-		attributeNames.add("totalArea");
 		choicesMap.put("Area", attributeNames);
 		attributeNames = FXCollections.observableArrayList();
-		attributeNames.add("longitude");
-		attributeNames.add("latitude");
+		attributeNames.add("centroidX");
+		attributeNames.add("centroidY");
 		attributeNames.add("xMin");
 		attributeNames.add("xMax");
 		attributeNames.add("yMin");
 		attributeNames.add("yMax");
 		attributeNames.add("totalPopulation");
-		attributeNames.add("totalArea");
 		choicesMap.put("Nuts3", attributeNames);
 		attributeNames = FXCollections.observableArrayList();
-		attributeNames.add("longitude");
-		attributeNames.add("latitude");
+		attributeNames.add("centroidX");
+		attributeNames.add("centroidY");
 		attributeNames.add("xMin");
 		attributeNames.add("xMax");
 		attributeNames.add("yMin");
 		attributeNames.add("yMax");
 		attributeNames.add("totalPopulation");
-		attributeNames.add("totalArea");
 		choicesMap.put("Province", attributeNames);
 		attributeNames = FXCollections.observableArrayList();
-		attributeNames.add("longitude");
-		attributeNames.add("latitude");
+		attributeNames.add("centroidX");
+		attributeNames.add("centroidY");
 		attributeNames.add("xMin");
 		attributeNames.add("xMax");
 		attributeNames.add("yMin");
 		attributeNames.add("yMax");
 		attributeNames.add("totalPopulation");
-		attributeNames.add("totalArea");
 		attributeNames.add("nr");
-		attributeNames.add("shapeLength");
-		attributeNames.add("shapeArea");
-		attributeNames.add("populationDensity");
-		attributeNames.add("cluster");
 		choicesMap.put("Shaped", attributeNames);
 		attributeNames = FXCollections.observableArrayList();
-		attributeNames.add("longitude");
-		attributeNames.add("latitude");
+		attributeNames.add("centroidX");
+		attributeNames.add("centroidY");
 		attributeNames.add("xMin");
 		attributeNames.add("xMax");
 		attributeNames.add("yMin");
 		attributeNames.add("yMax");
 		attributeNames.add("totalPopulation");
-		attributeNames.add("totalArea");
 		attributeNames.add("nr");
-		attributeNames.add("shapeLength");
-		attributeNames.add("shapeArea");
-		attributeNames.add("populationDensity");
-		attributeNames.add("cluster");
+		attributeNames.add("nrED");
+		choicesMap.put("County", attributeNames);
+		attributeNames = FXCollections.observableArrayList();
+		attributeNames.add("centroidX");
+		attributeNames.add("centroidY");
+		attributeNames.add("xMin");
+		attributeNames.add("xMax");
+		attributeNames.add("yMin");
+		attributeNames.add("yMax");
+		attributeNames.add("totalPopulation");
+		attributeNames.add("nr");
 		attributeNames.add("edId");
 		choicesMap.put("ElectoralDivision", attributeNames);
+		attributeNames = FXCollections.observableArrayList();
+		attributeNames.add("centroidX");
+		attributeNames.add("centroidY");
+		attributeNames.add("xMin");
+		attributeNames.add("xMax");
+		attributeNames.add("yMin");
+		attributeNames.add("yMax");
+		attributeNames.add("totalPopulation");
+		attributeNames.add("nr");
+		choicesMap.put("Lea", attributeNames);
 		attributeNames = FXCollections.observableArrayList();
 		attributeNames.add("value");
 		attributeNames.add("min");
@@ -180,12 +179,6 @@ public class BarChartController extends ChartController {
 			else if (className.equals("ApplicationWarning")) {
 				objectList = mainApp.getApplicationWarningData();
 			}
-			else if (className.equals("Country")) {
-				objectList = mainApp.getCountryData();
-			}
-			else if (className.equals("County")) {
-				objectList = mainApp.getCountyData();
-			}
 			else if (className.equals("ConstituencyType")) {
 				objectList = mainApp.getConstituencyTypeData();
 			}
@@ -204,8 +197,14 @@ public class BarChartController extends ChartController {
 			else if (className.equals("Shaped")) {
 				objectList = mainApp.getShapedData();
 			}
+			else if (className.equals("County")) {
+				objectList = mainApp.getCountyData();
+			}
 			else if (className.equals("ElectoralDivision")) {
 				objectList = mainApp.getElectoralDivisionData();
+			}
+			else if (className.equals("Lea")) {
+				objectList = mainApp.getLeaData();
 			}
 			else if (className.equals("Distance")) {
 				objectList = mainApp.getDistanceData();

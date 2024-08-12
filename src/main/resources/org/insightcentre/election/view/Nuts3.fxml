@@ -10,7 +10,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 
-<!--Generated at 17:04:25 on 2024-08-07-->
+<!--Generated at 10:26:59 on 2024-08-11-->
 
 
 <Tab text="Nuts3" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.insightcentre.election.controller.Nuts3Controller">
@@ -20,15 +20,14 @@
             <columns>
                <TableColumn fx:id="name" styleClass="right-aligned" text="Name" />
                <TableColumn fx:id="shortName" styleClass="right-aligned" text="ShortName" />
-               <TableColumn fx:id="longitude" styleClass="right-aligned" text="Longitude" />
-               <TableColumn fx:id="latitude" styleClass="right-aligned" text="Latitude" />
                <TableColumn fx:id="ident" styleClass="right-aligned" text="Ident" />
+               <TableColumn fx:id="centroidX" styleClass="right-aligned" text="CentroidX" />
+               <TableColumn fx:id="centroidY" styleClass="right-aligned" text="CentroidY" />
                <TableColumn editable="false" styleClass="right-aligned,disabled-column" text="XMin" fx:id="xMin" />
                <TableColumn editable="false" styleClass="right-aligned,disabled-column" text="XMax" fx:id="xMax" />
                <TableColumn fx:id="yMin" editable="false" styleClass="right-aligned,disabled-column" text="YMin" />
                <TableColumn fx:id="yMax" editable="false" styleClass="right-aligned,disabled-column" text="YMax" />
                <TableColumn fx:id="totalPopulation" editable="false" styleClass="right-aligned,disabled-column" text="TotalPopulation" />
-               <TableColumn fx:id="totalArea" editable="false" styleClass="right-aligned,disabled-column" text="TotalArea" />
             </columns>
          </TableView>
       </center>

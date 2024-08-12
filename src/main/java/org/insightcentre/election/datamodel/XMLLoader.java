@@ -188,25 +188,6 @@ public SolverType getSolverType(String attributeName,
         return res;
     }
 
-    public Country getCountry(String attributeName,
-                               Attributes attributes) {
-        return (Country) find(getId(attributeName,attributes));
-    }
-
-    public List<Country> getCountryCollectionFromIds(String attributeName,
-                                     Attributes attributes) {
-        String e = attributes.getValue(attributeName);
-        String[] words = e.split(" ");
-        List<Country> res = new ArrayList<Country>();
-        for (int i = 0; i < words.length; i++) {
-            if (words[i].length() > 0) {
-                int id = Integer.parseInt(words[i].substring(3));
-                res.add((Country) find(id));
-            }
-        }
-        return res;
-    }
-
     public County getCounty(String attributeName,
                                Attributes attributes) {
         return (County) find(getId(attributeName,attributes));
@@ -278,6 +259,25 @@ public SolverType getSolverType(String attributeName,
             if (words[i].length() > 0) {
                 int id = Integer.parseInt(words[i].substring(3));
                 res.add((ElectoralDivision) find(id));
+            }
+        }
+        return res;
+    }
+
+    public Lea getLea(String attributeName,
+                               Attributes attributes) {
+        return (Lea) find(getId(attributeName,attributes));
+    }
+
+    public List<Lea> getLeaCollectionFromIds(String attributeName,
+                                     Attributes attributes) {
+        String e = attributes.getValue(attributeName);
+        String[] words = e.split(" ");
+        List<Lea> res = new ArrayList<Lea>();
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() > 0) {
+                int id = Integer.parseInt(words[i].substring(3));
+                res.add((Lea) find(id));
             }
         }
         return res;
@@ -535,14 +535,6 @@ public SolverType getSolverType(String attributeName,
                         getInteger("gammaCostFactor",attributes,0),
                         getInteger("nrSeats",attributes,0)
                         ));
-            } else if (qname.equals("country")) {
-                assert (base != null);
-                int id = getId("id", attributes);
-                store(id, new Country(base,
-                        id,
-                        getString("name", attributes, "dummy"),
-                        getInteger("population",attributes,0)
-                        ));
             } else if (qname.equals("county")) {
                 assert (base != null);
                 int id = getId("id", attributes);
@@ -551,8 +543,16 @@ public SolverType getSolverType(String attributeName,
                         getString("name", attributes, "dummy"),
                         getDouble("centroidX",attributes,0.0),
                         getDouble("centroidY",attributes,0.0),
-                        getInteger("nrED",attributes,0),
-                        getInteger("population",attributes,0)
+                        getString("ident",attributes,""),
+                        getString("shortName",attributes,""),
+                        getInteger("totalPopulation",attributes,0),
+                        getDouble("xMax",attributes,0.0),
+                        getDouble("xMin",attributes,0.0),
+                        getDouble("yMax",attributes,0.0),
+                        getDouble("yMin",attributes,0.0),
+                        getInteger("nr",attributes,0),
+                        getString("shape",attributes,""),
+                        getInteger("nrED",attributes,0)
                         ));
             } else if (qname.equals("distance")) {
                 assert (base != null);
@@ -581,26 +581,39 @@ public SolverType getSolverType(String attributeName,
                 store(id, new ElectoralDivision(base,
                         id,
                         getString("name", attributes, "dummy"),
+                        getDouble("centroidX",attributes,0.0),
+                        getDouble("centroidY",attributes,0.0),
                         getString("ident",attributes,""),
-                        getDouble("latitude",attributes,0.0),
-                        getDouble("longitude",attributes,0.0),
                         getString("shortName",attributes,""),
-                        getDouble("totalArea",attributes,0.0),
                         getInteger("totalPopulation",attributes,0),
                         getDouble("xMax",attributes,0.0),
                         getDouble("xMin",attributes,0.0),
                         getDouble("yMax",attributes,0.0),
                         getDouble("yMin",attributes,0.0),
-                        getInteger("cluster",attributes,0),
-                        null,
                         getInteger("nr",attributes,0),
-                        getDouble("populationDensity",attributes,0.0),
-                        null,
                         getString("shape",attributes,""),
-                        getDouble("shapeArea",attributes,0.0),
-                        getDouble("shapeLength",attributes,0.0),
+                        null,
                         getInteger("edId",attributes,0),
-                        getString("edIdString",attributes,"")
+                        getString("edIdString",attributes,""),
+                        null
+                        ));
+            } else if (qname.equals("lea")) {
+                assert (base != null);
+                int id = getId("id", attributes);
+                store(id, new Lea(base,
+                        id,
+                        getString("name", attributes, "dummy"),
+                        getDouble("centroidX",attributes,0.0),
+                        getDouble("centroidY",attributes,0.0),
+                        getString("ident",attributes,""),
+                        getString("shortName",attributes,""),
+                        getInteger("totalPopulation",attributes,0),
+                        getDouble("xMax",attributes,0.0),
+                        getDouble("xMin",attributes,0.0),
+                        getDouble("yMax",attributes,0.0),
+                        getDouble("yMin",attributes,0.0),
+                        getInteger("nr",attributes,0),
+                        getString("shape",attributes,"")
                         ));
             } else if (qname.equals("neighborCounty")) {
                 assert (base != null);
@@ -617,11 +630,10 @@ public SolverType getSolverType(String attributeName,
                 store(id, new Nuts3(base,
                         id,
                         getString("name", attributes, "dummy"),
+                        getDouble("centroidX",attributes,0.0),
+                        getDouble("centroidY",attributes,0.0),
                         getString("ident",attributes,""),
-                        getDouble("latitude",attributes,0.0),
-                        getDouble("longitude",attributes,0.0),
                         getString("shortName",attributes,""),
-                        getDouble("totalArea",attributes,0.0),
                         getInteger("totalPopulation",attributes,0),
                         getDouble("xMax",attributes,0.0),
                         getDouble("xMin",attributes,0.0),
@@ -634,11 +646,10 @@ public SolverType getSolverType(String attributeName,
                 store(id, new Province(base,
                         id,
                         getString("name", attributes, "dummy"),
+                        getDouble("centroidX",attributes,0.0),
+                        getDouble("centroidY",attributes,0.0),
                         getString("ident",attributes,""),
-                        getDouble("latitude",attributes,0.0),
-                        getDouble("longitude",attributes,0.0),
                         getString("shortName",attributes,""),
-                        getDouble("totalArea",attributes,0.0),
                         getInteger("totalPopulation",attributes,0),
                         getDouble("xMax",attributes,0.0),
                         getDouble("xMin",attributes,0.0),
@@ -763,10 +774,6 @@ public SolverType getSolverType(String attributeName,
                 assert (base != null);
                 int id = getId("id", attributes);
                 ConstituencyType item = (ConstituencyType) find(id);
-            } else if (qname.equals("country")) {
-                assert (base != null);
-                int id = getId("id", attributes);
-                Country item = (Country) find(id);
             } else if (qname.equals("county")) {
                 assert (base != null);
                 int id = getId("id", attributes);
@@ -788,7 +795,11 @@ public SolverType getSolverType(String attributeName,
                 int id = getId("id", attributes);
                 ElectoralDivision item = (ElectoralDivision) find(id);
                  item.setCounty(getCounty("county",attributes));
-                 item.setProvince(getProvince("province",attributes));
+                 item.setLea(getLea("lea",attributes));
+            } else if (qname.equals("lea")) {
+                assert (base != null);
+                int id = getId("id", attributes);
+                Lea item = (Lea) find(id);
             } else if (qname.equals("neighborCounty")) {
                 assert (base != null);
                 int id = getId("id", attributes);

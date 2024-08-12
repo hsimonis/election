@@ -10,7 +10,6 @@ $\square$\ & xMax &  \\
 $\square$\ & yMin &  \\
 $\square$\ & yMax &  \\
 $\square$\ & totalPopulation &  \\
-$\square$\ & totalArea &  \\
 \end{longtable}
 \label{attr:Area}
 \end{table}
@@ -28,24 +27,11 @@ $\square$\ & gammaCostFactor &  \\
 \end{table}
 
 \begin{table}
-\caption{Country  }
-
-\begin{longtable}{llp{8cm}}
-& Attribute & Description \\
-$\square$\ & population &  \\
-\end{longtable}
-\label{attr:Country}
-\end{table}
-
-\begin{table}
 \caption{County  }
 
 \begin{longtable}{llp{8cm}}
 & Attribute & Description \\
-$\square$\ & population &  \\
 $\square$\ & nrED &  \\
-$\square$\ & centroidX &  \\
-$\square$\ & centroidY &  \\
 \end{longtable}
 \label{attr:County}
 \end{table}
@@ -75,7 +61,6 @@ $\square$\ & to &  \\
 \label{attr:DistanceError}
 \end{table}
 
-\clearpage
 \begin{table}
 \caption{ElectoralDivision  }
 
@@ -83,8 +68,20 @@ $\square$\ & to &  \\
 & Attribute & Description \\
 $\square$\ & edId &  \\
 $\square$\ & edIdString &  \\
+$\square$\ & county &  \\
+$\square$\ & lea &  \\
 \end{longtable}
 \label{attr:ElectoralDivision}
+\end{table}
+
+\clearpage
+\begin{table}
+\caption{Lea  }
+
+\begin{longtable}{llp{8cm}}
+& Attribute & Description \\
+\end{longtable}
+\label{attr:Lea}
 \end{table}
 
 \begin{table}
@@ -93,9 +90,9 @@ $\square$\ & edIdString &  \\
 \begin{longtable}{llp{8cm}}
 & Attribute & Description \\
 $\square$\ & shortName &  \\
-$\square$\ & longitude &  \\
-$\square$\ & latitude &  \\
 $\square$\ & ident &  \\
+$\square$\ & centroidX &  \\
+$\square$\ & centroidY &  \\
 \end{longtable}
 \label{attr:MapLocation}
 \end{table}
@@ -150,12 +147,6 @@ $\square$\ & totalPopulation &  \\
 \begin{longtable}{llp{8cm}}
 & Attribute & Description \\
 $\square$\ & nr &  \\
-$\square$\ & shapeLength &  \\
-$\square$\ & shapeArea &  \\
-$\square$\ & populationDensity &  \\
-$\square$\ & cluster &  \\
-$\square$\ & county &  \\
-$\square$\ & province &  \\
 $\square$\ & shape &  \\
 \end{longtable}
 \label{attr:Shaped}

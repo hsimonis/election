@@ -5,15 +5,15 @@ import org.insightcentre.election.datamodel.ApplicationObject;
 import org.insightcentre.election.datamodel.ApplicationDifference;
 import org.insightcentre.election.datamodel.ApplicationWarning;
 import org.insightcentre.election.datamodel.Scenario;
-import org.insightcentre.election.datamodel.Country;
-import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ConstituencyType;
 import org.insightcentre.election.datamodel.MapLocation;
 import org.insightcentre.election.datamodel.Area;
 import org.insightcentre.election.datamodel.Nuts3;
 import org.insightcentre.election.datamodel.Province;
 import org.insightcentre.election.datamodel.Shaped;
+import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ElectoralDivision;
+import org.insightcentre.election.datamodel.Lea;
 import org.insightcentre.election.datamodel.Distance;
 import org.insightcentre.election.datamodel.DistanceError;
 import org.insightcentre.election.datamodel.NeighborCounty;
@@ -73,11 +73,10 @@ public  class Province extends Area{
     public Province(ApplicationDataset applicationDataset,
             Integer id,
             String name,
+            Double centroidX,
+            Double centroidY,
             String ident,
-            Double latitude,
-            Double longitude,
             String shortName,
-            Double totalArea,
             Integer totalPopulation,
             Double xMax,
             Double xMin,
@@ -86,11 +85,10 @@ public  class Province extends Area{
         super(applicationDataset,
             id,
             name,
+            centroidX,
+            centroidY,
             ident,
-            latitude,
-            longitude,
             shortName,
-            totalArea,
             totalPopulation,
             xMax,
             xMin,
@@ -103,11 +101,10 @@ public  class Province extends Area{
         this(other.applicationDataset,
             other.id,
             other.name,
+            other.centroidX,
+            other.centroidY,
             other.ident,
-            other.latitude,
-            other.longitude,
             other.shortName,
-            other.totalArea,
             other.totalPopulation,
             other.xMax,
             other.xMin,
@@ -123,7 +120,6 @@ public  class Province extends Area{
 */
 
     public Boolean remove(){
-        getApplicationDataset().cascadeShapedProvince(this);
         getApplicationDataset().cascadeDistanceFrom(this);
         getApplicationDataset().cascadeDistanceTo(this);
         getApplicationDataset().cascadeDistanceErrorFrom(this);
@@ -148,7 +144,7 @@ public  class Province extends Area{
 */
 
     public String prettyString(){
-        return ""+ " " +getId()+ " " +getName()+ " " +getIdent()+ " " +getLatitude()+ " " +getLongitude()+ " " +getShortName()+ " " +getTotalArea()+ " " +getTotalPopulation()+ " " +getXMax()+ " " +getXMin()+ " " +getYMax()+ " " +getYMin();
+        return ""+ " " +getId()+ " " +getName()+ " " +getCentroidX()+ " " +getCentroidY()+ " " +getIdent()+ " " +getShortName()+ " " +getTotalPopulation()+ " " +getXMax()+ " " +getXMin()+ " " +getYMax()+ " " +getYMin();
     }
 
 /**
@@ -172,11 +168,10 @@ public  class Province extends Area{
          out.println("<province "+ " applicationDataset=\""+toXMLApplicationDataset()+"\""+
             " id=\""+toXMLId()+"\""+
             " name=\""+toXMLName()+"\""+
+            " centroidX=\""+toXMLCentroidX()+"\""+
+            " centroidY=\""+toXMLCentroidY()+"\""+
             " ident=\""+toXMLIdent()+"\""+
-            " latitude=\""+toXMLLatitude()+"\""+
-            " longitude=\""+toXMLLongitude()+"\""+
             " shortName=\""+toXMLShortName()+"\""+
-            " totalArea=\""+toXMLTotalArea()+"\""+
             " totalPopulation=\""+toXMLTotalPopulation()+"\""+
             " xMax=\""+toXMLXMax()+"\""+
             " xMin=\""+toXMLXMin()+"\""+
@@ -191,11 +186,11 @@ public  class Province extends Area{
 */
 
     public static String toHTMLLabels(){
-        return "<tr><th>Province</th>"+"<th>Name</th>"+"<th>ShortName</th>"+"<th>Longitude</th>"+"<th>Latitude</th>"+"<th>Ident</th>"+"<th>XMin</th>"+"<th>XMax</th>"+"<th>YMin</th>"+"<th>YMax</th>"+"<th>TotalPopulation</th>"+"<th>TotalArea</th>"+"</tr>";
+        return "<tr><th>Province</th>"+"<th>Name</th>"+"<th>ShortName</th>"+"<th>Ident</th>"+"<th>CentroidX</th>"+"<th>CentroidY</th>"+"<th>XMin</th>"+"<th>XMax</th>"+"<th>YMin</th>"+"<th>YMax</th>"+"<th>TotalPopulation</th>"+"</tr>";
     }
 
     public String toHTML(){
-        return "<tr><th>&nbsp;</th>"+"<td>"+getName()+"</td>"+ " " +"<td>"+getShortName()+"</td>"+ " " +"<td>"+getLongitude()+"</td>"+ " " +"<td>"+getLatitude()+"</td>"+ " " +"<td>"+getIdent()+"</td>"+ " " +"<td>"+getXMin()+"</td>"+ " " +"<td>"+getXMax()+"</td>"+ " " +"<td>"+getYMin()+"</td>"+ " " +"<td>"+getYMax()+"</td>"+ " " +"<td>"+getTotalPopulation()+"</td>"+ " " +"<td>"+getTotalArea()+"</td>"+"</tr>";
+        return "<tr><th>&nbsp;</th>"+"<td>"+getName()+"</td>"+ " " +"<td>"+getShortName()+"</td>"+ " " +"<td>"+getIdent()+"</td>"+ " " +"<td>"+getCentroidX()+"</td>"+ " " +"<td>"+getCentroidY()+"</td>"+ " " +"<td>"+getXMin()+"</td>"+ " " +"<td>"+getXMax()+"</td>"+ " " +"<td>"+getYMin()+"</td>"+ " " +"<td>"+getYMax()+"</td>"+ " " +"<td>"+getTotalPopulation()+"</td>"+"</tr>";
     }
 
 /**
@@ -312,23 +307,20 @@ public  class Province extends Area{
 */
 
     public Boolean applicationEqual(Province b){
+      if(!this.getCentroidX().equals(b.getCentroidX())){
+         System.out.println("CentroidX");
+        }
+      if(!this.getCentroidY().equals(b.getCentroidY())){
+         System.out.println("CentroidY");
+        }
       if(!this.getIdent().equals(b.getIdent())){
          System.out.println("Ident");
-        }
-      if(!this.getLatitude().equals(b.getLatitude())){
-         System.out.println("Latitude");
-        }
-      if(!this.getLongitude().equals(b.getLongitude())){
-         System.out.println("Longitude");
         }
       if(!this.getName().equals(b.getName())){
          System.out.println("Name");
         }
       if(!this.getShortName().equals(b.getShortName())){
          System.out.println("ShortName");
-        }
-      if(!this.getTotalArea().equals(b.getTotalArea())){
-         System.out.println("TotalArea");
         }
       if(!this.getTotalPopulation().equals(b.getTotalPopulation())){
          System.out.println("TotalPopulation");
@@ -345,12 +337,11 @@ public  class Province extends Area{
       if(!this.getYMin().equals(b.getYMin())){
          System.out.println("YMin");
         }
-        return  this.getIdent().equals(b.getIdent()) &&
-          this.getLatitude().equals(b.getLatitude()) &&
-          this.getLongitude().equals(b.getLongitude()) &&
+        return  this.getCentroidX().equals(b.getCentroidX()) &&
+          this.getCentroidY().equals(b.getCentroidY()) &&
+          this.getIdent().equals(b.getIdent()) &&
           this.getName().equals(b.getName()) &&
           this.getShortName().equals(b.getShortName()) &&
-          this.getTotalArea().equals(b.getTotalArea()) &&
           this.getTotalPopulation().equals(b.getTotalPopulation()) &&
           this.getXMax().equals(b.getXMax()) &&
           this.getXMin().equals(b.getXMin()) &&

@@ -5,15 +5,15 @@ import org.insightcentre.election.datamodel.ApplicationObject;
 import org.insightcentre.election.datamodel.ApplicationDifference;
 import org.insightcentre.election.datamodel.ApplicationWarning;
 import org.insightcentre.election.datamodel.Scenario;
-import org.insightcentre.election.datamodel.Country;
-import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ConstituencyType;
 import org.insightcentre.election.datamodel.MapLocation;
 import org.insightcentre.election.datamodel.Area;
 import org.insightcentre.election.datamodel.Nuts3;
 import org.insightcentre.election.datamodel.Province;
 import org.insightcentre.election.datamodel.Shaped;
+import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.ElectoralDivision;
+import org.insightcentre.election.datamodel.Lea;
 import org.insightcentre.election.datamodel.Distance;
 import org.insightcentre.election.datamodel.DistanceError;
 import org.insightcentre.election.datamodel.NeighborCounty;
@@ -40,34 +40,13 @@ import framework.AppearInCollection;
  * @author generated
 */
 
-public  class County extends ApplicationObject{
-/**
- *  
- *
-*/
-
-    public Double centroidX;
-
-/**
- *  
- *
-*/
-
-    public Double centroidY;
-
+public  class County extends Shaped{
 /**
  *  
  *
 */
 
     public Integer nrED;
-
-/**
- *  
- *
-*/
-
-    public Integer population;
 
 /**
  *  No-arg constructor for use in TableView
@@ -88,10 +67,7 @@ public  class County extends ApplicationObject{
 
     public County(ApplicationDataset applicationDataset){
         super(applicationDataset);
-        setCentroidX(0.0);
-        setCentroidY(0.0);
         setNrED(0);
-        setPopulation(0);
         applicationDataset.addCounty(this);
     }
 
@@ -107,15 +83,31 @@ public  class County extends ApplicationObject{
             String name,
             Double centroidX,
             Double centroidY,
-            Integer nrED,
-            Integer population){
+            String ident,
+            String shortName,
+            Integer totalPopulation,
+            Double xMax,
+            Double xMin,
+            Double yMax,
+            Double yMin,
+            Integer nr,
+            String shape,
+            Integer nrED){
         super(applicationDataset,
             id,
-            name);
-        setCentroidX(centroidX);
-        setCentroidY(centroidY);
+            name,
+            centroidX,
+            centroidY,
+            ident,
+            shortName,
+            totalPopulation,
+            xMax,
+            xMin,
+            yMax,
+            yMin,
+            nr,
+            shape);
         setNrED(nrED);
-        setPopulation(population);
         applicationDataset.addCounty(this);
     }
 
@@ -125,8 +117,16 @@ public  class County extends ApplicationObject{
             other.name,
             other.centroidX,
             other.centroidY,
-            other.nrED,
-            other.population);
+            other.ident,
+            other.shortName,
+            other.totalPopulation,
+            other.xMax,
+            other.xMin,
+            other.yMax,
+            other.yMin,
+            other.nr,
+            other.shape,
+            other.nrED);
     }
 
 /**
@@ -139,31 +139,15 @@ public  class County extends ApplicationObject{
     public Boolean remove(){
         getApplicationDataset().cascadeNeighborCountyCounty1(this);
         getApplicationDataset().cascadeNeighborCountyCounty2(this);
-        getApplicationDataset().cascadeShapedCounty(this);
+        getApplicationDataset().cascadeElectoralDivisionCounty(this);
+        getApplicationDataset().cascadeDistanceFrom(this);
+        getApplicationDataset().cascadeDistanceTo(this);
+        getApplicationDataset().cascadeDistanceErrorFrom(this);
+        getApplicationDataset().cascadeDistanceErrorTo(this);
         getApplicationDataset().cascadeSolCountyCounty(this);
         getApplicationDataset().cascadeSolTransferFrom(this);
         getApplicationDataset().cascadeSolTransferTo(this);
-        return getApplicationDataset().removeCounty(this) && getApplicationDataset().removeApplicationObject(this);
-    }
-
-/**
- *  get attribute centroidX
- *
- * @return Double
-*/
-
-    public Double getCentroidX(){
-        return this.centroidX;
-    }
-
-/**
- *  get attribute centroidY
- *
- * @return Double
-*/
-
-    public Double getCentroidY(){
-        return this.centroidY;
+        return getApplicationDataset().removeCounty(this) && getApplicationDataset().removeShaped(this) && getApplicationDataset().removeArea(this) && getApplicationDataset().removeMapLocation(this) && getApplicationDataset().removeApplicationObject(this);
     }
 
 /**
@@ -174,40 +158,6 @@ public  class County extends ApplicationObject{
 
     public Integer getNrED(){
         return this.nrED;
-    }
-
-/**
- *  get attribute population
- *
- * @return Integer
-*/
-
-    public Integer getPopulation(){
-        return this.population;
-    }
-
-/**
- *  set attribute centroidX, mark dataset as dirty, mark dataset as not valid
-@param centroidX Double
- *
-*/
-
-    public void setCentroidX(Double centroidX){
-        this.centroidX = centroidX;
-        getApplicationDataset().setDirty(true);
-        getApplicationDataset().setValid(false);
-    }
-
-/**
- *  set attribute centroidY, mark dataset as dirty, mark dataset as not valid
-@param centroidY Double
- *
-*/
-
-    public void setCentroidY(Double centroidY){
-        this.centroidY = centroidY;
-        getApplicationDataset().setDirty(true);
-        getApplicationDataset().setValid(false);
     }
 
 /**
@@ -223,35 +173,12 @@ public  class County extends ApplicationObject{
     }
 
 /**
- *  set attribute population, mark dataset as dirty, mark dataset as not valid
-@param population Integer
- *
-*/
-
-    public void setPopulation(Integer population){
-        this.population = population;
-        getApplicationDataset().setDirty(true);
-        getApplicationDataset().setValid(false);
-    }
-
-/**
  *  inc attribute nrED, mark dataset as dirty, mark dataset as not valid
  *
 */
 
     public void incNrED(){
         this.nrED++;
-        getApplicationDataset().setDirty(true);
-        getApplicationDataset().setValid(false);
-    }
-
-/**
- *  inc attribute population, mark dataset as dirty, mark dataset as not valid
- *
-*/
-
-    public void incPopulation(){
-        this.population++;
         getApplicationDataset().setDirty(true);
         getApplicationDataset().setValid(false);
     }
@@ -273,7 +200,7 @@ public  class County extends ApplicationObject{
 */
 
     public String prettyString(){
-        return ""+ " " +getId()+ " " +getName()+ " " +getCentroidX()+ " " +getCentroidY()+ " " +getNrED()+ " " +getPopulation();
+        return ""+ " " +getId()+ " " +getName()+ " " +getCentroidX()+ " " +getCentroidY()+ " " +getIdent()+ " " +getShortName()+ " " +getTotalPopulation()+ " " +getXMax()+ " " +getXMin()+ " " +getYMax()+ " " +getYMin()+ " " +getNr()+ " " +getShape()+ " " +getNrED();
     }
 
 /**
@@ -299,29 +226,17 @@ public  class County extends ApplicationObject{
             " name=\""+toXMLName()+"\""+
             " centroidX=\""+toXMLCentroidX()+"\""+
             " centroidY=\""+toXMLCentroidY()+"\""+
-            " nrED=\""+toXMLNrED()+"\""+
-            " population=\""+toXMLPopulation()+"\""+" />");
+            " ident=\""+toXMLIdent()+"\""+
+            " shortName=\""+toXMLShortName()+"\""+
+            " totalPopulation=\""+toXMLTotalPopulation()+"\""+
+            " xMax=\""+toXMLXMax()+"\""+
+            " xMin=\""+toXMLXMin()+"\""+
+            " yMax=\""+toXMLYMax()+"\""+
+            " yMin=\""+toXMLYMin()+"\""+
+            " nr=\""+toXMLNr()+"\""+
+            " shape=\""+toXMLShape()+"\""+
+            " nrED=\""+toXMLNrED()+"\""+" />");
      }
-
-/**
- * helper method for toXML(), prcess one attribute
- * probably useless on its own
- * @return String
-*/
-
-    String toXMLCentroidX(){
-        return this.getCentroidX().toString();
-    }
-
-/**
- * helper method for toXML(), prcess one attribute
- * probably useless on its own
- * @return String
-*/
-
-    String toXMLCentroidY(){
-        return this.getCentroidY().toString();
-    }
 
 /**
  * helper method for toXML(), prcess one attribute
@@ -334,27 +249,17 @@ public  class County extends ApplicationObject{
     }
 
 /**
- * helper method for toXML(), prcess one attribute
- * probably useless on its own
- * @return String
-*/
-
-    String toXMLPopulation(){
-        return this.getPopulation().toString();
-    }
-
-/**
  * show object as one row in an HTML table
  * 
  * @return String of form <tr>...</tr>
 */
 
     public static String toHTMLLabels(){
-        return "<tr><th>County</th>"+"<th>Name</th>"+"<th>Population</th>"+"<th>NrED</th>"+"<th>CentroidX</th>"+"<th>CentroidY</th>"+"</tr>";
+        return "<tr><th>County</th>"+"<th>Name</th>"+"<th>ShortName</th>"+"<th>Ident</th>"+"<th>CentroidX</th>"+"<th>CentroidY</th>"+"<th>XMin</th>"+"<th>XMax</th>"+"<th>YMin</th>"+"<th>YMax</th>"+"<th>TotalPopulation</th>"+"<th>Nr</th>"+"<th>Shape</th>"+"<th>NrED</th>"+"</tr>";
     }
 
     public String toHTML(){
-        return "<tr><th>&nbsp;</th>"+"<td>"+getName()+"</td>"+ " " +"<td>"+getPopulation()+"</td>"+ " " +"<td>"+getNrED()+"</td>"+ " " +"<td>"+getCentroidX()+"</td>"+ " " +"<td>"+getCentroidY()+"</td>"+"</tr>";
+        return "<tr><th>&nbsp;</th>"+"<td>"+getName()+"</td>"+ " " +"<td>"+getShortName()+"</td>"+ " " +"<td>"+getIdent()+"</td>"+ " " +"<td>"+getCentroidX()+"</td>"+ " " +"<td>"+getCentroidY()+"</td>"+ " " +"<td>"+getXMin()+"</td>"+ " " +"<td>"+getXMax()+"</td>"+ " " +"<td>"+getYMin()+"</td>"+ " " +"<td>"+getYMax()+"</td>"+ " " +"<td>"+getTotalPopulation()+"</td>"+ " " +"<td>"+getNr()+"</td>"+ " " +"<td>"+getShape()+"</td>"+ " " +"<td>"+getNrED()+"</td>"+"</tr>";
     }
 
 /**
@@ -477,20 +382,52 @@ public  class County extends ApplicationObject{
       if(!this.getCentroidY().equals(b.getCentroidY())){
          System.out.println("CentroidY");
         }
+      if(!this.getIdent().equals(b.getIdent())){
+         System.out.println("Ident");
+        }
       if(!this.getName().equals(b.getName())){
          System.out.println("Name");
+        }
+      if(!this.getNr().equals(b.getNr())){
+         System.out.println("Nr");
         }
       if(!this.getNrED().equals(b.getNrED())){
          System.out.println("NrED");
         }
-      if(!this.getPopulation().equals(b.getPopulation())){
-         System.out.println("Population");
+      if(!this.getShape().equals(b.getShape())){
+         System.out.println("Shape");
+        }
+      if(!this.getShortName().equals(b.getShortName())){
+         System.out.println("ShortName");
+        }
+      if(!this.getTotalPopulation().equals(b.getTotalPopulation())){
+         System.out.println("TotalPopulation");
+        }
+      if(!this.getXMax().equals(b.getXMax())){
+         System.out.println("XMax");
+        }
+      if(!this.getXMin().equals(b.getXMin())){
+         System.out.println("XMin");
+        }
+      if(!this.getYMax().equals(b.getYMax())){
+         System.out.println("YMax");
+        }
+      if(!this.getYMin().equals(b.getYMin())){
+         System.out.println("YMin");
         }
         return  this.getCentroidX().equals(b.getCentroidX()) &&
           this.getCentroidY().equals(b.getCentroidY()) &&
+          this.getIdent().equals(b.getIdent()) &&
           this.getName().equals(b.getName()) &&
+          this.getNr().equals(b.getNr()) &&
           this.getNrED().equals(b.getNrED()) &&
-          this.getPopulation().equals(b.getPopulation());
+          this.getShape().equals(b.getShape()) &&
+          this.getShortName().equals(b.getShortName()) &&
+          this.getTotalPopulation().equals(b.getTotalPopulation()) &&
+          this.getXMax().equals(b.getXMax()) &&
+          this.getXMin().equals(b.getXMin()) &&
+          this.getYMax().equals(b.getYMax()) &&
+          this.getYMin().equals(b.getYMin());
     }
 
 /**

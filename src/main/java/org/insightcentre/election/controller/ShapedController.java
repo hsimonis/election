@@ -14,16 +14,13 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.ComboBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import org.insightcentre.election.GeneratedJfxApp;
-import org.insightcentre.election.datamodel.County;
-import org.insightcentre.election.datamodel.Province;
 import org.insightcentre.election.datamodel.Shaped;
 
 /**
- * Generated at 17:04:25 on 2024-08-07 */
+ * Generated at 10:26:59 on 2024-08-11 */
 public class ShapedController extends Table3Controller {
 	@FXML
 	private TableView<Shaped> table;
@@ -35,13 +32,13 @@ public class ShapedController extends Table3Controller {
 	private TableColumn<Shaped, String> shortName;
 
 	@FXML
-	private TableColumn<Shaped, Double> longitude;
-
-	@FXML
-	private TableColumn<Shaped, Double> latitude;
-
-	@FXML
 	private TableColumn<Shaped, String> ident;
+
+	@FXML
+	private TableColumn<Shaped, Double> centroidX;
+
+	@FXML
+	private TableColumn<Shaped, Double> centroidY;
 
 	@FXML
 	private TableColumn<Shaped, Double> xMin;
@@ -59,28 +56,7 @@ public class ShapedController extends Table3Controller {
 	private TableColumn<Shaped, Integer> totalPopulation;
 
 	@FXML
-	private TableColumn<Shaped, Double> totalArea;
-
-	@FXML
 	private TableColumn<Shaped, Integer> nr;
-
-	@FXML
-	private TableColumn<Shaped, Double> shapeLength;
-
-	@FXML
-	private TableColumn<Shaped, Double> shapeArea;
-
-	@FXML
-	private TableColumn<Shaped, Double> populationDensity;
-
-	@FXML
-	private TableColumn<Shaped, Integer> cluster;
-
-	@FXML
-	private TableColumn<Shaped, County> county;
-
-	@FXML
-	private TableColumn<Shaped, Province> province;
 
 	@FXML
 	private TableColumn<Shaped, String> shape;
@@ -91,10 +67,6 @@ public class ShapedController extends Table3Controller {
 	public void setMainApp(AbstractJfxMainWindow app) {
 		mainApp = (GeneratedJfxApp) app;
 		table.setItems(mainApp.getShapedData());
-		county.setCellFactory(ComboBoxTableCell.forTableColumn(mainApp.getCountyData()));
-		county.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCounty(event.getNewValue()); mainApp.reset();});
-		province.setCellFactory(ComboBoxTableCell.forTableColumn(mainApp.getProvinceData()));
-		province.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setProvince(event.getNewValue()); mainApp.reset();});
 	}
 
 	public TableView<Shaped> getTable() {
@@ -114,18 +86,18 @@ public class ShapedController extends Table3Controller {
 		shortName.setCellValueFactory(new PropertyValueFactory<>("shortName"));
 		shortName.setCellFactory(TextFieldTableCell.forTableColumn());
 		shortName.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setShortName(event.getNewValue()); mainApp.reset();});
-		choices.add("longitude");
-		longitude.setCellValueFactory(new PropertyValueFactory<>("longitude"));
-		longitude.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
-		longitude.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setLongitude(event.getNewValue()); mainApp.reset();});
-		choices.add("latitude");
-		latitude.setCellValueFactory(new PropertyValueFactory<>("latitude"));
-		latitude.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
-		latitude.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setLatitude(event.getNewValue()); mainApp.reset();});
 		choices.add("ident");
 		ident.setCellValueFactory(new PropertyValueFactory<>("ident"));
 		ident.setCellFactory(TextFieldTableCell.forTableColumn());
 		ident.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setIdent(event.getNewValue()); mainApp.reset();});
+		choices.add("centroidX");
+		centroidX.setCellValueFactory(new PropertyValueFactory<>("centroidX"));
+		centroidX.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
+		centroidX.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCentroidX(event.getNewValue()); mainApp.reset();});
+		choices.add("centroidY");
+		centroidY.setCellValueFactory(new PropertyValueFactory<>("centroidY"));
+		centroidY.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
+		centroidY.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCentroidY(event.getNewValue()); mainApp.reset();});
 		choices.add("xMin");
 		xMin.setCellValueFactory(new PropertyValueFactory<>("xMin"));
 		xMin.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.0000")));
@@ -146,34 +118,10 @@ public class ShapedController extends Table3Controller {
 		totalPopulation.setCellValueFactory(new PropertyValueFactory<>("totalPopulation"));
 		totalPopulation.setCellFactory(TextFieldTableCell.forTableColumn(INTEGER_CONVERTER));
 		totalPopulation.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setTotalPopulation(event.getNewValue()); mainApp.reset();});
-		choices.add("totalArea");
-		totalArea.setCellValueFactory(new PropertyValueFactory<>("totalArea"));
-		totalArea.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
-		totalArea.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setTotalArea(event.getNewValue()); mainApp.reset();});
 		choices.add("nr");
 		nr.setCellValueFactory(new PropertyValueFactory<>("nr"));
 		nr.setCellFactory(TextFieldTableCell.forTableColumn(INTEGER_CONVERTER));
 		nr.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setNr(event.getNewValue()); mainApp.reset();});
-		choices.add("shapeLength");
-		shapeLength.setCellValueFactory(new PropertyValueFactory<>("shapeLength"));
-		shapeLength.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
-		shapeLength.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setShapeLength(event.getNewValue()); mainApp.reset();});
-		choices.add("shapeArea");
-		shapeArea.setCellValueFactory(new PropertyValueFactory<>("shapeArea"));
-		shapeArea.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
-		shapeArea.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setShapeArea(event.getNewValue()); mainApp.reset();});
-		choices.add("populationDensity");
-		populationDensity.setCellValueFactory(new PropertyValueFactory<>("populationDensity"));
-		populationDensity.setCellFactory(TextFieldTableCell.forTableColumn(getDoubleConverter("#,##0.00")));
-		populationDensity.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setPopulationDensity(event.getNewValue()); mainApp.reset();});
-		choices.add("cluster");
-		cluster.setCellValueFactory(new PropertyValueFactory<>("cluster"));
-		cluster.setCellFactory(TextFieldTableCell.forTableColumn(INTEGER_CONVERTER));
-		cluster.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCluster(event.getNewValue()); mainApp.reset();});
-		choices.add("county");
-		county.setCellValueFactory(new PropertyValueFactory<>("county"));
-		choices.add("province");
-		province.setCellValueFactory(new PropertyValueFactory<>("province"));
 		choices.add("shape");
 		shape.setCellValueFactory(new PropertyValueFactory<>("shape"));
 		shape.setCellFactory(TextFieldTableCell.forTableColumn());
