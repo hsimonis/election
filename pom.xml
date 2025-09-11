@@ -47,22 +47,22 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<dependency>
 			<groupId>org.insight-centre</groupId>
 			<artifactId>framework</artifactId>
-			<version>4.10.0</version>
+			<version>5.0.0</version>
 		</dependency>
 		   <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-controls</artifactId>
-        <version>18.0.1</version>
+        <version>24.0.2</version>
     </dependency>
    <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-fxml</artifactId>
-        <version>18.0.1</version>
+        <version>24.0.2</version>
     </dependency>
    <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-web</artifactId>
-        <version>18.0.1</version>
+        <version>24.0.2</version>
     </dependency>
     <dependency>
         <groupId>org.jbibtex</groupId>
@@ -77,18 +77,18 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
-        <version>3.12.0</version>
+        <version>3.18.0</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/edu.princeton.cs/algs4 -->
     <dependency>
-        <groupId>edu.princeton.cs</groupId>
-        <artifactId>algs4</artifactId>
-        <version>1.0.0</version>
+        <groupId>com.googlecode.princeton-java-algorithms</groupId>
+        <artifactId>algorithms</artifactId>
+        <version>4.0.1</version>
     </dependency>
     <dependency>
         <groupId>com.ibm.ilog</groupId>
         <artifactId>cplex</artifactId>
-        <version>22.1.0</version>
+        <version>22.1.1</version>
     </dependency>
 
 </dependencies>
