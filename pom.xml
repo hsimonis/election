@@ -47,7 +47,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<dependency>
 			<groupId>org.insight-centre</groupId>
 			<artifactId>framework</artifactId>
-			<version>5.0.0</version>
+			<version>5.2.0</version>
 		</dependency>
 		   <dependency>
         <groupId>org.openjfx</groupId>
