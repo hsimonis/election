@@ -20,7 +20,8 @@ import org.insightcentre.election.datamodel.DistanceError;
 import org.insightcentre.election.datamodel.MapLocation;
 
 /**
- * Generated at 10:26:59 on 2024-08-11 */
+ * Generated code
+ */
 public class DistanceErrorController extends Table3Controller {
 	@FXML
 	private TableView<DistanceError> table;
@@ -39,6 +40,7 @@ public class DistanceErrorController extends Table3Controller {
 	@Override
 	public void setMainApp(AbstractJfxMainWindow app) {
 		mainApp = (GeneratedJfxApp) app;
+		table.setEditable(true);
 		table.setItems(mainApp.getDistanceErrorData());
 		from.setCellFactory(ComboBoxTableCell.forTableColumn(mainApp.getMapLocationData()));
 		from.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setFrom(event.getNewValue()); mainApp.reset();});

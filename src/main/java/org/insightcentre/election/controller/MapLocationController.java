@@ -19,7 +19,8 @@ import org.insightcentre.election.GeneratedJfxApp;
 import org.insightcentre.election.datamodel.MapLocation;
 
 /**
- * Generated at 10:26:59 on 2024-08-11 */
+ * Generated code
+ */
 public class MapLocationController extends Table3Controller {
 	@FXML
 	private TableView<MapLocation> table;
@@ -44,6 +45,7 @@ public class MapLocationController extends Table3Controller {
 	@Override
 	public void setMainApp(AbstractJfxMainWindow app) {
 		mainApp = (GeneratedJfxApp) app;
+		table.setEditable(true);
 		table.setItems(mainApp.getMapLocationData());
 	}
 

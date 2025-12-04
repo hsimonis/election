@@ -23,7 +23,8 @@ import org.insightcentre.election.datamodel.ElectoralDivision;
 import org.insightcentre.election.datamodel.Lea;
 
 /**
- * Generated at 10:26:59 on 2024-08-11 */
+ * Generated code
+ */
 public class ElectoralDivisionController extends Table3Controller {
 	@FXML
 	private TableView<ElectoralDivision> table;
@@ -81,6 +82,7 @@ public class ElectoralDivisionController extends Table3Controller {
 	@Override
 	public void setMainApp(AbstractJfxMainWindow app) {
 		mainApp = (GeneratedJfxApp) app;
+		table.setEditable(true);
 		table.setItems(mainApp.getElectoralDivisionData());
 		county.setCellFactory(ComboBoxTableCell.forTableColumn(mainApp.getCountyData()));
 		county.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCounty(event.getNewValue()); mainApp.reset();});

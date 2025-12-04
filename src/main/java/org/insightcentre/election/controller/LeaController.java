@@ -20,7 +20,8 @@ import org.insightcentre.election.GeneratedJfxApp;
 import org.insightcentre.election.datamodel.Lea;
 
 /**
- * Generated at 10:26:59 on 2024-08-11 */
+ * Generated code
+ */
 public class LeaController extends Table3Controller {
 	@FXML
 	private TableView<Lea> table;
@@ -66,6 +67,7 @@ public class LeaController extends Table3Controller {
 	@Override
 	public void setMainApp(AbstractJfxMainWindow app) {
 		mainApp = (GeneratedJfxApp) app;
+		table.setEditable(true);
 		table.setItems(mainApp.getLeaData());
 	}
 

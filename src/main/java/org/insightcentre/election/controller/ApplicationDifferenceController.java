@@ -20,7 +20,8 @@ import org.insightcentre.election.datamodel.ApplicationDifference;
 import org.insightcentre.election.datamodel.DifferenceType;
 
 /**
- * Generated at 10:26:59 on 2024-08-11 */
+ * Generated code
+ */
 public class ApplicationDifferenceController extends Table3Controller {
 	@FXML
 	private TableView<ApplicationDifference> table;
@@ -39,6 +40,7 @@ public class ApplicationDifferenceController extends Table3Controller {
 	@Override
 	public void setMainApp(AbstractJfxMainWindow app) {
 		mainApp = (GeneratedJfxApp) app;
+		table.setEditable(true);
 		table.setItems(mainApp.getApplicationDifferenceData());
 		ObservableList<DifferenceType> typeValues = FXCollections.observableArrayList(DifferenceType.values());
 		type.setCellFactory(ComboBoxTableCell.forTableColumn(typeValues));

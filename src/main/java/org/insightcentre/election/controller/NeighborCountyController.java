@@ -20,7 +20,8 @@ import org.insightcentre.election.datamodel.County;
 import org.insightcentre.election.datamodel.NeighborCounty;
 
 /**
- * Generated at 10:26:59 on 2024-08-11 */
+ * Generated code
+ */
 public class NeighborCountyController extends Table3Controller {
 	@FXML
 	private TableView<NeighborCounty> table;
@@ -39,6 +40,7 @@ public class NeighborCountyController extends Table3Controller {
 	@Override
 	public void setMainApp(AbstractJfxMainWindow app) {
 		mainApp = (GeneratedJfxApp) app;
+		table.setEditable(true);
 		table.setItems(mainApp.getNeighborCountyData());
 		county1.setCellFactory(ComboBoxTableCell.forTableColumn(mainApp.getCountyData()));
 		county1.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setCounty1(event.getNewValue()); mainApp.reset();});

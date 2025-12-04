@@ -43,10 +43,11 @@ import org.insightcentre.election.datamodel.Solution;
 import org.insightcentre.election.datamodel.XMLLoader;
 
 /**
- * Generated at 10:26:59 on 2024-08-11 */
+ * Generated code
+ */
 public class GeneratedJfxApp extends AbstractJfxMainWindow {
 	static {
-		FREEMARKER_CFG.setClassForTemplateLoading(GeneratedJfxApp.class, "C:/Users/hsimonis/Documents/Github/election/site/web");
+		FREEMARKER_CFG.setClassForTemplateLoading(GeneratedJfxApp.class, "site/web/");
 	}
 
 	public Scenario basebase;
@@ -94,7 +95,7 @@ public class GeneratedJfxApp extends AbstractJfxMainWindow {
 	private ObservableList<SolConstType> solConstTypeData = FXCollections.observableArrayList();
 
 	public GeneratedJfxApp() {
-		super("election", "Election District Mapping - Insight SFI Centre for Data Analytics", "*.data", "C:/Users/hsimonis/Documents/Github/election");
+		super("election", "Election District Mapping - Insight SFI Centre for Data Analytics, University College Cork", "*.data", "data/");
 		fs = minimalDataset();
 		reset();
 		tableViews.put("ConstituencyType", "ConstituencyType");
@@ -168,6 +169,10 @@ public class GeneratedJfxApp extends AbstractJfxMainWindow {
 	@Override
 	public void setStatus(String text) {
 		controller.setStatus(text);
+	}
+
+	public void setTitle(String text) {
+		if (primaryStage != null) primaryStage.setTitle(text);
 	}
 
 	@Override

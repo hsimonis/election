@@ -22,7 +22,8 @@ import org.insightcentre.election.datamodel.Solution;
 import org.insightcentre.election.datamodel.SolutionStatus;
 
 /**
- * Generated at 10:26:59 on 2024-08-11 */
+ * Generated code
+ */
 public class SolutionController extends Table3Controller {
 	@FXML
 	private TableView<Solution> table;
@@ -107,6 +108,7 @@ public class SolutionController extends Table3Controller {
 	@Override
 	public void setMainApp(AbstractJfxMainWindow app) {
 		mainApp = (GeneratedJfxApp) app;
+		table.setEditable(true);
 		table.setItems(mainApp.getSolutionData());
 		ObservableList<SolutionStatus> solutionStatusValues = FXCollections.observableArrayList(SolutionStatus.values());
 		solutionStatus.setCellFactory(ComboBoxTableCell.forTableColumn(solutionStatusValues));

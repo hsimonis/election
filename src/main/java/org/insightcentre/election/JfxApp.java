@@ -4,6 +4,8 @@ package org.insightcentre.election;
 Generated once, should be extended by user
 */
 
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 import org.insightcentre.election.datamodel.*;
 import framework.ApplicationDatasetInterface;
 import framework.ApplicationObjectInterface;
@@ -14,7 +16,14 @@ import org.insightcentre.election.implementedsolver.DetailedSolver;
 import org.insightcentre.election.imports.Importer;
 import org.insightcentre.election.reports.OverviewReport;
 
+import java.io.File;
+
+import static java.lang.System.getProperty;
+import static org.insightcentre.election.logging.LogShortcut.info;
+import static org.insightcentre.election.logging.LogShortcut.severe;
+
 public class JfxApp extends GeneratedJfxApp {
+    String workingDir;
 
 // callbacks to add for user interaction that is not generated
 // use stubs in GeneratedJFxApp as basis
@@ -28,7 +37,18 @@ public class JfxApp extends GeneratedJfxApp {
         public ApplicationDatasetInterface minimalDataset() {
                 Scenario base = new Scenario();
                 IrishCalendar.buildCalendar();
-                int seats = 174;
+            workingDir = getProperty("user.dir");
+            if (!workingDir.endsWith("/")){
+                workingDir = workingDir + "/";
+            }
+            if (!new File(workingDir).exists()){
+                severe("WorkingDir "+workingDir+" does not exist");
+            } else{
+                info("WorkingDir "+workingDir);
+            }
+//            base.setWorkingDir(workingDir);
+
+            int seats = 174;
                 String scenario="parameters"; // "parameters","nogamma","noalpha"
                 String specifics;
                 switch(scenario) {
@@ -48,12 +68,12 @@ public class JfxApp extends GeneratedJfxApp {
                         default:
                                 specifics = "No description provided for scenario.";
                 }
-                new Importer(base,"imports/",scenario);
+                new Importer(base,workingDir+"imports/",scenario);
 //                for(int delta = 100;delta<=3000;delta+= 50) {
 //                        new ConstituencySolver(base, seats, delta, 300, 25);
 //                }
-//                new Exporter(base,"exports/");
-//                new OverviewReport(base,"reports/",scenario,specifics).produce(scenario,"Solution Overview Report for Scenario "+scenario,"H. Simonis");
+//                new Exporter(base,workingDir+"exports/");
+//                new OverviewReport(base,workingDir+"reports/",scenario,specifics).produce(scenario,"Solution Overview Report for Scenario "+scenario,"H. Simonis");
                 new DetailedSolver(base,"Galway",new int[]{0,1,1});
                 new DetailedSolver(base,"Dublin",new int[]{0,1,9});
                 new DetailedSolver(base,"Cork",new int[]{0,1,3});
@@ -69,4 +89,10 @@ public class JfxApp extends GeneratedJfxApp {
                 launch(args);
         }
 
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.getIcons().add(new Image(JfxApp.class.getResourceAsStream("/LightGreen_Election.png")));
+        //     primaryStage.getIcons().add(new Image(JfxApp.class.getResourceAsStream("/insight.jpg")));
+        super.start(primaryStage);
+    }
 }

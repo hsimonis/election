@@ -23,7 +23,8 @@ import org.insightcentre.election.datamodel.SolConstType;
 import org.insightcentre.election.datamodel.Solution;
 
 /**
- * Generated at 10:26:59 on 2024-08-11 */
+ * Generated code
+ */
 public class SolConstTypeController extends Table3Controller {
 	@FXML
 	private TableView<SolConstType> table;
@@ -48,6 +49,7 @@ public class SolConstTypeController extends Table3Controller {
 	@Override
 	public void setMainApp(AbstractJfxMainWindow app) {
 		mainApp = (GeneratedJfxApp) app;
+		table.setEditable(true);
 		table.setItems(mainApp.getSolConstTypeData());
 		solution.setCellFactory(ComboBoxTableCell.forTableColumn(mainApp.getSolutionData()));
 		solution.setOnEditCommit(event -> {table.getSelectionModel().getSelectedItem().setSolution(event.getNewValue()); mainApp.reset();});
